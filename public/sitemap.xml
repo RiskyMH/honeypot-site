@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://honeypot.riskymh.dev/</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/commands</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/configuration</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/faq</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/how-it-works</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/self-hosting</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/setup-guide</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/tips</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/legal/privacy</loc>
+  </url>
+  <url>
+    <loc>https://honeypot.riskymh.dev/docs/legal/terms</loc>
+  </url>
+</urlset>
