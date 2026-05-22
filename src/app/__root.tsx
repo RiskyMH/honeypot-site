@@ -22,6 +22,11 @@ export const Route = createRootRoute({
           'A Discord bot that automatically catches and removes spam bots by monitoring a dedicated #honeypot channel.',
       },
       {
+        name: 'og:site_name',
+        content:
+          'Honeypot',
+      },
+      {
         name: 'twitter:creator',
         content: 'RiskyMH5',
       },

@@ -49,6 +49,7 @@ export function LiveStats() {
         <h2 className="mb-12 text-center text-3xl font-bold text-foreground md:text-4xl">
           Live Statistics
         </h2>
+        <noscript className="hidden">Note: Live stats update in real-time. JavaScript is required for live updates</noscript>
         <div className="grid gap-6 lg:grid-cols-4">
           {/* Stat cards */}
           <div className="grid gap-4 grid-cols-2 lg:grid-cols-1">
