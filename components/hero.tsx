@@ -76,67 +76,25 @@ export function Hero() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-50">
                     <DropdownMenuGroup>
+                      <DropdownMenuLabel className="text-muted-foreground">Key Links:</DropdownMenuLabel>
                       <DropdownMenuItem asChild>
-                        <a
-                          href="docs/setup-guide"
-                          className='sm:hidden'
-                        >
-                          Read the Guide
-                        </a>
+                        <Link to="/docs">
+                          Documentation
+                        </Link>
                       </DropdownMenuItem>
-                      <DropdownMenuSeparator className='sm:hidden' />
-
-                      <DropdownMenuLabel className="text-muted-foreground">View bot on:</DropdownMenuLabel>
                       <DropdownMenuItem asChild>
                         <a
-                          href="https://discord.com/discovery/applications/1450060292716494940"
+                          href="https://discord.gg/BanFeVWyFP"
                           target="_blank"
                         >
-                          Discord App Directory
+                          Support Server
                         </a>
                       </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <a
-                          href="https://top.gg/bot/1450060292716494940"
-                          target="_blank"
-                        >
-                          Top.gg
-                        </a>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <a
-                          href="https://discord.bots.gg/bots/1450060292716494940"
-                          target="_blank"
-                        >
-                          Discord.bots.gg
-                        </a>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <a
-                          href="https://discords.com/bots/bot/1450060292716494940"
-                          target="_blank"
-                        >
-                          Discords.com
-                        </a>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <a
-                          href="https://discordbotlist.com/bots/honeypot"
-                          target="_blank"
-                        >
-                          Discordbotlist.com
-                        </a>
-                      </DropdownMenuItem>
-                    </DropdownMenuGroup>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuGroup>
-                      <DropdownMenuLabel className="text-muted-foreground">Other Links:</DropdownMenuLabel>
                       <DropdownMenuItem asChild>
                         <Link
-                          to="/docs"
-                        // target="_blank"
+                          to="/docs/setup-guide"
                         >
-                          Documentation
+                          Setup Guide
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
@@ -147,89 +105,10 @@ export function Hero() {
                           GitHub
                         </a>
                       </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <a
-                          href="https://discord.gg/BanFeVWyFP"
-                          target="_blank"
-                        >
-                          Support Server
-                        </a>
-                      </DropdownMenuItem>
                     </DropdownMenuGroup>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </ButtonGroup>
-              <div className='hidden'>
-                <ul>
-                  <li>
-                    <a
-                      href="https://discord.com/discovery/applications/1450060292716494940"
-                      target="_blank"
-                    >
-                      View on Discord App Directory
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://top.gg/bot/1450060292716494940"
-                      target="_blank"
-                      className="text-sm text-muted-foreground hover:text-foreground"
-                    >
-                      View on Top.gg
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://discord.bots.gg/bots/1450060292716494940"
-                      target="_blank"
-                    >
-                      View on Discord Bots
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://discords.com/bots/bot/1450060292716494940"
-                      target="_blank"
-                    >
-                      View on Discords
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://discordbotlist.com/bots/honeypot"
-                      target="_blank"
-                    >
-                      View on Discord Bot List
-                    </a>
-                  </li>
-                </ul>
-
-                <ul className="flex flex-col gap-2 mt-4">
-                  <li>
-                    <a
-                      href="/docs"
-                    >
-                      Documentation
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://github.com/riskymh/honeypot"
-                      target="_blank"
-                    >
-                      GitHub
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://discord.gg/BanFeVWyFP"
-                      target="_blank"
-                    >
-                      Support Server
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </div>
             <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground max-sm:text-center max-sm:mx-auto max-sm:justify-center">
               <ShieldCheck className="size-4 shrink-0" />

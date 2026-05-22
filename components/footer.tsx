@@ -20,6 +20,14 @@ const legalLinks = [
   { label: "Privacy Policy", href: "/docs/legal/privacy" },
 ];
 
+const otherLinks = [
+  { label: "Top.gg", href: "https://top.gg/bot/1450060292716494940" },
+  { label: "Discord Bots", href: "https://discord.bots.gg/bots/1450060292716494940" },
+  { label: "Discords.com", href: "https://discords.com/bots/bot/1450060292716494940" },
+  { label: "Discord Bot List", href: "https://discordbotlist.com/bots/honeypot" },
+  { label: "Discord App Directory", href: "https://discord.com/discovery/applications/1450060292716494940" },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-border py-12">
@@ -91,6 +99,26 @@ export function Footer() {
                   >
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* other links to include, but not displayed */}
+          <div className="hidden">
+            <h4 className="mb-4 text-sm font-semibold text-foreground">
+              Find Us On
+            </h4>
+            <ul className="space-y-2">
+              {otherLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
