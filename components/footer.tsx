@@ -26,6 +26,7 @@ const otherLinks = [
   { label: "Discords.com", href: "https://discords.com/bots/bot/1450060292716494940" },
   { label: "Discord Bot List", href: "https://discordbotlist.com/bots/honeypot" },
   { label: "Discord App Directory", href: "https://discord.com/discovery/applications/1450060292716494940" },
+  { label: "Discord Watch", href: "https://discord.watch/applications/1450060292716494940" },
 ];
 
 export function Footer() {
