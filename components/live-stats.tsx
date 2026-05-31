@@ -21,9 +21,9 @@ export function LiveStats() {
   // if (!stats) return null;
   const stats = _stats || {
     guilds: 10_000,
-    moderations: 90_000,
-    last7dModerations: 10_000,
-    last7dEngagedGuilds: 2_000,
+    moderations: 100_000,
+    last7dModerations: 15_000,
+    last7dEngagedGuilds: 3_000,
     dailyStats: [],
   };
 
@@ -81,18 +81,13 @@ export function LiveStats() {
                 <div className="size-3 rounded-full bg-green-400" />
                 <span className="text-sm text-muted-foreground">Bans Issued</span>
               </div>
-              {/* <div className="flex items-center gap-2">
-                <div className="size-3 rounded-full bg-blue-400" />
-                <span className="text-sm text-muted-foreground">
-                  Messages Deleted
-                </span>
-              </div> */}
               <div className="flex items-center gap-2 ms-auto">
                 <span className="text-sm text-muted-foreground">Engaged Servers</span>
                 <div className="size-3 rounded-full bg-primary" />
               </div>
             </div>
-            <div className="h-[280px] w-full ">
+            <p className="hidden">Engaged Server means a server that has had at least 1 ban issued in the time period</p>
+            <div className="h-70 w-full ">
               {!!chartData?.length && <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={chartData} >
                   <CartesianGrid

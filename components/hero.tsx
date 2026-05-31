@@ -14,7 +14,7 @@ export function Hero() {
           <div className="max-w-xl col-span-3 lg:col-span-1">
 
             <div className="relative sm:hidden max-sm:w-[35%] mx-auto mb-10 -mt-10">
-              <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-amber-500/30 via-orange-500/20 to-transparent blur-2xl" />
+              <div className="absolute -inset-8 rounded-full bg-linear-to-br from-amber-500/30 via-orange-500/20 to-transparent blur-2xl" />
               <img
                 src="/honeypot.svg"
                 alt="Honeypot"
@@ -121,7 +121,7 @@ export function Hero() {
             {/* Gradient glow background */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div
-                className="size-[400px] rounded-full opacity-60 animate-pulse duration-10000 blur-[80px] bg-gradient-to-br via-amber-500/30 from-orange-500/20 to-transparent"
+                className="size-100 rounded-full opacity-60 animate-pulse duration-10000 blur-[80px] bg-linear-to-br via-amber-500/30 from-orange-500/20 to-transparent"
                 style={{
                   // background:
                   //   "radial-gradient(circle, rgba(251,191,36,0.4) 0%, rgba(245,158,11,0.3) 30%, rgba(217,119,6,0.2) 50%, transparent 70%)",
@@ -132,7 +132,7 @@ export function Hero() {
             {/* Additional inner glow */}
             <div className="absolute inset-0 flex items-center justify-center ">
               <div
-                className="size-[280px] rounded-full  blur-[40px] bg-gradient-to-br from-yellow-400/20 via-orange-500/35 to-transparent"
+                className="size-70 rounded-full  blur-2xl bg-linear-to-br from-yellow-400/20 via-orange-500/35 to-transparent"
                 style={{
                   // background:
                   //   "radial-gradient(circle, rgba(251,191,36,0.5) 0%, rgba(245,158,11,0.3) 40%, transparent 70%)",
@@ -192,7 +192,7 @@ export function Hero() {
                       <span className="text-sm font-medium text-foreground">
                         Honeypot
                       </span>
-                      <span className="rounded bg-[#5865f2] px-1 py-0.25 text-[10px] font-medium text-white flex">
+                      <span className="rounded bg-[#5865f2] px-1 py-px text-[10px] font-medium text-white flex">
                         <Check className="size-3 self-center mr-1" /> APP
                       </span>
                     </div>

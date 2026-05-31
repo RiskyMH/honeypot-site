@@ -50,7 +50,7 @@ export function HowItWorks() {
             /* Use a fixed basis instead of flex-1 to keep them equal size without stretching */
             <div
               key={step.title}
-              className="flex items-center gap-2 w-[160px] md:w-[200px]"
+              className="flex items-center gap-2 w-40 md:w-50"
             >
               <div className="flex flex-col items-center w-full">
                 <div className={`flex size-14 items-center justify-center rounded-xl border border-border md:size-16 ${step.bgColor}`}>
@@ -68,7 +68,7 @@ export function HowItWorks() {
 
               {/* The Arrow */}
               {index < steps.length - 1 && (
-                <ArrowRight className="mt-[-40px] hidden size-4 text-muted-foreground lg:block" />
+                <ArrowRight className="-mt-10 hidden size-4 text-muted-foreground lg:block" />
               )}
             </div>
           ))}
