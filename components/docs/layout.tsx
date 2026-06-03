@@ -287,7 +287,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                       </a>
                     </li>
                     <li>
-                      <a href="https://discord.gg/honeypot" target="_blank" className="hover:text-white">
+                      <a href="https://discord.gg/BanFeVWyFP" target="_blank" className="hover:text-white">
                         Support Server
                       </a>
                     </li>

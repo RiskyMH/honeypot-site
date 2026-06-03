@@ -20,7 +20,7 @@ export function LiveStats() {
   const isMobile = useIsMobile();
   // if (!stats) return null;
   const stats = _stats || {
-    guilds: 10_000,
+    guilds: 15_000,
     moderations: 100_000,
     last7dModerations: 15_000,
     last7dEngagedGuilds: 3_000,
