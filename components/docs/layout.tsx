@@ -47,7 +47,7 @@ const sidebarNav = [
            - Honeypot Channel
            - Log Channel
            - Action (kick/ban/disabled)
-           - experimental features (eg no-warning-msg, no-dm, channel-warmer, random-channel-name, etc)
+           - experimental features (eg no-warning-msg, no-dm, channel-warmer, random-channel-name, reinvite, etc)
         - /honeypot-messages modal 
           (the custom messages you can set for the bot to use)
            - Honeypot Warning 

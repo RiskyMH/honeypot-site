@@ -59,6 +59,7 @@ function RouteComponent() {
           [<>Channel Warmer</>, 'Posts a daily message to keep the honeypot active.', 'Helps the channel look “alive”.'],
           [<>Random Channel Name</>, <>Renames the honeypot channel daily. <DocsLink href="https://github.com/RiskyMH/honeypot/blob/main/src/utils/random-channel-names.yaml">See the name list</DocsLink>.</>, 'Avoid predictable names.'],
           [<>Random Channel Name (Chaos)</>, 'Renames with random characters daily.', 'Best against blacklist bots.'],
+          [<>Reinvite</>, 'Include an invite link in the DM so users can rejoin.', 'Helpful to legitimate members.'],
         ]}
       />
 
@@ -88,8 +89,11 @@ function RouteComponent() {
         headers={['Variable', 'Used in', 'Replaced with']}
         rows={[
           [<DocsInlineCode>{'{{action:text}}'}</DocsInlineCode>, 'Warning, DM, Log', 'Text for the chosen action (ban / softban / disabled).'],
-          [<DocsInlineCode>{'{{server:name}}'}</DocsInlineCode>, 'DM', 'The server name, linked if server has vanity invite.'],
+          [<DocsInlineCode>{'{{server:name}}'}</DocsInlineCode>, 'DM', 'The server name.'],
+          [<DocsInlineCode>{'{{server:name:linked}}'}</DocsInlineCode>, 'DM', 'Server name linked to its Discord discovery page (if applicable).'],
+          [<DocsInlineCode>{'{{server:public-link}}'}</DocsInlineCode>, 'DM', 'Link to the server\'s public discovery page (if applicable).'],
           [<DocsInlineCode>{'{{honeypot:channel:link}}'}</DocsInlineCode>, 'DM', 'Link to the honeypot channel message.'],
+          [<DocsInlineCode>{'{{reinvite:link}}'}</DocsInlineCode>, 'DM', 'Invite link to rejoin the server (requires Reinvite experiment).'],
           [<DocsInlineCode>{'{{user:mention}}'}</DocsInlineCode>, 'Log', 'Mentions the user.'],
           [<DocsInlineCode>{'{{user:id}}'}</DocsInlineCode>, 'Log', 'Raw user ID.'],
           [<DocsInlineCode>{'{{honeypot:channel:mention}}'}</DocsInlineCode>, 'Log', 'Mentions the honeypot channel.'],
