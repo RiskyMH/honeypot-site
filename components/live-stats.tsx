@@ -22,8 +22,8 @@ export function LiveStats() {
   const stats = _stats || {
     guilds: 15_000,
     moderations: 100_000,
-    last7dModerations: 15_000,
-    last7dEngagedGuilds: 3_000,
+    last7dModerations: 20_000,
+    last7dEngagedGuilds: 4_000,
     dailyStats: [],
   };
 
@@ -31,7 +31,7 @@ export function LiveStats() {
   const statCards = [
     { icon: Shield, label: "Bans (7d)", value: stats.last7dModerations?.toLocaleString?.() || "-", color: "text-green-400" },
     { icon: Shield, label: "Total Bans", value: stats.moderations?.toLocaleString?.() || "-", color: "text-blue-400" },
-    { icon: Server, label: "Engaged Servers (7d)", value: stats.last7dEngagedGuilds?.toLocaleString?.() || "-", color: "text-primary" },
+    { icon: Server, label: "Triggered Servers (7d)", value: stats.last7dEngagedGuilds?.toLocaleString?.() || "-", color: "text-primary" },
     { icon: Server, label: "Total Servers", value: stats.guilds?.toLocaleString?.() || "-", color: "text-blue-400" },
   ];
 
@@ -82,11 +82,11 @@ export function LiveStats() {
                 <span className="text-sm text-muted-foreground">Bans Issued</span>
               </div>
               <div className="flex items-center gap-2 ms-auto">
-                <span className="text-sm text-muted-foreground">Engaged Servers</span>
+                <span className="text-sm text-muted-foreground">Triggered Servers</span>
                 <div className="size-3 rounded-full bg-primary" />
               </div>
             </div>
-            <p className="hidden">Engaged Server means a server that has had at least 1 ban issued in the time period</p>
+            <p className="hidden">Triggered Server means a server that has had at least 1 ban issued in the time period</p>
             <div className="h-70 w-full ">
               {!!chartData?.length && <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={chartData} >
