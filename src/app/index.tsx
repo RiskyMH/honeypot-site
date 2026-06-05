@@ -30,6 +30,7 @@ const title = 'Honeypot - The Discord Bot That Catches Bots'
 const description = 'A Discord bot that automatically catches and removes spam bots by monitoring a dedicated #honeypot channel.'
 const url = 'https://honeypot.riskymh.dev/'
 
+const head = buildHead({ title, description, url })
 
 export const Route = createFileRoute('/')({
   // loader: async () => {
@@ -50,13 +51,78 @@ export const Route = createFileRoute('/')({
   //   'CDN-Cache-Control': 'max-age=60, stale-while-revalidate=86400',
   // }),
   head: () => ({
-    ...buildHead({ title, description, url }),
-    links: [
-      ...buildHead({ title, description, url }).links,
-      { rel: 'preconnect', href: 'https://honeypot-stats.riskymh.dev', crossOrigin: "" },
-      // { rel: 'preconnect', href: 'https://honeypot-stats.riskymh.dev/ws', crossOrigin: "" },
-      // { rel: 'preconnect', href: 'wss://honeypot-stats.riskymh.dev/ws', crossOrigin: "" }
+    meta: [
+      ...head.meta,
+      { name: 'og:type', content: 'website' },
+      { name: 'keywords', content: 'discord bot, spam protection, anti-spam, moderation bot, honeypot' },
+      { name: 'robots', content: 'index, follow' },
     ],
+    links: [
+      ...head.links,
+      { rel: 'preconnect', href: 'https://honeypot-stats.riskymh.dev', crossOrigin: "" },
+    ],
+    scripts: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://honeypot.riskymh.dev/#website",
+              url: "https://honeypot.riskymh.dev/",
+              name: "Honeypot",
+              description: description,
+              inLanguage: "en-US",
+              publisher: {
+                "@id": "https://honeypot.riskymh.dev/#organization"
+              },
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://honeypot.riskymh.dev/#organization",
+              name: "RiskyMH",
+              url: "https://riskymh.dev",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://riskymh.dev/fire_anim.png"
+              },
+              sameAs: [
+                "https://github.com/RiskyMH",
+              ]
+            },
+            {
+              "@type": "SoftwareApplication",
+              "@id": "https://honeypot.riskymh.dev/#app",
+              name: "Honeypot",
+              url: "https://honeypot.riskymh.dev/",
+              description: description,
+              applicationCategory: "SecurityApplication",
+              operatingSystem: "Discord",
+              inLanguage: "en-US",
+              mainEntityOfPage: "https://honeypot.riskymh.dev/",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD"
+              },
+              publisher: {
+                "@id": "https://honeypot.riskymh.dev/#organization"
+              },
+              potentialAction: {
+                "@type": "ViewAction",
+                target:
+                  "https://discord.com/oauth2/authorize?client_id=1450060292716494940"
+              },
+              sameAs: [
+                "https://github.com/RiskyMH/honeypot",
+                "https://discord.com/discovery/applications/1450060292716494940"
+              ]
+            }
+          ]
+        }),
+      }
+    ]
   }),
   component: HomePage,
 })
