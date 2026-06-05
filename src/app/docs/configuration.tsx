@@ -97,6 +97,7 @@ function RouteComponent() {
           [<DocsInlineCode>{'{{user:mention}}'}</DocsInlineCode>, 'Log', 'Mentions the user.'],
           [<DocsInlineCode>{'{{user:id}}'}</DocsInlineCode>, 'Log', 'Raw user ID.'],
           [<DocsInlineCode>{'{{honeypot:channel:mention}}'}</DocsInlineCode>, 'Log', 'Mentions the honeypot channel.'],
+          [<DocsInlineCode>{'{{honeypot:moderation-count}}'}</DocsInlineCode>, 'Log', 'Total moderation count for this server.'],
         ]}
       />
 
