@@ -48,6 +48,11 @@ function RouteComponent() {
         value={<>Choose <DocsInlineCode>softban</DocsInlineCode>, <DocsInlineCode>ban</DocsInlineCode>, or <DocsInlineCode>disabled</DocsInlineCode>.</>}
         hint={<>Softban is default. It bans then unbans to remove recent messages.</>}
       />
+      <DocsKeyValue
+        label="Experiments"
+        value={<>Optional switches for extra behavior at catching & preventing spam better.</>}
+        hint={<>See below table for options.</>}
+      />
 
       <DocsSubheading title="Experiments" />
       <DocsP>Optional switches for extra behavior. These can be enabled together.</DocsP>
