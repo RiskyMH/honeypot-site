@@ -60,6 +60,8 @@ function RouteComponent() {
           [<>Random Channel Name</>, <>Renames the honeypot channel daily. <DocsLink href="https://github.com/RiskyMH/honeypot/blob/main/src/utils/random-channel-names.yaml">See the name list</DocsLink>.</>, 'Avoid predictable names.'],
           [<>Random Channel Name (Chaos)</>, 'Renames with random characters daily.', 'Best against blacklist bots.'],
           [<>Reinvite</>, 'Include an invite link in the DM so users can rejoin.', 'Helpful to legitimate members.'],
+          [<>Timeout First</>, 'Timeouts the user for 1 hour before banning/softbanning.', 'This timeout should still apply when they rejoin.'],
+          [<>Only More Recent Delete</>, 'Only deletes the last 15 minutes of messages instead of 1 hour.', 'Should be less jarring to message history.'],
         ]}
       />
 
