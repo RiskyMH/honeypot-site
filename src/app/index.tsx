@@ -26,7 +26,7 @@ function cache(key: string, fetcher: () => Promise<any>, ttl = 600) {
   return value
 }
 
-const title = 'Honeypot - The Discord Bot That Catches Bots'
+const title = 'Honeypot: The Discord Bot That Catches Bots'
 const description = 'A Discord bot that automatically catches and removes spam bots by monitoring a dedicated #honeypot channel.'
 const url = 'https://honeypot.riskymh.dev/'
 
@@ -72,6 +72,7 @@ export const Route = createFileRoute('/')({
               "@id": "https://honeypot.riskymh.dev/#website",
               url: "https://honeypot.riskymh.dev/",
               name: "Honeypot",
+              alternateName: ["Honeypot Bot", "honeypot.riskymh.dev"],
               description: description,
               inLanguage: "en-US",
               publisher: {
