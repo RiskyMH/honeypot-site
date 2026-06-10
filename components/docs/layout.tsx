@@ -109,7 +109,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           </Link>
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/riskymh/honeypot"
+              href="https://github.com/RiskyMH/honeypot"
               target="_blank"
               className="text-sm text-gray-400 transition-colors hover:text-white max-lg:hidden flex items-center"
             >
@@ -277,7 +277,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/riskymh/honeypot" target="_blank" className="hover:text-white">
+                      <a href="https://github.com/RiskyMH/honeypot" target="_blank" className="hover:text-white">
                         GitHub
                       </a>
                     </li>

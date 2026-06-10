@@ -99,7 +99,7 @@ export function Hero() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <a
-                          href="https://github.com/riskymh/honeypot"
+                          href="https://github.com/RiskyMH/honeypot"
                           target="_blank"
                         >
                           GitHub
@@ -112,7 +112,7 @@ export function Hero() {
             </div>
             <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground max-sm:text-center max-sm:mx-auto max-sm:justify-center">
               <ShieldCheck className="size-4 shrink-0" />
-              <span><a href="https://github.com/riskymh/honeypot" className="hover:font-semibold hover:underline //hover:tracking-[-0.0232519em] hover:tracking-[-0.0089em]">Open Source</a> • Actively Maintained</span>
+              <span><a href="https://github.com/RiskyMH/honeypot" className="hover:font-semibold hover:underline //hover:tracking-[-0.0232519em] hover:tracking-[-0.0089em]">Open Source</a> • Actively Maintained</span>
             </div>
           </div>
 

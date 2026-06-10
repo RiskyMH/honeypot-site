@@ -28,7 +28,7 @@ const stats = [
   },
   {
     icon: UserPlus2Icon,
-    value: "35m+",
+    value: "40m+",
     label: "Members",
     live: false,
   },
@@ -374,7 +374,7 @@ export default function DocsPage() {
               className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
               asChild
             >
-              <a href="https://github.com/riskymh/honeypot" target="_blank">
+              <a href="https://github.com/RiskyMH/honeypot" target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
                   viewBox="0 0 24 24"
