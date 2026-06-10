@@ -2,10 +2,25 @@ import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 
 
+function hashify(text: string) {
+    return text.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
+
+export function TitleHashLinkIcon({ hash }: { hash: string }) {
+    return (
+        <a
+            href={`#${hash}`}
+            className="relative inline-block opacity-0 group-hover/title:opacity-100 transition-opacity duration-200 ease-in-out text-amber-500 hover:text-amber-500/85 ms-1 px-1 select-none font-normal"
+        >
+            #
+        </a>
+    )
+}
+
 export function DocsTitle({ title, description }: { title: string, description?: string }) {
     return (
         <div className="flex flex-col items-start">
-            <h1 className="mb-2 text-4xl font-bold text-white">
+            <h1 className="mb-2 text-4xl font-bold text-white scroll-mt-20">
                 {title}
             </h1>
             {description && (
@@ -17,21 +32,23 @@ export function DocsTitle({ title, description }: { title: string, description?:
     )
 }
 
-export function DocsSection({ title, children }: { title: string, children: React.ReactNode }) {
+export function DocsSection({ title, children, id }: { title: string, children: React.ReactNode, id?: string }) {
     return (
-        <section className="mb-12" id={title.toLowerCase().replace(/\s+/g, "-")}>
-            <h2 className="mb-6 text-2xl font-bold text-white">
+        <section className="mb-12 scroll-mt-20" id={id || hashify(title)}>
+            <h2 className="mb-6 text-2xl font-bold text-white group/title">
                 {title}
+                <TitleHashLinkIcon hash={id || hashify(title)} />
             </h2>
             {children}
         </section>
     )
 }
 
-export function DocsSubheading({ title }: { title: string }) {
+export function DocsSubheading({ title, id }: { title: string, id?: string }) {
     return (
-        <h3 className="mb-3 text-lg font-semibold text-white">
+        <h3 className="mb-3 text-lg font-semibold text-white scroll-mt-20 group/title" id={id || hashify(title)}>
             {title}
+            <TitleHashLinkIcon hash={id || hashify(title)} />
         </h3>
     )
 }
