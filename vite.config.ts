@@ -44,6 +44,9 @@ export default defineConfig({
     }),
     viteReact(),
     // i set this env var in cf pages builder
-    !process.env.BUN_VERSION && nitro({ preset: "node" }),
+    !process.env.BUN_VERSION && nitro({ preset: "node", sourcemap: true }),
   ],
+  build: {
+    sourcemap: true,
+  }
 })
