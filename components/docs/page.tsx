@@ -1,6 +1,5 @@
 "use client"
 
-import { Link } from '@tanstack/react-router'
 import {
   ChevronRight,
   Info,
@@ -12,6 +11,13 @@ import {
   UserPlus2Icon,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import {
+  DocsSection,
+  DocsP,
+  DocsOl,
+  DocsInlineCode,
+  DocsLink,
+} from "./markdown"
 
 const stats = [
   {
@@ -38,12 +44,6 @@ const stats = [
     label: "Success Rate",
     live: false,
   },
-  // {
-  //   icon: Clock,
-  //   value: "24/7",
-  //   label: "Always On",
-  //   live: false,
-  // },
 ]
 
 const commands = [
@@ -76,11 +76,10 @@ const whatWeDontCollect = [
 ]
 
 export default function DocsPage() {
-
   return (
     <>
       {/* Overview Section */}
-      <section className="mb-12 ">
+      <section className="mb-12">
         <div className="flex items-start justify-between">
           <div className="max-w-xl">
             <h1 className="mb-2 text-4xl font-bold text-white">
@@ -141,47 +140,26 @@ export default function DocsPage() {
       </section>
 
       {/* How It Works */}
-      <section className="mb-12 flex flex-col gap-4">
-        <h2 className="mb-2 text-2xl font-bold text-white">
-          How It Works
-        </h2>
-        <ol className=" space-y-3 text-gray-400">
-          <li className="flex gap-3">
-            <span className="text-gray-500">1.</span>
-            <span>
-              Honeypot creates (or you set up) a hidden{" "}
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-amber-500 text-sm">
-                #honeypot
-              </code>{" "}
-              channel.
-            </span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-gray-500">2.</span>
-            <span>Spammers or bots post in the channel.</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-gray-500">3.</span>
-            <span>
-              Honeypot instantly removes the user (kick/ban) and deletes
-              their messages.
-            </span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-gray-500">4.</span>
-            <span>The action is logged to your selected log channel.</span>
-          </li>
-        </ol>
+      <DocsSection title="How It Works">
+        <DocsOl>
+          <span>
+            Honeypot creates (or you set up) a hidden{" "}
+            <DocsInlineCode>#honeypot</DocsInlineCode> channel.
+          </span>
+          <span>Spammers or bots post in the channel.</span>
+          <span>
+            Honeypot instantly removes the user (kick/ban) and deletes
+            their messages.
+          </span>
+          <span>The action is logged to your selected log channel.</span>
+        </DocsOl>
 
-        <p className="text-sm text-gray-400 mb-2">
+        <p className="text-sm text-gray-400 mb-6 -mt-2">
           For more info on the logic behind honeypot, check out the{" "}
-          <Link
-            to="/docs/how-it-works"
-            className="text-amber-500 hover:underline"
-          >
+          <DocsLink href="/docs/how-it-works">
             How It Works
             <ChevronRight className="ml-1 inline h-3 w-3" />
-          </Link>
+          </DocsLink>
         </p>
 
         {/* Info callout */}
@@ -192,63 +170,37 @@ export default function DocsPage() {
             deletes their immediate messages.
           </p>
         </div>
-
-
-      </section>
+      </DocsSection>
 
       {/* Getting Started */}
-      <section className="mb-12">
-        <h2 className="mb-6 text-2xl font-bold text-white">
-          Getting Started
-        </h2>
-        {/* just use pain list */}
-        <ol className="mb-6 space-y-3 text-gray-400">
-          <li className="flex gap-3">
-            <span className="text-gray-500">1.</span>
-            <span><a href="https://discord.com/api/oauth2/authorize?client_id=1450060292716494940" target="_blank" className="text-amber-500 hover:underline">
+      < DocsSection title="Getting Started" >
+        <DocsOl>
+          <span>
+            <DocsLink href="https://discord.com/api/oauth2/authorize?client_id=1450060292716494940">
               Invite Honeypot
-            </a> to your server.</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-gray-500">2.</span>
-            <span>Ensure the bot has the required permissions.</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-gray-500">3.</span>
-            <span>The bot creates a <code className="rounded bg-white/10 px-1.5 py-0.5 text-amber-500 text-sm">
-              #honeypot
-            </code>{" "}
-              channel for you.</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-gray-500">4.</span>
-            <span>Use /honeypot to configure the bot's behavior.</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-gray-500">5.</span>
-            <span>Honeypot will handle the rest!</span>
-          </li>
-        </ol>
+            </DocsLink>{" "}
+            to your server.
+          </span>
+          <span>Ensure the bot has the required permissions.</span>
+          <span>
+            The bot creates a <DocsInlineCode>#honeypot</DocsInlineCode>{" "}
+            channel for you.
+          </span>
+          <span>Use /honeypot to configure the bot's behavior.</span>
+          <span>Honeypot will handle the rest!</span>
+        </DocsOl>
         <p className="text-sm text-gray-400">
           For a detailed walkthrough, check out the{" "}
-          <Link
-            to="/docs/setup-guide"
-            className="text-amber-500 hover:underline"
-          >
+          <DocsLink href="/docs/setup-guide">
             Setup Guide.
             <ChevronRight className="ml-1 inline h-3 w-3" />
-          </Link>
+          </DocsLink>
         </p>
-      </section>
+      </DocsSection >
 
       {/* Bot Commands */}
-      <section className="mb-12">
-        <h2 className="mb-2 text-2xl font-bold text-white">
-          Bot Commands
-        </h2>
-        <p className="mb-6 text-gray-400">
-          Use slash commands to configure Honeypot in your server.
-        </p>
+      <DocsSection title="Bot Commands">
+        <DocsP>Use slash commands to configure Honeypot in your server.</DocsP>
         <div className="overflow-hidden rounded-xl border border-white/10 bg-white/5">
           <table className="w-full">
             <tbody>
@@ -270,25 +222,19 @@ export default function DocsPage() {
         </div>
         <p className="mt-4 text-sm text-gray-400">
           See all commands in the{" "}
-          <Link
-            to="/docs/commands"
-            className="text-amber-500 hover:underline"
-          >
+          <DocsLink href="/docs/commands">
             Commands Reference.
             <ChevronRight className="ml-1 inline h-3 w-3" />
-          </Link>
+          </DocsLink>
         </p>
-      </section>
+      </DocsSection >
 
       {/* Privacy Policy */}
-      <section className="mb-12">
-        <h2 className="mb-2 text-2xl font-bold text-white">
-          Privacy Policy
-        </h2>
-        <p className="mb-6 text-gray-400">
+      < DocsSection title="Privacy Policy" >
+        <DocsP>
           Your privacy matters. Honeypot is designed to be minimal and
           transparent.
-        </p>
+        </DocsP>
         <div className="grid grid-cols-2 gap-4 rounded-xl border border-white/10 bg-white/5 p-6">
           <div>
             <h3 className="mb-4 text-sm font-semibold text-amber-500">
@@ -325,19 +271,16 @@ export default function DocsPage() {
         </div>
         <p className="mt-4 text-sm text-gray-400">
           Read the full{" "}
-          <Link
-            to="/docs/legal/privacy"
-            className="text-amber-500 hover:underline"
-          >
+          <DocsLink href="/docs/legal/privacy">
             Privacy Policy
-          </Link>{" "}
+          </DocsLink>{" "}
           for more details.
           <ChevronRight className="ml-1 inline h-3 w-3 text-amber-500" />
         </p>
-      </section>
+      </DocsSection >
 
       {/* Still have questions */}
-      <section className="mb-12">
+      < section className="mb-12" >
         <div className="flex max-sm:flex-col gap-y-5 items-center justify-between rounded-xl border border-white/10 bg-white/5 p-6 overflow-ellipsis">
           <div className="flex items-center gap-4">
             <img
@@ -357,7 +300,7 @@ export default function DocsPage() {
             </div>
           </div>
           <div className="flex gap-3 flex-wrap max-sm:justify-center">
-            <Button className="bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
+            <Button className="bg-[#5865F2] text-white hover:bg-[#4752C4] ms-auto" asChild>
               <a href="https://discord.gg/BanFeVWyFP" target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
@@ -371,7 +314,7 @@ export default function DocsPage() {
             </Button>
             <Button
               variant="outline"
-              className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white"
+              className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white ms-auto"
               asChild
             >
               <a href="https://github.com/RiskyMH/honeypot" target="_blank">
@@ -388,7 +331,6 @@ export default function DocsPage() {
           </div>
         </div>
       </section>
-
     </>
   )
 }

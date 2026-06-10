@@ -35,7 +35,7 @@ export function DocsTitle({ title, description }: { title: string, description?:
 export function DocsSection({ title, children, id }: { title: string, children: React.ReactNode, id?: string }) {
     return (
         <section className="mb-12 scroll-mt-20" id={id || hashify(title)}>
-            <h2 className="mb-6 text-2xl font-bold text-white group/title">
+            <h2 className="mb-3 text-2xl font-bold text-white group/title">
                 {title}
                 <TitleHashLinkIcon hash={id || hashify(title)} />
             </h2>
@@ -55,11 +55,12 @@ export function DocsSubheading({ title, id }: { title: string, id?: string }) {
 
 export function DocsOl({ children }: { children: React.ReactNode }) {
     children = Array.isArray(children) ? children : [children];
+    const size = children.length.toString().length;
     return (
         <ol className="mb-6 space-y-3 text-gray-400">
             {children.map((child, index) => (
                 <li key={index} className="flex gap-3">
-                    <span className="text-gray-500">{index + 1}.</span>
+                    <span className="text-gray-500 w-[1ch]" style={{width: `${size}ch`}}>{index + 1}.</span>
                     <span>{child}</span>
                 </li>
             ))}
