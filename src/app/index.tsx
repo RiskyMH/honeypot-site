@@ -72,7 +72,7 @@ export const Route = createFileRoute('/')({
               "@id": "https://honeypot.riskymh.dev/#website",
               url: "https://honeypot.riskymh.dev/",
               name: "Honeypot",
-              alternateName: ["Honeypot Bot", "honeypot.riskymh.dev"],
+              alternateName: ["Honeypot Bot"],
               description: description,
               inLanguage: "en-US",
               publisher: {
