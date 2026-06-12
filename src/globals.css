@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: "CalSans-SemiBold";
-  src: url("/public/CalSans-SemiBold.woff2") format("woff2");
+  src: url("/CalSans-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }

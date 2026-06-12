@@ -67,6 +67,7 @@ function RouteComponent() {
           [<>Reinvite</>, 'Include an invite link in the DM so users can rejoin.', 'Helpful to legitimate members.'],
           [<>Timeout First</>, 'Timeouts the user for 1 hour before banning/softbanning.', 'This timeout should still apply when they rejoin.'],
           [<>Only More Recent Delete</>, 'Only deletes the last 15 minutes of messages instead of 1 hour.', 'Should be less jarring to message history.'],
+          [<>Many Honeypots</>, 'Allows selection of multiple honeypot channels.', 'Requires modal submit and re-open to add them.'],
         ]}
       />
 
