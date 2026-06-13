@@ -7,6 +7,7 @@ const resourceLinks = [
     label: "Invite Bot",
     href: "https://discord.com/oauth2/authorize?client_id=1450060292716494940",
   },
+  { label: "Honeypot Lite", href: "https://github.com/RiskyMH/honeypot-lite" },
   { label: "Documentation", href: "/docs" },
   {
     label: "Support Server",

@@ -22,19 +22,19 @@ import {
 const stats = [
   {
     icon: Users,
-    value: "10k+",
+    value: "20k+",
     label: "Servers",
     live: false,
   },
   {
     icon: Ban,
-    value: "100k+",
+    value: "150k+",
     label: "Bans",
     live: false,
   },
   {
     icon: UserPlus2Icon,
-    value: "40m+",
+    value: "45m+",
     label: "Members",
     live: false,
   },

@@ -34,6 +34,7 @@ const faqs = [
     answer:
       "Yes, Honeypot works in any Discord server. Just make sure the bot has the necessary permissions (Ban Members, Manage Channels, etc.) and that its role is positioned correctly in the role hierarchy.",
   },
+
 ];
 
 const benefits = [

@@ -35,14 +35,14 @@ export function StatsBar() {
   const displayStats = [
     {
       icon: Users,
-      value: stats?.guilds?.toLocaleString?.() || "10k+",
+      value: stats?.guilds?.toLocaleString?.() || "20k+",
       label: "Servers Protected",
       color: "text-primary",
       slideOnRemount: true, // on an actual change, make it a vertical slider or smth
     },
     {
       icon: ShieldAlert,
-      value: stats?.moderations?.toLocaleString?.() || "100k+",
+      value: stats?.moderations?.toLocaleString?.() || "150k+",
       label: "Users Banned",
       color: "text-primary",
       slideOnRemount: true,
