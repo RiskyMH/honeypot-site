@@ -10,7 +10,7 @@ export function TitleHashLinkIcon({ hash }: { hash: string }) {
     return (
         <a
             href={`#${hash}`}
-            className="relative inline-block opacity-0 group-hover/title:opacity-100 transition-opacity duration-200 ease-in-out text-amber-500 hover:text-amber-500/85 ms-1 px-1 select-none font-normal"
+            className="relative inline-block opacity-0 group-hover/title:opacity-100 focus-visible:opacity-100 transition-opacity duration-200 ease-in-out text-amber-500 hover:text-amber-500/85 ms-1 px-1 select-none font-normal"
         >
             #
         </a>
@@ -60,7 +60,7 @@ export function DocsOl({ children }: { children: React.ReactNode }) {
         <ol className="mb-6 space-y-3 text-gray-400">
             {children.map((child, index) => (
                 <li key={index} className="flex gap-3">
-                    <span className="text-gray-500 w-[1ch]" style={{width: `${size}ch`}}>{index + 1}.</span>
+                    <span className="text-gray-500 w-[1ch]" style={{ width: `${size}ch` }}>{index + 1}.</span>
                     <span>{child}</span>
                 </li>
             ))}
@@ -327,10 +327,13 @@ export function DocsFaqList({ children }: { children: React.ReactNode }) {
     )
 }
 
-export function DocsFaqItem({ question, children }: { question: string; children: React.ReactNode }) {
+export function DocsFaqItem({ id, question, children }: { id?: string; question: string; children: React.ReactNode }) {
     return (
-        <div className="rounded-xl border border-white/10 bg-white/5 p-5">
-            <h3 className="mb-2 text-base font-semibold text-white">{question}</h3>
+        <div id={id || hashify(question)} className="rounded-xl border border-white/10 bg-white/5 p-5 target:border-orange-500 scroll-mt-20 group/title">
+            <h3 className="mb-2 text-base font-semibold text-white">
+                {question}
+                <TitleHashLinkIcon hash={id || hashify(question)} />
+            </h3>
             <div className="text-sm text-gray-400">{children}</div>
         </div>
     )
