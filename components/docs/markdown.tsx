@@ -10,10 +10,8 @@ export function TitleHashLinkIcon({ hash }: { hash: string }) {
     return (
         <a
             href={`#${hash}`}
-            className="relative inline-block opacity-0 group-hover/title:opacity-100 focus-visible:opacity-100 transition-opacity duration-200 ease-in-out text-amber-500 hover:text-amber-500/85 ms-1 px-1 select-none font-normal"
-        >
-            #
-        </a>
+            className="relative inline-block opacity-0 group-hover/title:opacity-100 focus-visible:opacity-100 transition-opacity duration-200 ease-in-out text-amber-500 hover:text-amber-500/85 ms-1 px-1 select-none font-normal after:content-['#']"
+        />
     )
 }
 
