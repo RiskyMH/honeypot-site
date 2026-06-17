@@ -15,36 +15,24 @@ export const Route = createRootRoute({
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
-      { title: 'Honeypot - The Discord Bot That Catches Bots' },
+      { title: 'Honeypot: The Discord Bot That Catches Bots' },
       {
         name: 'description',
         content:
           'A Discord bot that automatically catches and removes spam bots by monitoring a dedicated #honeypot channel.',
       },
-      {
-        property: 'og:site_name',
-        content:
-          'Honeypot',
-      },
+      { property: 'og:site_name', content: 'Honeypot' },
       { property: 'og:locale', content: 'en_US' },
       { property: 'og:type', content: 'website' },
-      {
-        name: 'twitter:creator',
-        content: 'RiskyMH5',
-      },
-      {
-        name: 'twitter:card',
-        content: 'summary',
-      },
-      {
-        name: 'twitter:card',
-        content: 'summary',
-      },
+      { name: 'twitter:creator', content: 'RiskyMH5' },
+      { name: 'twitter:card', content: 'summary' },
       {
         name: 'twitter:image',
         content:
           'https://honeypot.riskymh.dev/honeypot.png',
       },
+      { property: 'og:image', content: 'https://honeypot.riskymh.dev/honeypot.png' },
+      { name: 'application-name', content: 'Honeypot' },
     ],
     links: [
       // {
@@ -54,8 +42,7 @@ export const Route = createRootRoute({
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        href:
-          '/honeypot.svg',
+        href: '/honeypot.svg',
       },
       {
         rel: 'apple-touch-icon',
