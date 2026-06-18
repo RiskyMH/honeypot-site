@@ -1,23 +1,14 @@
 "use client";
 
-import { useIsMobile } from "@/hooks/use-mobile";
-import { Shield, MessageSquare, Server } from "lucide-react";
+import { Shield, Server } from "lucide-react";
 import { useStats } from "@/components/stats-context";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  ResponsiveContainer,
-  Tooltip,
-  CartesianGrid,
-  ReferenceLine,
-} from "recharts";
 import { AnimatedStatValue } from "./stats-bar";
+import { lazy, Suspense } from 'react';
+
+const LiveStatsChart = lazy(() => import('./live-stats-chart.js').then(module => ({ default: module.LiveStatsChart })));
 
 export function LiveStats() {
   const { stats: _stats } = useStats();
-  const isMobile = useIsMobile();
   // if (!stats) return null;
   const stats = _stats || {
     guilds: 20_000,
@@ -87,91 +78,10 @@ export function LiveStats() {
               </div>
             </div>
             <p className="hidden">Triggered Server means a server that has had at least 1 ban issued in the time period</p>
-            <div className="h-70 w-full ">
-              {!!chartData?.length && <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={chartData} >
-                  <CartesianGrid
-                    strokeDasharray="3 3"
-                    stroke="rgba(255,255,255,0.1)"
-                    vertical={false}
-                  />
-                  <XAxis
-                    dataKey="date"
-                    xAxisId="main"
-                    type="category"
-                    tick={{ fill: "#6b7280", fontSize: 12 }}
-                    axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
-                    tickLine={false}
-                  />
-                  <XAxis
-                    xAxisId="boring"
-                    type="number"
-                    domain={[0, 2]}
-                    hide
-                  />
-                  <YAxis
-                    yAxisId="left"
-                    orientation="left"
-                    domain={['auto', 'auto']}
-                    tick={{ fill: "#4ade80B3", fontSize: 12 }}
-                    axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
-                    tickLine={false}
-                    tickFormatter={(value) =>
-                      value >= 1000 ? `${value / 1000}k` : value
-                    }
-                    hide={isMobile}
-                  />
-                  <YAxis
-                    yAxisId="right"
-                    orientation="right"
-                    domain={['auto', 'auto']}
-                    tick={{ fill: "#f59e0bB3", fontSize: 12 }}
-                    axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
-                    tickLine={false}
-                    tickFormatter={(value) =>
-                      value >= 1000 ? `${value / 1000}k` : value
-                    }
-                    hide={isMobile}
-                  />
-                  <ReferenceLine xAxisId="boring" x={1} yAxisId={"left"} strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" strokeWidth={1} />
-                  <Tooltip
-                    contentStyle={{
-                      backgroundColor: "#1a1d21",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      borderRadius: "8px",
-                      color: "#fff",
-                    }}
-                    labelStyle={{ color: "#fff", fontWeight: "bold" }}
-                    formatter={(value) => value.toLocaleString()}
-                  />
-                  <Line
-                    yAxisId="left"
-                    xAxisId="main"
-                    type="monotone"
-                    dataKey="bans"
-                    stroke="#4ade80"
-                    strokeWidth={2}
-                    dot={{ fill: "#4ade80", strokeWidth: 0, r: 4 }}
-                    activeDot={{ r: 6 }}
-                    isAnimationActive={false}
-                  />
-                  <Line
-                    yAxisId="right"
-                    xAxisId="main"
-                    type="monotone"
-                    dataKey="servers"
-                    stroke="#f59e0b"
-                    strokeWidth={2}
-                    dot={{
-                      fill: "#f59e0b",
-                      strokeWidth: 0,
-                      r: 4,
-                    }}
-                    activeDot={{ r: 6 }}
-                    isAnimationActive={false}
-                  />
-                </LineChart>
-              </ResponsiveContainer>}
+            <div className="h-70 w-full">
+              <Suspense>
+                <LiveStatsChart data={chartData} />
+              </Suspense>
             </div>
             {/* <p className="mt-4 text-center text-xs text-muted-foreground">
               Real-time stats update every 60s
