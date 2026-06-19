@@ -33,7 +33,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border py-12">
       <div className="container mx-auto px-4">
-        <div className="grid gap-8 grid-cols-2 md:grid-cols-4">
+        <div className="grid gap-8 grid-cols-2 md:grid-cols-4 10xl:grid-cols-5">
           {/* Brand */}
           <div className="md:col-span-1 col-span-2">
             <Link to="/" className="flex items-center gap-2">
@@ -63,7 +63,7 @@ export function Footer() {
                 RiskyMH
               </a>
             </p>
-            <p className='hidden'>Official Instance Id: <code>1450060292716494940</code></p>
+            <p className='sr-only'>Official Instance Id: <code>1450060292716494940</code></p>
           </div>
 
           {/* Resources */}
@@ -106,7 +106,7 @@ export function Footer() {
           </div>
 
           {/* other links to include, but not displayed */}
-          <div className="hidden">
+          <div className="max-10xl:hidden">
             <h4 className="mb-4 text-sm font-semibold text-foreground">
               Find Us On
             </h4>

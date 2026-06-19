@@ -133,8 +133,8 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 href="https://discord.com/oauth2/authorize?client_id=1450060292716494940"
                 target="_blank"
               >
-                Invite Bot
-                <ExternalLink className="ml-1 h-3 w-3" />
+                Invite <span className="max-sm:sr-only">Bot</span>
+                <ExternalLink className="ml-1 h-3 w-3 " />
               </a>
             </Button>
           </div>

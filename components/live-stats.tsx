@@ -40,7 +40,7 @@ export function LiveStats() {
         <h2 className="mb-12 text-center text-3xl font-bold text-foreground md:text-4xl">
           Live Statistics
         </h2>
-        <noscript className="hidden">Note: Live stats update in real-time. JavaScript is required for live updates</noscript>
+        <noscript className="sr-only">Note: Live stats update in real-time. JavaScript is required for live updates</noscript>
         <div className="grid gap-6 lg:grid-cols-4">
           {/* Stat cards */}
           <div className="grid gap-4 grid-cols-2 lg:grid-cols-1">
@@ -77,7 +77,7 @@ export function LiveStats() {
                 <div className="size-3 rounded-full bg-primary" />
               </div>
             </div>
-            <p className="hidden">Triggered Server means a server that has had at least 1 ban issued in the time period</p>
+            <p className="sr-only">Triggered Server means a server that has had at least 1 ban issued in the time period</p>
             <div className="h-70 w-full">
               <Suspense>
                 <LiveStatsChart data={chartData} />
