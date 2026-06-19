@@ -8,4 +8,7 @@
   "observability": {
     "enabled": true,
   },
+  "assets": {
+    "not_found_handling": "404-page"
+  }
 }
