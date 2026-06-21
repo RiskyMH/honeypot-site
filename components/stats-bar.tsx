@@ -35,7 +35,7 @@ export function StatsBar() {
   const displayStats = [
     {
       icon: Users,
-      value: stats?.guilds?.toLocaleString?.() || "20k+",
+      value: stats?.guilds?.toLocaleString?.() || "25k+",
       label: "Servers Protected",
       color: "text-primary",
       slideOnRemount: true, // on an actual change, make it a vertical slider or smth
