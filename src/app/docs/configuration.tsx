@@ -59,6 +59,7 @@ function RouteComponent() {
       <DocsTable
         headers={['Experiment', 'What it does', 'Notes']}
         rows={[
+          [<>Forward Message</>, 'Send the incriminating message to the log channel.', 'Helps you review what messages were sent.'],
           [<>No Warning Msg</>, 'Removes the warning post from the honeypot channel.', 'Use when you want the trap to look empty.'],
           [<>No DM</>, 'Skips DMing the user after they trigger.', 'Use if you prefer silence.'],
           [<>Channel Warmer</>, 'Posts a daily message to keep the honeypot active.', 'Helps the channel look “alive”.'],
