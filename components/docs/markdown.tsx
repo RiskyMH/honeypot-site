@@ -80,9 +80,10 @@ export function DocsImg({ src, alt, height }: { src: string, alt: string, height
             <img
                 src={src}
                 alt={alt}
-                className="max-h-130 w-full max-w-3xl rounded-lg border-amber-500/50 border-2 object-contain"
+                className="max-h-130 w-full max-w-3xl rounded-lg box-content border-amber-500/50 border-2 object-contain"
                 loading="lazy"
                 height={height}
+                decoding="async"
             />
             <figcaption className="text-center text-sm text-gray-500">{alt}</figcaption>
         </figure>
