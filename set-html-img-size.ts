@@ -46,6 +46,14 @@ async function lockImageAspectRatios() {
                 async element(element) {
                     const src = element.getAttribute("src");
 
+                    const heightAttr = element.getAttribute("height");
+                    const widthAttr = element.getAttribute("width");
+
+                    // Skip if the image already has explicit width and height attributes
+                    if (heightAttr && widthAttr) {
+                        return;
+                    }
+
                     // Skip missing sources, base64 data strings, and remote network assets
                     if (!src || src.startsWith("data:") || src.startsWith("http://") || src.startsWith("https://")) {
                         return;
