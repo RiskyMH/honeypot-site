@@ -13,8 +13,8 @@ export function LiveStats() {
   const stats = _stats || {
     guilds: 30_000,
     moderations: 200_000,
-    last7dModerations: 30_000,
-    last7dEngagedGuilds: 5_000,
+    last7dModerations: 40_000,
+    last7dEngagedGuilds: 10_000,
     dailyStats: [],
   };
 

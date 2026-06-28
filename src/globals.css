@@ -126,6 +126,16 @@
 
   }
 
+  ::selection {
+    background: color-mix(in oklch, var(--primary) 40%, transparent);
+    color: var(--foreground);
+  }
+
+  ::-moz-selection {
+    background: color-mix(in oklch, var(--primary) 40%, transparent);
+    color: var(--foreground);
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
   }
