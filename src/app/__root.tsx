@@ -41,12 +41,26 @@ export const Route = createRootRoute({
       // },
       {
         rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico',
+        sizes: "265x265"
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/honeypot.png',
+        sizes: "265x265"
+      },
+      {
+        rel: 'icon',
         type: 'image/svg+xml',
         href: '/honeypot.svg',
+        sizes: "any"
       },
       {
         rel: 'apple-touch-icon',
-        href: '/honeypot.svg',
+        href: '/honeypot.png',
+        sizes: "265x265"
       },
     ],
   }),
