@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { Check } from "lucide-react";
 
-const faqs = [
+export const faqs = [
   {
     question: "Is Honeypot free to use?",
     answer:

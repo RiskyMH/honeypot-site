@@ -4,7 +4,7 @@ import { Hero } from '../../components/hero'
 import { StatsBar } from '../../components/stats-bar'
 import { Features } from '../../components/features'
 import { HowItWorks } from '../../components/how-it-works'
-import { FAQ } from '../../components/faq'
+import { FAQ, faqs } from '../../components/faq'
 import { LiveStats } from '../../components/live-stats'
 import { Footer } from '../../components/footer'
 import { StatsProvider } from '../../components/stats-context'
@@ -55,7 +55,7 @@ export const Route = createFileRoute('/')({
       ...head.meta,
       { name: 'og:type', content: 'website' },
       { name: 'keywords', content: 'discord bot, spam protection, anti-spam, moderation bot, honeypot' },
-      { name: 'robots', content: 'index, follow' },
+      { name: 'robots', content: 'index, follow, max-image-preview:large' },
     ],
     links: [
       ...head.links,
@@ -105,6 +105,7 @@ export const Route = createFileRoute('/')({
               operatingSystem: "Discord",
               inLanguage: "en-US",
               mainEntityOfPage: "https://honeypot.riskymh.dev/",
+              image: "https://honeypot.riskymh.dev/honeypot.png",
               offers: {
                 "@type": "Offer",
                 price: "0",
@@ -122,6 +123,18 @@ export const Route = createFileRoute('/')({
                 "https://github.com/RiskyMH/honeypot",
                 "https://discord.com/discovery/applications/1450060292716494940"
               ]
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://honeypot.riskymh.dev/#faq",
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer
+                }
+              }))
             }
           ]
         }),
