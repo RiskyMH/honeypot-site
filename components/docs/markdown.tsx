@@ -158,7 +158,7 @@ const calloutStyles: Record<CalloutTone, { border: string; bg: string; text: str
     note: {
         border: "border-white/10",
         bg: "bg-white/5",
-        text: "text-gray-300",
+        text: "text-gray-500",
         label: "Note",
     },
 };

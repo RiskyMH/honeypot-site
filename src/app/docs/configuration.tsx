@@ -88,8 +88,8 @@ function RouteComponent() {
           ['Log Message', 'Message posted to your log channel.', '10-500 chars'],
         ]}
       />
-      <DocsCallout tone="note" title="Log message requirement">
-        Your log message must include <DocsInlineCode>{'{{user:mention}}'}</DocsInlineCode> or <DocsInlineCode>{'{{user:id}}'}</DocsInlineCode>.
+      <DocsCallout tone="note" title="Image support">
+        Honeypot Warning & DM Messages can include images. Place each image URL on its own line at the end of the message (max 4).
       </DocsCallout>
 
       <DocsSubheading title="Message variables" />
@@ -109,6 +109,9 @@ function RouteComponent() {
           [<DocsInlineCode>{'{{honeypot:moderation-count}}'}</DocsInlineCode>, 'Log', 'Total moderation count for this server.'],
         ]}
       />
+      <DocsCallout tone="note" title="Log message requirement">
+        Your log message must include <DocsInlineCode>{'{{user:mention}}'}</DocsInlineCode> or <DocsInlineCode>{'{{user:id}}'}</DocsInlineCode>.
+      </DocsCallout>
 
       <DocsSubheading title="Defaults (examples)" />
       <DocsP>These are the default templates used if you do not customize messages.</DocsP>
