@@ -93,7 +93,13 @@ export const Route = createFileRoute('/')({
               },
               sameAs: [
                 "https://github.com/RiskyMH",
-              ]
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                url: "https://discord.com/servers/riskys-server-894705593087049729",
+                contactType: "technical support",
+                availableLanguage: "en"
+              }
             },
             {
               "@type": "SoftwareApplication",
@@ -108,7 +114,7 @@ export const Route = createFileRoute('/')({
               image: "https://honeypot.riskymh.dev/honeypot.png",
               offers: {
                 "@type": "Offer",
-                price: "0",
+                price: "0.00",
                 priceCurrency: "USD"
               },
               publisher: {
@@ -121,12 +127,16 @@ export const Route = createFileRoute('/')({
               },
               sameAs: [
                 "https://github.com/RiskyMH/honeypot",
-                "https://discord.com/discovery/applications/1450060292716494940"
+                "https://discord.com/discovery/applications/1450060292716494940",
+                "https://top.gg/bot/1450060292716494940"
               ]
             },
             {
               "@type": "FAQPage",
               "@id": "https://honeypot.riskymh.dev/#faq",
+              isPartOf: {
+                "@id": "https://honeypot.riskymh.dev/#website"
+              },
               mainEntity: faqs.map((faq) => ({
                 "@type": "Question",
                 name: faq.question,
