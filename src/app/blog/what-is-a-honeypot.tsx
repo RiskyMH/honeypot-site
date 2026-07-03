@@ -10,7 +10,7 @@ import { buildHead } from '@/lib/utils'
 
 const meta = getBlogPostMeta('what-is-a-honeypot')
 
-const title = `${meta.title} - Honeypot Blog`
+const title = `${meta.title} - Honeypot`
 const description = meta.description
 const url = 'https://honeypot.riskymh.dev/blog/what-is-a-honeypot'
 

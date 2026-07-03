@@ -25,8 +25,8 @@ const metaRegistry: BlogPostMeta[] = [
     description:
       'Behind the simple concept of a bait channel is a detection system that has to fight Unicode tricks, image spam, and compromised accounts at scale.',
     category: 'Engineering',
-    date: 'July 1, 2026',
-    dateCanonical: '2026-07-01',
+    date: 'July 2, 2026',
+    dateCanonical: '2026-07-02',
     readTime: '10 min read',
     sections: [
       { id: 'simplest-possible-honeypot', title: 'The simplest possible honeypot' },
@@ -56,8 +56,8 @@ const metaRegistry: BlogPostMeta[] = [
     description:
       'A decoy that catches attackers by doing nothing. From Cold War-era network traps to Discord spam detection, here is how honeypots work and why they have lasted 40 years.',
     category: 'Security',
-    date: 'July 2, 2026',
-    dateCanonical: '2026-07-02',
+    date: 'July 1, 2026',
+    dateCanonical: '2026-07-01',
     readTime: '12 min read',
     featured: true,
     sections: [

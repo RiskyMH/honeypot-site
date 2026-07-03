@@ -29,7 +29,7 @@ export function BlogIndexPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to={featuredPost.path}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               Read featured post
               <ArrowRight className="size-4" />
