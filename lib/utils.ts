@@ -6,10 +6,19 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 // Utility to create consistent meta/link entries for route "head" in TanStack Router
-// Usage: buildHead({ title, description, url, image })
-export function buildHead({ title, description, url, image }: { title: string, description?: string, url?: string, image?: string }) {
+// Usage: buildHead({ title, description, url, image, type, publishedTime, author })
+export function buildHead({ title, description, url, image, type, publishedTime, author }: {
+  title: string
+  description?: string
+  url?: string
+  image?: string
+  type?: 'website' | 'article'
+  publishedTime?: string
+  author?: string
+}) {
   return {
     meta: [
+      ...(type ? [{ property: 'og:type', content: type }] : []),
       ...(title ? [
         { title },
         { property: 'og:title', content: title },
@@ -28,6 +37,8 @@ export function buildHead({ title, description, url, image }: { title: string, d
         { name: 'twitter:image', content: image },
         { property: 'og:image', content: image },
       ] : []),
+      ...(publishedTime ? [{ property: 'article:published_time', content: publishedTime }] : []),
+      ...(author ? [{ property: 'article:author', content: author }] : []),
     ],
     links: [
       ...(url ? [{ rel: 'canonical', href: url }] : []),

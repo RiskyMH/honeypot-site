@@ -34,7 +34,7 @@ const stats = [
   },
   {
     icon: UserPlus2Icon,
-    value: "50m+",
+    value: "70m+",
     label: "Members",
     live: false,
   },

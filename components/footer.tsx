@@ -13,6 +13,7 @@ const resourceLinks = [
     href: "https://discord.gg/BanFeVWyFP",
   },
   { label: "GitHub", href: "https://github.com/RiskyMH/honeypot" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const legalLinks = [

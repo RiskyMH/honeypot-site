@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './app/__root'
 import { Route as R404RouteImport } from './app/404'
 import { Route as IndexRouteImport } from './app/index'
 import { Route as DocsIndexRouteImport } from './app/docs/index'
+import { Route as BlogIndexRouteImport } from './app/blog/index'
 import { Route as DocsTipsRouteImport } from './app/docs/tips'
 import { Route as DocsSetupGuideRouteImport } from './app/docs/setup-guide'
 import { Route as DocsSelfHostingRouteImport } from './app/docs/self-hosting'
@@ -19,6 +20,8 @@ import { Route as DocsHowItWorksRouteImport } from './app/docs/how-it-works'
 import { Route as DocsFaqRouteImport } from './app/docs/faq'
 import { Route as DocsConfigurationRouteImport } from './app/docs/configuration'
 import { Route as DocsCommandsRouteImport } from './app/docs/commands'
+import { Route as BlogWhatIsAHoneypotRouteImport } from './app/blog/what-is-a-honeypot'
+import { Route as BlogHowHoneypotSystemsWorkRouteImport } from './app/blog/how-honeypot-systems-work'
 import { Route as DocsLegalTermsRouteImport } from './app/docs/legal/terms'
 import { Route as DocsLegalPrivacyRouteImport } from './app/docs/legal/privacy'
 
@@ -35,6 +38,11 @@ const IndexRoute = IndexRouteImport.update({
 const DocsIndexRoute = DocsIndexRouteImport.update({
   id: '/docs/',
   path: '/docs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsTipsRoute = DocsTipsRouteImport.update({
@@ -72,6 +80,17 @@ const DocsCommandsRoute = DocsCommandsRouteImport.update({
   path: '/docs/commands',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogWhatIsAHoneypotRoute = BlogWhatIsAHoneypotRouteImport.update({
+  id: '/blog/what-is-a-honeypot',
+  path: '/blog/what-is-a-honeypot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogHowHoneypotSystemsWorkRoute =
+  BlogHowHoneypotSystemsWorkRouteImport.update({
+    id: '/blog/how-honeypot-systems-work',
+    path: '/blog/how-honeypot-systems-work',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DocsLegalTermsRoute = DocsLegalTermsRouteImport.update({
   id: '/docs/legal/terms',
   path: '/docs/legal/terms',
@@ -86,6 +105,8 @@ const DocsLegalPrivacyRoute = DocsLegalPrivacyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
+  '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/docs/commands': typeof DocsCommandsRoute
   '/docs/configuration': typeof DocsConfigurationRoute
   '/docs/faq': typeof DocsFaqRoute
@@ -93,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/docs/self-hosting': typeof DocsSelfHostingRoute
   '/docs/setup-guide': typeof DocsSetupGuideRoute
   '/docs/tips': typeof DocsTipsRoute
+  '/blog/': typeof BlogIndexRoute
   '/docs/': typeof DocsIndexRoute
   '/docs/legal/privacy': typeof DocsLegalPrivacyRoute
   '/docs/legal/terms': typeof DocsLegalTermsRoute
@@ -100,6 +122,8 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
+  '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/docs/commands': typeof DocsCommandsRoute
   '/docs/configuration': typeof DocsConfigurationRoute
   '/docs/faq': typeof DocsFaqRoute
@@ -107,6 +131,7 @@ export interface FileRoutesByTo {
   '/docs/self-hosting': typeof DocsSelfHostingRoute
   '/docs/setup-guide': typeof DocsSetupGuideRoute
   '/docs/tips': typeof DocsTipsRoute
+  '/blog': typeof BlogIndexRoute
   '/docs': typeof DocsIndexRoute
   '/docs/legal/privacy': typeof DocsLegalPrivacyRoute
   '/docs/legal/terms': typeof DocsLegalTermsRoute
@@ -115,6 +140,8 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
+  '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/docs/commands': typeof DocsCommandsRoute
   '/docs/configuration': typeof DocsConfigurationRoute
   '/docs/faq': typeof DocsFaqRoute
@@ -122,6 +149,7 @@ export interface FileRoutesById {
   '/docs/self-hosting': typeof DocsSelfHostingRoute
   '/docs/setup-guide': typeof DocsSetupGuideRoute
   '/docs/tips': typeof DocsTipsRoute
+  '/blog/': typeof BlogIndexRoute
   '/docs/': typeof DocsIndexRoute
   '/docs/legal/privacy': typeof DocsLegalPrivacyRoute
   '/docs/legal/terms': typeof DocsLegalTermsRoute
@@ -131,6 +159,8 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/404'
+    | '/blog/how-honeypot-systems-work'
+    | '/blog/what-is-a-honeypot'
     | '/docs/commands'
     | '/docs/configuration'
     | '/docs/faq'
@@ -138,6 +168,7 @@ export interface FileRouteTypes {
     | '/docs/self-hosting'
     | '/docs/setup-guide'
     | '/docs/tips'
+    | '/blog/'
     | '/docs/'
     | '/docs/legal/privacy'
     | '/docs/legal/terms'
@@ -145,6 +176,8 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/404'
+    | '/blog/how-honeypot-systems-work'
+    | '/blog/what-is-a-honeypot'
     | '/docs/commands'
     | '/docs/configuration'
     | '/docs/faq'
@@ -152,6 +185,7 @@ export interface FileRouteTypes {
     | '/docs/self-hosting'
     | '/docs/setup-guide'
     | '/docs/tips'
+    | '/blog'
     | '/docs'
     | '/docs/legal/privacy'
     | '/docs/legal/terms'
@@ -159,6 +193,8 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/404'
+    | '/blog/how-honeypot-systems-work'
+    | '/blog/what-is-a-honeypot'
     | '/docs/commands'
     | '/docs/configuration'
     | '/docs/faq'
@@ -166,6 +202,7 @@ export interface FileRouteTypes {
     | '/docs/self-hosting'
     | '/docs/setup-guide'
     | '/docs/tips'
+    | '/blog/'
     | '/docs/'
     | '/docs/legal/privacy'
     | '/docs/legal/terms'
@@ -174,6 +211,8 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   R404Route: typeof R404Route
+  BlogHowHoneypotSystemsWorkRoute: typeof BlogHowHoneypotSystemsWorkRoute
+  BlogWhatIsAHoneypotRoute: typeof BlogWhatIsAHoneypotRoute
   DocsCommandsRoute: typeof DocsCommandsRoute
   DocsConfigurationRoute: typeof DocsConfigurationRoute
   DocsFaqRoute: typeof DocsFaqRoute
@@ -181,6 +220,7 @@ export interface RootRouteChildren {
   DocsSelfHostingRoute: typeof DocsSelfHostingRoute
   DocsSetupGuideRoute: typeof DocsSetupGuideRoute
   DocsTipsRoute: typeof DocsTipsRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   DocsIndexRoute: typeof DocsIndexRoute
   DocsLegalPrivacyRoute: typeof DocsLegalPrivacyRoute
   DocsLegalTermsRoute: typeof DocsLegalTermsRoute
@@ -207,6 +247,13 @@ declare module '@tanstack/react-router' {
       path: '/docs'
       fullPath: '/docs/'
       preLoaderRoute: typeof DocsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/tips': {
@@ -258,6 +305,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsCommandsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/what-is-a-honeypot': {
+      id: '/blog/what-is-a-honeypot'
+      path: '/blog/what-is-a-honeypot'
+      fullPath: '/blog/what-is-a-honeypot'
+      preLoaderRoute: typeof BlogWhatIsAHoneypotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/how-honeypot-systems-work': {
+      id: '/blog/how-honeypot-systems-work'
+      path: '/blog/how-honeypot-systems-work'
+      fullPath: '/blog/how-honeypot-systems-work'
+      preLoaderRoute: typeof BlogHowHoneypotSystemsWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/legal/terms': {
       id: '/docs/legal/terms'
       path: '/docs/legal/terms'
@@ -278,6 +339,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   R404Route: R404Route,
+  BlogHowHoneypotSystemsWorkRoute: BlogHowHoneypotSystemsWorkRoute,
+  BlogWhatIsAHoneypotRoute: BlogWhatIsAHoneypotRoute,
   DocsCommandsRoute: DocsCommandsRoute,
   DocsConfigurationRoute: DocsConfigurationRoute,
   DocsFaqRoute: DocsFaqRoute,
@@ -285,6 +348,7 @@ const rootRouteChildren: RootRouteChildren = {
   DocsSelfHostingRoute: DocsSelfHostingRoute,
   DocsSetupGuideRoute: DocsSetupGuideRoute,
   DocsTipsRoute: DocsTipsRoute,
+  BlogIndexRoute: BlogIndexRoute,
   DocsIndexRoute: DocsIndexRoute,
   DocsLegalPrivacyRoute: DocsLegalPrivacyRoute,
   DocsLegalTermsRoute: DocsLegalTermsRoute,
