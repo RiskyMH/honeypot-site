@@ -10,7 +10,7 @@ const resourceLinks = [
   { label: "Documentation", href: "/docs" },
   {
     label: "Support Server",
-    href: "https://discord.gg/BanFeVWyFP",
+    href: "https://discord.com/servers/riskys-server-894705593087049729",
   },
   { label: "GitHub", href: "https://github.com/RiskyMH/honeypot" },
   { label: "Blog", href: "/blog" },
