@@ -28,7 +28,7 @@ function RouteComponent() {
     <DocsSection title="General">
       <DocsFaqList>
         <DocsFaqItem question="What does Honeypot actually do?">
-          It watches one dedicated channel and automatically moderates anyone who posts there.
+          It watches one (or many) dedicated channels and automatically moderates anyone who posts there.
         </DocsFaqItem>
         <DocsFaqItem question="Why does this catch spam bots?">
           Most spam bots blast every visible channel. A normal-looking trap channel catches those blasts immediately.
