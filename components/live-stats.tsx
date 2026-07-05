@@ -11,10 +11,10 @@ export function LiveStats() {
   const { stats: _stats } = useStats();
   // if (!stats) return null;
   const stats = _stats || {
-    guilds: 40_000,
+    guilds: 50_000,
     moderations: 250_000,
-    last7dModerations: 50_000,
-    last7dEngagedGuilds: 10_000,
+    last7dModerations: 70_000,
+    last7dEngagedGuilds: 15_000,
     dailyStats: [],
   };
 
