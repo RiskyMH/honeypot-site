@@ -22,6 +22,7 @@ import { Route as DocsConfigurationRouteImport } from './app/docs/configuration'
 import { Route as DocsCommandsRouteImport } from './app/docs/commands'
 import { Route as BlogWhatIsAHoneypotRouteImport } from './app/blog/what-is-a-honeypot'
 import { Route as BlogHowHoneypotSystemsWorkRouteImport } from './app/blog/how-honeypot-systems-work'
+import { Route as BlogDiscordAccountHackedRecoveryRouteImport } from './app/blog/discord-account-hacked-recovery'
 import { Route as DocsLegalTermsRouteImport } from './app/docs/legal/terms'
 import { Route as DocsLegalPrivacyRouteImport } from './app/docs/legal/privacy'
 
@@ -91,6 +92,12 @@ const BlogHowHoneypotSystemsWorkRoute =
     path: '/blog/how-honeypot-systems-work',
     getParentRoute: () => rootRouteImport,
   } as any)
+const BlogDiscordAccountHackedRecoveryRoute =
+  BlogDiscordAccountHackedRecoveryRouteImport.update({
+    id: '/blog/discord-account-hacked-recovery',
+    path: '/blog/discord-account-hacked-recovery',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DocsLegalTermsRoute = DocsLegalTermsRouteImport.update({
   id: '/docs/legal/terms',
   path: '/docs/legal/terms',
@@ -105,6 +112,7 @@ const DocsLegalPrivacyRoute = DocsLegalPrivacyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
   '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/docs/commands': typeof DocsCommandsRoute
@@ -122,6 +130,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
   '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/docs/commands': typeof DocsCommandsRoute
@@ -140,6 +149,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
   '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/docs/commands': typeof DocsCommandsRoute
@@ -159,6 +169,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/404'
+    | '/blog/discord-account-hacked-recovery'
     | '/blog/how-honeypot-systems-work'
     | '/blog/what-is-a-honeypot'
     | '/docs/commands'
@@ -176,6 +187,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/404'
+    | '/blog/discord-account-hacked-recovery'
     | '/blog/how-honeypot-systems-work'
     | '/blog/what-is-a-honeypot'
     | '/docs/commands'
@@ -193,6 +205,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/404'
+    | '/blog/discord-account-hacked-recovery'
     | '/blog/how-honeypot-systems-work'
     | '/blog/what-is-a-honeypot'
     | '/docs/commands'
@@ -211,6 +224,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   R404Route: typeof R404Route
+  BlogDiscordAccountHackedRecoveryRoute: typeof BlogDiscordAccountHackedRecoveryRoute
   BlogHowHoneypotSystemsWorkRoute: typeof BlogHowHoneypotSystemsWorkRoute
   BlogWhatIsAHoneypotRoute: typeof BlogWhatIsAHoneypotRoute
   DocsCommandsRoute: typeof DocsCommandsRoute
@@ -319,6 +333,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogHowHoneypotSystemsWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/discord-account-hacked-recovery': {
+      id: '/blog/discord-account-hacked-recovery'
+      path: '/blog/discord-account-hacked-recovery'
+      fullPath: '/blog/discord-account-hacked-recovery'
+      preLoaderRoute: typeof BlogDiscordAccountHackedRecoveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/legal/terms': {
       id: '/docs/legal/terms'
       path: '/docs/legal/terms'
@@ -339,6 +360,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   R404Route: R404Route,
+  BlogDiscordAccountHackedRecoveryRoute: BlogDiscordAccountHackedRecoveryRoute,
   BlogHowHoneypotSystemsWorkRoute: BlogHowHoneypotSystemsWorkRoute,
   BlogWhatIsAHoneypotRoute: BlogWhatIsAHoneypotRoute,
   DocsCommandsRoute: DocsCommandsRoute,

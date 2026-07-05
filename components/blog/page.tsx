@@ -256,16 +256,18 @@ const TableOfContents = memo(function TableOfContents({ sections, articleBodyRef
   }, [sectionIds])
 
   return (
-    <aside className="hidden space-y-4 lg:block lg:self-start lg:sticky lg:top-24">
-      <div className="rounded-2xl border border-border bg-[#12151a] p-4 shadow-[0_1px_0_rgba(255,255,255,0.02)]">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          On this page
-        </p>
-        <ScrollProgress articleBodyRef={articleBodyRef} />
-        <nav className="mt-3 space-y-0.5">
+    <aside className="hidden space-y-4 lg:block lg:self-start lg:sticky lg:top-24 ">
+      <div className="rounded-2xl border border-border bg-[#12151a] shadow-[0_1px_0_rgba(255,255,255,0.02)] max-h-[calc(100vh-8rem)] overflow-auto">
+        <div className="sticky top-0 bg-[#12151a] p-4 -mb-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground ">
+            On this page
+          </p>
+          <ScrollProgress articleBodyRef={articleBodyRef} />
+        </div>
+        <nav className="mt-3 space-y-0.5 px-4">
           {renderSectionLinks(sections, activeSectionId)}
         </nav>
-        <div className="pt-2">
+        <div className="pt-2 bottom-0 sticky bg-[#12151a] p-4 ">
           <Link
             to="/blog"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"

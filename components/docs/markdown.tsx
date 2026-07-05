@@ -284,22 +284,25 @@ export function DocsCodeBlock({ code, language = "" }: { code: string; language?
     );
 }
 
-export function DocsUl({ children }: { children: React.ReactNode }) {
-    return (
-        <ul className="mb-6 space-y-2">
-            {children}
-        </ul>
-    );
-}
+// export function DocsUl({ children }: { children: React.ReactNode }) {
+//     return (
+//         <ul className="mb-6 space-y-2">
+//             {children}
+//         </ul>
+//     );
+// }
 
-export function DocsLi({ children }: { children: React.ReactNode }) {
-    return (
-        <li className="flex items-start gap-2 text-gray-400">
-            <span className="mt-1.5 h-1 w-1.5 shrink-0 rounded-full bg-gray-500" />
-            <span>{children}</span>
-        </li>
-    );
-}
+// export function DocsLi({ children }: { children: React.ReactNode }) {
+//     return (
+//         <li className="flex items-start gap-2 text-gray-400">
+//             <span className="mt-1.5 h-1 w-1.5 shrink-0 rounded-full bg-gray-500" />
+//             <span>{children}</span>
+//         </li>
+//     );
+// }
+
+export const DocsUl = DocsChecklist;
+export const DocsLi = DocsChecklistItem;
 
 export function DocsChecklist({ children }: { children: React.ReactNode }) {
     return (
