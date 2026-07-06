@@ -66,14 +66,14 @@ function RouteComponent() {
           [<>Channel Warmer</>, 'Posts a daily message to keep the honeypot active.', 'Helps the channel look “alive”.'],
           [<>Random Channel Name</>, <>Renames the honeypot channel daily. <DocsLink href="https://github.com/RiskyMH/honeypot/blob/main/src/utils/random-channel-names.yaml">See the name list</DocsLink>.</>, 'Avoid predictable names.'],
           [<>Random Channel Name (Chaos)</>, 'Renames with random characters daily.', 'Best against blacklist bots.'],
-          [<>⚠️ Recreate Channel</>, 'Remake the honeypot channel (every day).', 'Channel gets replaced to have a new ID - messages are not preserved.'],
+          [<>🔧 Recreate Channel</>, 'Remake the honeypot channel (every day).', 'Channel gets replaced to have a new ID - messages are not preserved.'],
           [<>Timeout First</>, 'Timeouts the user for 1 hour before banning/softbanning.', 'This timeout should still apply when they rejoin.'],
           [<>⭐️ Only More Recent Delete</>, 'Only deletes the last 15 minutes of messages instead of 1 hour.', 'Should be less jarring to message history.'],
           [<>⭐️ Many Honeypots</>, 'Allows selection of multiple honeypot channels.', 'Requires modal submit and re-open to add them.'],
-          [<>⚠️ Ensure Message Deletion</>, 'Search & delete leftover messages from moderated users 2 min after moderation.', <>May fix issues when the Discord ban <DocsLink href="https://github.com/discord/discord-api-docs/issues/8360">doesn't fully clean up messages</DocsLink>.</>],
+          [<>🔧 Ensure Message Deletion</>, 'Search & delete leftover messages from moderated users 2 min after moderation.', <>May fix issues when the Discord ban <DocsLink href="https://github.com/discord/discord-api-docs/issues/8360">doesn't fully clean up messages</DocsLink>.</>],
         ]}
       />
-      <DocsP><strong>Legend:</strong> ⭐️ recommended features · ⚠️ risky, only use if you're seeing issues</DocsP>
+      <DocsP><strong>Legend:</strong> ⭐️ recommended features · 🔧 advanced, only use if you're seeing issues</DocsP>
       <DocsCallout tone="warn" title="Permissions">
         Some experiments require additional permissions - the bot will let you know if anything is missing.
       </DocsCallout>
