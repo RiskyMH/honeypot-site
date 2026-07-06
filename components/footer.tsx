@@ -141,7 +141,7 @@ export function Footer() {
               className="border-border bg-[#12151a] text-foreground hover:bg-muted hover:text-foreground"
             >
               <a
-                href="https://discord.gg/BanFeVWyFP"
+                href="https://discord.gg/wYZa4Fpwfy"
                 target="_blank"
               >
                 <DiscordIcon className="mr-2 size-4" />

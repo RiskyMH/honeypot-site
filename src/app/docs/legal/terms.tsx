@@ -86,7 +86,7 @@ function RouteComponent() {
     </DocsSection>
 
     <DocsSection title="Contact">
-      <DocsP>For support, join the Discord server <DocsLink href="https://discord.gg/qK9pfnB3Yv">https://discord.gg/qK9pfnB3Yv</DocsLink> or contact the owner RiskyMH at <DocsLink href="https://riskymh.dev">https://riskymh.dev</DocsLink>.</DocsP>
+      <DocsP>For support, join the Discord server <DocsLink href="https://discord.gg/wYZa4Fpwfy">https://discord.gg/wYZa4Fpwfy</DocsLink> or contact the owner RiskyMH at <DocsLink href="https://riskymh.dev">https://riskymh.dev</DocsLink>.</DocsP>
     </DocsSection>
   </DocsLayout>
 }

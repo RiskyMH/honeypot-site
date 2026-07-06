@@ -84,7 +84,7 @@ export function Hero() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <a
-                          href="https://discord.gg/BanFeVWyFP"
+                          href="https://discord.gg/wYZa4Fpwfy"
                           target="_blank"
                         >
                           Support Server

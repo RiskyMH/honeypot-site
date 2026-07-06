@@ -115,7 +115,7 @@ function RouteComponent() {
           Optional extra features I&apos;ve added. See the <DocsLink href="/docs/configuration#experiments">experiments docs</DocsLink> for details.
         </DocsFaqItem>
         <DocsFaqItem question="How can I get help?">
-          Join the <DocsLink href="https://discord.gg/qK9pfnB3Yv">Discord server</DocsLink> for fast support.
+          Join the <DocsLink href="https://discord.gg/wYZa4Fpwfy">Discord server</DocsLink> for fast support.
         </DocsFaqItem>
         <DocsFaqItem question="Honeypot DMed me, was I hacked?">
           Your account may be compromised. See the <DocsLink href="/blog/discord-account-hacked-recovery">recovery guide</DocsLink>.

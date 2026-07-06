@@ -301,7 +301,7 @@ export default function DocsPage() {
           </div>
           <div className="flex gap-3 flex-wrap max-sm:justify-center">
             <Button className="bg-[#5865F2] text-white hover:bg-[#4752C4] ms-auto" asChild>
-              <a href="https://discord.gg/BanFeVWyFP" target="_blank">
+              <a href="https://discord.gg/wYZa4Fpwfy" target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
                   viewBox="0 0 24 24"

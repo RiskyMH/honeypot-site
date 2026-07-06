@@ -232,7 +232,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               on Discord.
             </p>
             <Button className="w-full bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
-              <a href="https://discord.gg/BanFeVWyFP" target="_blank">
+              <a href="https://discord.gg/wYZa4Fpwfy" target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
                   viewBox="0 0 24 24"
@@ -287,7 +287,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                       </a>
                     </li>
                     <li>
-                      <a href="https://discord.gg/BanFeVWyFP" target="_blank" className="hover:text-white">
+                      <a href="https://discord.gg/wYZa4Fpwfy" target="_blank" className="hover:text-white">
                         Support Server
                       </a>
                     </li>
@@ -427,7 +427,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 on Discord.
               </p>
               <Button className="w-full bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
-                <a href="https://discord.gg/BanFeVWyFP" target="_blank">
+                <a href="https://discord.gg/wYZa4Fpwfy" target="_blank">
                   <svg
                     className="mr-2 h-4 w-4"
                     viewBox="0 0 24 24"
