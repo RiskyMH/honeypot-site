@@ -37,7 +37,7 @@ function RouteComponent() {
     <DocsSection title="Permissions">
       <DocsP>Commands are restricted to members with server management permissions.</DocsP>
       <DocsCallout tone="info" title="Required">
-        Manage Server, Ban Members, Moderate Members, Manage Messages, and Manage Channels.
+        Manage Server, Ban Members, Manage Messages, and Manage Channels.
       </DocsCallout>
     </DocsSection>
   </DocsLayout>

@@ -54,7 +54,7 @@ function RouteComponent() {
     <DocsSection title="Setup &amp; Configuration">
       <DocsFaqList>
         <DocsFaqItem question="What permissions do I need to use /honeypot?">
-          You need Manage Server, Ban Members, Moderate Members, Manage Messages, and Manage Channels.
+          You need Manage Server, Ban Members, Manage Messages, and Manage Channels.
         </DocsFaqItem>
         <DocsFaqItem question="Do I need to do anything after adding the bot?">
           If you gave it the right permissions, most things are already done. You can use <DocsInlineCode>/honeypot</DocsInlineCode> to tweak settings further.
