@@ -55,7 +55,7 @@ function RouteComponent() {
     <DocsSection title="Edge cases">
       <DocsP>Honeypot is conservative and logs failures clearly:</DocsP>
       <DocsCallout tone="warn" title="Server owner">
-        If the server owner triggers the honeypot, the bot cannot action them and will log a warning instead.
+        If the server owner or someone with administrator permissions triggers the honeypot, the bot wont action them and will log a warning instead.
       </DocsCallout>
       <DocsCallout tone="warn" title="Missing permissions">
         If the bot lacks Ban Members or its role is too low, the action fails and a log warning is posted.
