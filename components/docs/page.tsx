@@ -28,13 +28,13 @@ const stats = [
   },
   {
     icon: Ban,
-    value: "250k+",
+    value: "300k+",
     label: "Bans",
     live: false,
   },
   {
     icon: UserPlus2Icon,
-    value: "70m+",
+    value: "75m+",
     label: "Members",
     live: false,
   },

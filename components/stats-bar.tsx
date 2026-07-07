@@ -42,7 +42,7 @@ export function StatsBar() {
     },
     {
       icon: ShieldAlert,
-      value: stats?.moderations?.toLocaleString?.() || "250k+",
+      value: stats?.moderations?.toLocaleString?.() || "300k+",
       label: "Users Banned",
       color: "text-primary",
       slideOnRemount: true,
