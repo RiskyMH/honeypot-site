@@ -11,7 +11,7 @@ export function LiveStats() {
   const { stats: _stats } = useStats();
   // if (!stats) return null;
   const stats = _stats || {
-    guilds: 50_000,
+    guilds: 60_000,
     moderations: 300_000,
     last7dModerations: 80_000,
     last7dEngagedGuilds: 20_000,
