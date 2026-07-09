@@ -85,9 +85,9 @@ function RouteComponent() {
       <DocsTable
         headers={['Message', 'Purpose', 'Limit']}
         rows={[
-          ['Honeypot Warning', 'Pinned warning shown in the honeypot channel.', '10-1500 chars'],
-          ['DM Message', 'Message sent to the user after they trigger.', '10-1000 chars'],
-          ['Log Message', 'Message posted to your log channel.', '10-500 chars'],
+          ['Honeypot Warning', 'Pinned warning shown in the honeypot channel.', '25-1500 chars'],
+          ['DM Message', 'Message sent to the user after they trigger.', '25-1000 chars'],
+          ['Log Message', 'Message posted to your log channel.', '25-500 chars'],
         ]}
       />
       <DocsCallout tone="note" title="Image support">
