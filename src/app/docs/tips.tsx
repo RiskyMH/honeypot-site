@@ -33,7 +33,7 @@ function RouteComponent() {
 
       <DocsSubheading title="Channel naming" />
       <DocsP>
-        Many spam bots may blacklist channel names like <DocsInlineCode>#honeypot</DocsInlineCode>,
+        Many spam bots may blacklist channel names like <DocsInlineCode>#honeypot</DocsInlineCode>,{" "}
         <DocsInlineCode>#trap</DocsInlineCode>, or <DocsInlineCode>#staff-only</DocsInlineCode>.
         If your trap has an obvious name, bots may skip it entirely.
       </DocsP>
@@ -90,6 +90,7 @@ function RouteComponent() {
         <DocsChecklistItem>Turn on the <strong>Reinvite</strong> experiment to auto-add an invite link, or manually include one. This lets legitimate members rejoin after a softban.</DocsChecklistItem>
         <DocsChecklistItem>Keep the tone calm and explain what happened. This reduces confusion for real users.</DocsChecklistItem>
         <DocsChecklistItem>Localise the in-channel warning to your server's primary language via <DocsInlineCode>/honeypot-messages</DocsInlineCode>.</DocsChecklistItem>
+        <DocsChecklistItem>Mark the honeypot channel as <DocsLink href="https://support.discord.com/hc/en-us/articles/40248967926167-Spoiler-Channels-FAQ">spoiler</DocsLink> or age restricted to make accidental access less likely.</DocsChecklistItem>
       </DocsChecklist>
     </DocsSection>
 
