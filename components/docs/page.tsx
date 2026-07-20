@@ -22,7 +22,7 @@ import {
 const stats = [
   {
     icon: Users,
-    value: "70k+",
+    value: "75k+",
     label: "Servers",
     live: false,
   },
