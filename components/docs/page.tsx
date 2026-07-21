@@ -28,7 +28,7 @@ const stats = [
   },
   {
     icon: Ban,
-    value: "350k+",
+    value: "400k+",
     label: "Bans",
     live: false,
   },
