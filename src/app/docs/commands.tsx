@@ -9,10 +9,11 @@ import {
   DocsTitle,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { APP_URL } from '@/lib/constants'
 
 const title = 'Commands - Honeypot'
 const description = 'Slash commands available in Honeypot.'
-const url = 'https://honeypot.riskymh.dev/docs/commands'
+const url = `${APP_URL}/docs/commands`
 
 export const Route = createFileRoute('/docs/commands')({
   component: RouteComponent,

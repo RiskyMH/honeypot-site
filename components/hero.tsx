@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, X, Check, BadgeCheck, ShieldCheck, HashIcon, BotIcon, ChevronDown } from "lucide-react";
 import { ButtonGroup } from "./ui/button-group";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { DISCORD_BOT_INVITE_URL, DISCORD_INVITE_URL, GITHUB_REPO_URL } from "@/lib/constants";
 
 
 export function Hero() {
@@ -43,7 +44,7 @@ export function Hero() {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 shrink"
               >
                 <a
-                  href="https://discord.com/oauth2/authorize?client_id=1450060292716494940"
+                  href={DISCORD_BOT_INVITE_URL}
                   target="_blank"
                 >
                   <DiscordIcon className="mr-2 size-5" />
@@ -84,7 +85,7 @@ export function Hero() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <a
-                          href="https://discord.gg/wYZa4Fpwfy"
+                          href={DISCORD_INVITE_URL}
                           target="_blank"
                         >
                           Support Server
@@ -99,7 +100,7 @@ export function Hero() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <a
-                          href="https://github.com/RiskyMH/honeypot"
+                          href={GITHUB_REPO_URL}
                           target="_blank"
                         >
                           GitHub
@@ -112,7 +113,7 @@ export function Hero() {
             </div>
             <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground max-sm:text-center max-sm:mx-auto max-sm:justify-center">
               <ShieldCheck className="size-4 shrink-0" />
-              <span><a href="https://github.com/RiskyMH/honeypot" className="hover:font-semibold hover:underline //hover:tracking-[-0.0232519em] hover:tracking-[-0.0089em]">Open Source</a> • Actively Maintained</span>
+              <span><a href={GITHUB_REPO_URL} className="hover:font-semibold hover:underline //hover:tracking-[-0.0232519em] hover:tracking-[-0.0089em]">Open Source</a> • Actively Maintained</span>
             </div>
           </div>
 

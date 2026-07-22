@@ -11,10 +11,11 @@ import {
   DocsTitle,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { APP_URL } from '@/lib/constants'
 
 const title = 'Self-Hosting - Honeypot'
 const description = 'Run Honeypot on your own infrastructure with our official Docker image or Railway template.'
-const url = 'https://honeypot.riskymh.dev/docs/self-hosting'
+const url = `${APP_URL}/docs/self-hosting`
 
 export const Route = createFileRoute('/docs/self-hosting')({
   component: RouteComponent,

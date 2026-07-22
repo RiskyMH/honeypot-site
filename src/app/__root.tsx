@@ -6,6 +6,7 @@ import {
 } from '@tanstack/react-router'
 // import appCss from '../../app/globals.css?url'
 import '../globals.css'
+import { APP_URL } from '@/lib/constants'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -28,10 +29,9 @@ export const Route = createRootRoute({
       { name: 'twitter:card', content: 'summary' },
       {
         name: 'twitter:image',
-        content:
-          'https://honeypot.riskymh.dev/honeypot.png',
+        content: `${APP_URL}/honeypot.png`,
       },
-      { property: 'og:image', content: 'https://honeypot.riskymh.dev/honeypot.png' },
+      { property: 'og:image', content: `${APP_URL}/honeypot.png` },
       { name: 'application-name', content: 'Honeypot' },
     ],
     links: [

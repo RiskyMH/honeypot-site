@@ -11,10 +11,11 @@ import {
   DocsTitle,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { APP_URL } from '@/lib/constants'
 
 const title = 'Tips & Best Practices - Honeypot'
 const description = 'Recommendations for maximizing the effectiveness of your honeypot trap and ensuring smooth moderation.'
-const url = 'https://honeypot.riskymh.dev/docs/tips'
+const url = `${APP_URL}/docs/tips`
 
 export const Route = createFileRoute('/docs/tips')({
   component: RouteComponent,

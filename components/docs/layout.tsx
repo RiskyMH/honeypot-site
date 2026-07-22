@@ -20,6 +20,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import { useState } from "react"
+import { DISCORD_INVITE_URL, DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_INVITE_URL, GITHUB_REPO_URL } from "@/lib/constants"
 
 const sidebarNav = [
   {
@@ -109,7 +110,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           </Link>
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com/RiskyMH/honeypot"
+              href={GITHUB_REPO_URL}
               target="_blank"
               className="text-sm text-gray-400 transition-colors hover:text-white max-lg:hidden flex items-center"
             >
@@ -117,7 +118,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               <ExternalLink className="ml-1 h-4 w-4" />
             </a>
             <a
-              href="https://discord.com/discovery/applications/1450060292716494940"
+              href={DISCORD_APP_DIRECTORY_URL}
               target="_blank"
               className="text-sm text-gray-400 transition-colors hover:text-white max-lg:hidden flex items-center"
             >
@@ -130,7 +131,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
               <a
-                href="https://discord.com/oauth2/authorize?client_id=1450060292716494940"
+                href={DISCORD_BOT_INVITE_URL}
                 target="_blank"
               >
                 Invite <span className="max-sm:sr-only">Bot</span>
@@ -231,8 +232,8 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               <br />
               on Discord.
             </p>
-            <Button className="w-full bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
-              <a href="https://discord.gg/wYZa4Fpwfy" target="_blank">
+              <Button className="w-full bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
+              <a href={DISCORD_INVITE_URL} target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
                   viewBox="0 0 24 24"
@@ -272,22 +273,22 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                   </h4>
                   <ul className="space-y-2 text-sm text-gray-400">
                     <li>
-                      <a href="https://discord.com/discovery/applications/1450060292716494940" target="_blank" className="hover:text-white">
+                      <a href={DISCORD_APP_DIRECTORY_URL} target="_blank" className="hover:text-white">
                         Discord App
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/RiskyMH/honeypot" target="_blank" className="hover:text-white">
+                      <a href={GITHUB_REPO_URL} target="_blank" className="hover:text-white">
                         GitHub
                       </a>
                     </li>
                     <li>
-                      <a href="https://discord.com/api/oauth2/authorize?client_id=1450060292716494940" target="_blank" className="hover:text-white">
+                      <a href={DISCORD_BOT_INVITE_URL} target="_blank" className="hover:text-white">
                         Invite Bot
                       </a>
                     </li>
                     <li>
-                      <a href="https://discord.gg/wYZa4Fpwfy" target="_blank" className="hover:text-white">
+                      <a href={DISCORD_INVITE_URL} target="_blank" className="hover:text-white">
                         Support Server
                       </a>
                     </li>
@@ -426,8 +427,8 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 <br />
                 on Discord.
               </p>
-              <Button className="w-full bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
-                <a href="https://discord.gg/wYZa4Fpwfy" target="_blank">
+            <Button className="w-full bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
+                <a href={DISCORD_INVITE_URL} target="_blank">
                   <svg
                     className="mr-2 h-4 w-4"
                     viewBox="0 0 24 24"

@@ -9,6 +9,7 @@ import { LiveStats } from '../../components/live-stats'
 import { Footer } from '../../components/footer'
 import { StatsProvider } from '../../components/stats-context'
 import { buildHead } from '@/lib/utils'
+import { DISCORD_BOT_INVITE_URL, DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_CLIENT_ID, GITHUB_REPO_URL, GITHUB_PROFILE_URL, OWNER_URL, APP_URL, DISCORD_SERVER_URL, STATS_URL } from '@/lib/constants'
 
 
 
@@ -28,7 +29,7 @@ function cache(key: string, fetcher: () => Promise<any>, ttl = 600) {
 
 const title = 'Honeypot: The Discord Bot That Catches Bots'
 const description = 'A Discord bot that automatically catches and removes spam bots by monitoring a dedicated #honeypot channel.'
-const url = 'https://honeypot.riskymh.dev/'
+const url = APP_URL
 
 const head = buildHead({ title, description, url })
 
@@ -59,7 +60,7 @@ export const Route = createFileRoute('/')({
     ],
     links: [
       ...head.links,
-      { rel: 'preconnect', href: 'https://honeypot-stats.riskymh.dev', crossOrigin: "" },
+      { rel: 'preconnect', href: STATS_URL, crossOrigin: "" },
     ],
     scripts: [
       {
@@ -69,73 +70,72 @@ export const Route = createFileRoute('/')({
           "@graph": [
             {
               "@type": "WebSite",
-              "@id": "https://honeypot.riskymh.dev/#website",
-              url: "https://honeypot.riskymh.dev/",
+              "@id": `${APP_URL}/#website`,
+              url: `${APP_URL}/`,
               name: "Honeypot",
               alternateName: ["Honeypot Bot", "Honeypot Discord Bot"],
               description: description,
               inLanguage: "en-US",
               publisher: {
-                "@id": "https://honeypot.riskymh.dev/#organization"
+                "@id": `${APP_URL}/#organization`
               },
               mainEntity: {
-                "@id": "https://honeypot.riskymh.dev/#app"
+                "@id": `${APP_URL}/#app`
               }
             },
             {
               "@type": "Organization",
-              "@id": "https://honeypot.riskymh.dev/#organization",
+              "@id": `${APP_URL}/#organization`,
               name: "RiskyMH",
-              url: "https://riskymh.dev",
+              url: OWNER_URL,
               logo: {
                 "@type": "ImageObject",
-                url: "https://riskymh.dev/fire_anim.png"
+                url: `${OWNER_URL}/fire_anim.png`
               },
               sameAs: [
-                "https://github.com/RiskyMH",
+                GITHUB_PROFILE_URL,
               ],
               contactPoint: {
                 "@type": "ContactPoint",
-                url: "https://discord.com/servers/riskys-server-894705593087049729",
+                url: DISCORD_SERVER_URL,
                 contactType: "technical support",
                 availableLanguage: "en"
               }
             },
             {
               "@type": "SoftwareApplication",
-              "@id": "https://honeypot.riskymh.dev/#app",
+              "@id": `${APP_URL}/#app`,
               name: "Honeypot",
-              url: "https://honeypot.riskymh.dev/",
+              url: `${APP_URL}/`,
               description: description,
               applicationCategory: "SecurityApplication",
               operatingSystem: "Discord",
               inLanguage: "en-US",
-              mainEntityOfPage: "https://honeypot.riskymh.dev/",
-              image: "https://honeypot.riskymh.dev/honeypot.png",
+              mainEntityOfPage: `${APP_URL}/`,
+              image: `${APP_URL}/honeypot.png`,
               offers: {
                 "@type": "Offer",
                 price: "0.00",
                 priceCurrency: "USD"
               },
               publisher: {
-                "@id": "https://honeypot.riskymh.dev/#organization"
+                "@id": `${APP_URL}/#organization`
               },
               potentialAction: {
                 "@type": "ViewAction",
-                target:
-                  "https://discord.com/oauth2/authorize?client_id=1450060292716494940"
+                target: DISCORD_BOT_INVITE_URL
               },
               sameAs: [
-                "https://github.com/RiskyMH/honeypot",
-                "https://discord.com/discovery/applications/1450060292716494940",
-                "https://top.gg/bot/1450060292716494940"
+                GITHUB_REPO_URL,
+                DISCORD_APP_DIRECTORY_URL,
+                `https://top.gg/bot/${DISCORD_BOT_CLIENT_ID}`
               ]
             },
             {
               "@type": "FAQPage",
-              "@id": "https://honeypot.riskymh.dev/#faq",
+              "@id": `${APP_URL}/#faq`,
               isPartOf: {
-                "@id": "https://honeypot.riskymh.dev/#website"
+                "@id": `${APP_URL}/#website`
               },
               mainEntity: faqs.map((faq) => ({
                 "@type": "Question",

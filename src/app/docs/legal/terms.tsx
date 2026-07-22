@@ -2,10 +2,11 @@ import DocsLayout from '@/components/docs/layout'
 import { createFileRoute } from '@tanstack/react-router'
 import { DocsCallout, DocsInlineCode, DocsLink, DocsP, DocsSection, DocsTitle, DocsChecklist, DocsChecklistItem } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { DISCORD_INVITE_URL, OWNER_URL, GITHUB_REPO_URL, APP_URL } from '@/lib/constants'
 
 const title = 'Terms of Service - Honeypot'
 const description = 'Official Honeypot bot terms of service.'
-const url = 'https://honeypot.riskymh.dev/docs/legal/terms'
+const url = `${APP_URL}/docs/legal/terms`
 
 export const Route = createFileRoute('/docs/legal/terms')({
   component: RouteComponent,
@@ -17,13 +18,13 @@ function RouteComponent() {
     <DocsTitle title="Terms of Service" description="Official Honeypot bot terms of service." />
 
     <DocsCallout tone="note" title="Disclaimer">
-      <DocsP>This page is a presentation-friendly edition of the canonical legal text. The authoritative source is available at <DocsLink href="https://github.com/RiskyMH/Honeypot/blob/main/legal.md">github.com/RiskyMH/Honeypot</DocsLink>.</DocsP>
+      <DocsP>This page is a presentation-friendly edition of the canonical legal text. The authoritative source is available at <DocsLink href={`${GITHUB_REPO_URL}/blob/main/legal.md`}>github.com/RiskyMH/Honeypot</DocsLink>.</DocsP>
     </DocsCallout>
 
 
     <DocsSection title="Terms of Service">
       <DocsP><strong>Last Updated: February 23, 2026</strong></DocsP>
-      <DocsP><DocsLink href="https://riskymh.dev">RiskyMH</DocsLink> operates the Honeypot Discord bot. These Terms of Service govern the use of the bot and your relationship with the bot operator.</DocsP>
+      <DocsP><DocsLink href={OWNER_URL}>RiskyMH</DocsLink> operates the Honeypot Discord bot. These Terms of Service govern the use of the bot and your relationship with the bot operator.</DocsP>
     </DocsSection>
 
     <DocsSection title="Acceptance of Terms">
@@ -53,7 +54,7 @@ function RouteComponent() {
         <DocsChecklistItem>Set bot warning, DM, or log messages to content that is offensive, harassing, abusive, illegal, or otherwise violates Discord’s Terms of Service or local laws.</DocsChecklistItem>
       </DocsChecklist>
       <DocsP>Server administrators are solely responsible for the content of any custom messages configured through Honeypot. Do <strong>not</strong> use the bot to send or automate messages that may be considered harmful, threatening, discriminatory, or inappropriate.</DocsP>
-      <DocsP>Do not use the bot to transmit any private or sensitive data. Users are encouraged to report abuse to Discord and contact the bot owner at <DocsLink href="https://riskymh.dev">https://riskymh.dev</DocsLink>.</DocsP>
+      <DocsP>Do not use the bot to transmit any private or sensitive data. Users are encouraged to report abuse to Discord and contact the bot owner at <DocsLink href={OWNER_URL}>{OWNER_URL}</DocsLink>.</DocsP>
     </DocsSection>
 
     <DocsSection title="Bot Operator Commitment">
@@ -86,7 +87,7 @@ function RouteComponent() {
     </DocsSection>
 
     <DocsSection title="Contact">
-      <DocsP>For support, join the Discord server <DocsLink href="https://discord.gg/wYZa4Fpwfy">https://discord.gg/wYZa4Fpwfy</DocsLink> or contact the owner RiskyMH at <DocsLink href="https://riskymh.dev">https://riskymh.dev</DocsLink>.</DocsP>
+      <DocsP>For support, join the Discord server <DocsLink href={DISCORD_INVITE_URL}>{DISCORD_INVITE_URL}</DocsLink> or contact the owner RiskyMH at <DocsLink href={OWNER_URL}>{OWNER_URL}</DocsLink>.</DocsP>
     </DocsSection>
   </DocsLayout>
 }

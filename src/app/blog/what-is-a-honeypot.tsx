@@ -7,12 +7,13 @@ import {
   DocsSubheading,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { APP_URL } from '@/lib/constants'
 
 const meta = getBlogPostMeta('what-is-a-honeypot')
 
 const title = `${meta.title} - Honeypot`
 const description = meta.description
-const url = 'https://honeypot.riskymh.dev/blog/what-is-a-honeypot'
+const url = `${APP_URL}/blog/what-is-a-honeypot`
 
 export const Route = createFileRoute('/blog/what-is-a-honeypot')({
   component: RouteComponent,
@@ -28,7 +29,7 @@ function RouteComponent() {
 
       <DocsP>
         Honeypots have existed in cybersecurity for decades. They began as improvised tools by researchers tracking hackers on Cold War-era networks. The same core idea now protects email inboxes, web forms, and - through tools like{' '}
-        <DocsLink href="https://honeypot.riskymh.dev/">Honeypot</DocsLink> - millions of Discord members from automated abuse.
+        <DocsLink href={APP_URL}>Honeypot</DocsLink> - millions of Discord members from automated abuse.
       </DocsP>
 
       <DocsP>
@@ -181,7 +182,7 @@ function RouteComponent() {
         </DocsP>
 
         <DocsP>
-          If you're running a larger Discord server and dealing with spam, a well-implemented honeypot channel can be one of the highest-signal detection methods available. I built the <DocsLink href="https://honeypot.riskymh.dev/">Honeypot Bot</DocsLink> specifically to make this approach reliable at scale.
+          If you're running a larger Discord server and dealing with spam, a well-implemented honeypot channel can be one of the highest-signal detection methods available. I built the <DocsLink href={APP_URL}>Honeypot Bot</DocsLink> specifically to make this approach reliable at scale.
         </DocsP>
       </DocsSection>
     </BlogPostLayout>

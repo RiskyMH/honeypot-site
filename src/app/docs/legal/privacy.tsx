@@ -2,10 +2,11 @@ import DocsLayout from '@/components/docs/layout'
 import { createFileRoute } from '@tanstack/react-router'
 import { DocsCallout, DocsInlineCode, DocsLink, DocsP, DocsSection, DocsTitle, DocsChecklist, DocsChecklistItem } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { GITHUB_REPO_URL, OWNER_URL, APP_URL } from '@/lib/constants'
 
 const title = 'Privacy Policy - Honeypot'
 const description = 'Official Honeypot bot privacy policy.'
-const url = 'https://honeypot.riskymh.dev/docs/legal/privacy'
+const url = `${APP_URL}/docs/legal/privacy`
 
 export const Route = createFileRoute('/docs/legal/privacy')({
   component: RouteComponent,
@@ -17,13 +18,13 @@ function RouteComponent() {
     <DocsTitle title="Privacy Policy" description="Official Honeypot bot privacy policy." />
 
     <DocsCallout tone="note" title="Disclaimer">
-      <DocsP>This page is a presentation-friendly edition of the canonical legal text. The authoritative source is available at <DocsLink href="https://github.com/RiskyMH/Honeypot/blob/main/legal.md">github.com/RiskyMH/Honeypot</DocsLink>.</DocsP>
+      <DocsP>This page is a presentation-friendly edition of the canonical legal text. The authoritative source is available at <DocsLink href={`${GITHUB_REPO_URL}/blob/main/legal.md`}>github.com/RiskyMH/Honeypot</DocsLink>.</DocsP>
     </DocsCallout>
 
 
     <DocsSection title="Privacy Policy">
       <DocsP><strong>Last Updated: February 23, 2026</strong></DocsP>
-      <DocsP><DocsLink href="https://riskymh.dev">RiskyMH</DocsLink> operates the Honeypot Discord bot. This Privacy Policy explains exactly what data the bot collects, stores, and uses.</DocsP>
+      <DocsP><DocsLink href={OWNER_URL}>RiskyMH</DocsLink> operates the Honeypot Discord bot. This Privacy Policy explains exactly what data the bot collects, stores, and uses.</DocsP>
     </DocsSection>
 
     <DocsSection title="Information We Collect">

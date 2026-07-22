@@ -8,6 +8,7 @@ import {
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 import { blogPosts, getBlogPostMeta, type BlogPostMeta } from '../../src/app/blog/-posts'
+import { OWNER_URL } from '@/lib/constants'
 
 export { getBlogPostMeta }
 
@@ -122,7 +123,7 @@ export function BlogPostLayout({ meta, children }: { meta: BlogPostMeta; childre
           <p className="mt-3 text-sm text-muted-foreground">
             Written by{' '}
             <a
-              href="https://riskymh.dev"
+              href={OWNER_URL}
               target="_blank"
               rel="noreferrer"
               className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"

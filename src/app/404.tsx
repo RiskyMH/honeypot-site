@@ -1,9 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { buildHead } from '@/lib/utils'
+import { APP_URL } from '@/lib/constants'
 
 const title = '404 – Not Found'
 const description = 'This page could not be found. It may have been moved or never existed.'
-const url = 'https://honeypot.riskymh.dev/404'
+const url = `${APP_URL}/404`
 
 export const Route = createFileRoute('/404')({
   head: () => buildHead({ title, description, url }),

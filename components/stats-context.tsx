@@ -1,5 +1,6 @@
 "use client"
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { STATS_URL } from "@/lib/constants";
 
 export interface RawStats {
   guilds: number;
@@ -38,7 +39,7 @@ export function StatsProvider({ children, initialStats }: { children: ReactNode;
     async function doFetchInitialStats() {
       fetchController = new AbortController();
       try {
-        const response = await fetch("https://honeypot-stats.riskymh.dev", {
+        const response = await fetch(STATS_URL, {
           signal: fetchController.signal,
         });
         if (!response.ok) return;
@@ -62,7 +63,7 @@ export function StatsProvider({ children, initialStats }: { children: ReactNode;
 
     function connect() {
       intentionallyClosed = false;
-      ws = new WebSocket("wss://honeypot-stats.riskymh.dev/ws");
+      ws = new WebSocket(`wss://honeypot-stats.riskymh.dev/ws`);
       ws.onopen = () => {
         if (pingInterval) clearInterval(pingInterval);
         pingInterval = setInterval(() => {

@@ -11,10 +11,11 @@ import {
   DocsTitle,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { DISCORD_INVITE_URL, APP_URL } from '@/lib/constants'
 
 const title = 'FAQ - Honeypot'
 const description = 'Quick answers to common questions about the Honeypot Discord bot.'
-const url = 'https://honeypot.riskymh.dev/docs/faq'
+const url = `${APP_URL}/docs/faq`
 
 export const Route = createFileRoute('/docs/faq')({
   component: RouteComponent,
@@ -115,7 +116,7 @@ function RouteComponent() {
           Optional extra features I&apos;ve added. See the <DocsLink href="/docs/configuration#experiments">experiments docs</DocsLink> for details.
         </DocsFaqItem>
         <DocsFaqItem question="How can I get help?">
-          Join the <DocsLink href="https://discord.gg/wYZa4Fpwfy">Discord server</DocsLink> for fast support.
+          Join the <DocsLink href={DISCORD_INVITE_URL}>Discord server</DocsLink> for fast support.
         </DocsFaqItem>
         <DocsFaqItem question="Honeypot DMed me, was I hacked?">
           Your account may be compromised. See the <DocsLink href="/blog/discord-account-hacked-recovery">recovery guide</DocsLink>.

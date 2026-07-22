@@ -1,18 +1,13 @@
 import { Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
+import { DISCORD_BOT_CLIENT_ID, DISCORD_BOT_INVITE_URL, DISCORD_SERVER_URL, DISCORD_INVITE_URL, GITHUB_REPO_URL, OWNER_URL, BOT_LISTING_LINKS } from "@/lib/constants";
 
 const resourceLinks = [
-  {
-    label: "Invite Bot",
-    href: "https://discord.com/oauth2/authorize?client_id=1450060292716494940",
-  },
+  { label: "Invite Bot", href: DISCORD_BOT_INVITE_URL },
   { label: "Documentation", href: "/docs" },
-  {
-    label: "Support Server",
-    href: "https://discord.com/servers/riskys-server-894705593087049729",
-  },
-  { label: "GitHub", href: "https://github.com/RiskyMH/honeypot" },
+  { label: "Support Server", href: DISCORD_SERVER_URL },
+  { label: "GitHub", href: GITHUB_REPO_URL },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -21,14 +16,7 @@ const legalLinks = [
   { label: "Privacy Policy", href: "/docs/legal/privacy" },
 ];
 
-const otherLinks = [
-  { label: "Top.gg", href: "https://top.gg/bot/1450060292716494940" },
-  { label: "Discord Bots", href: "https://discord.bots.gg/bots/1450060292716494940" },
-  { label: "Discords.com", href: "https://discords.com/bots/bot/1450060292716494940" },
-  { label: "Discord Bot List", href: "https://discordbotlist.com/bots/honeypot" },
-  { label: "Discord App Directory", href: "https://discord.com/discovery/applications/1450060292716494940" },
-  { label: "Discord Watch", href: "https://discord.watch/applications/1450060292716494940" },
-];
+const otherLinks = BOT_LISTING_LINKS;
 
 export function Footer() {
   return (
@@ -57,14 +45,14 @@ export function Footer() {
                 <text><tspan fontSize="0" fill="transparent" opacity="0">🧡</tspan></text>
               </Heart> by{" "}
               <a
-                href="https://riskymh.dev"
+                href={OWNER_URL}
                 className="hover:underline font-bold"
                 target="_blank"
               >
                 RiskyMH
               </a>
             </p>
-            <p className='sr-only'>Official Instance Id: <code>1450060292716494940</code></p>
+            <p className='sr-only'>Official Instance Id: <code>{DISCORD_BOT_CLIENT_ID}</code></p>
           </div>
 
           {/* Resources */}
@@ -141,7 +129,7 @@ export function Footer() {
               className="border-border bg-[#12151a] text-foreground hover:bg-muted hover:text-foreground"
             >
               <a
-                href="https://discord.gg/wYZa4Fpwfy"
+                href={DISCORD_INVITE_URL}
                 target="_blank"
               >
                 <DiscordIcon className="mr-2 size-4" />

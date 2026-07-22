@@ -15,10 +15,11 @@ import {
   DocsTitle,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { GITHUB_REPO_URL, APP_URL } from '@/lib/constants'
 
 const title = 'Configuration - Honeypot'
 const description = 'Low-level controls for channels, actions, experiments, and messages in the Honeypot Discord bot.'
-const url = 'https://honeypot.riskymh.dev/docs/configuration'
+const url = `${APP_URL}/docs/configuration`
 
 export const Route = createFileRoute('/docs/configuration')({
   component: RouteComponent,
@@ -64,7 +65,7 @@ function RouteComponent() {
           [<>No Warning Msg</>, 'Removes the warning post from the honeypot channel.', 'Use when you want the trap to look empty.'],
           [<>No DM</>, 'Skips DMing the user after they trigger.', 'Use if you prefer silence.'],
           [<>Channel Warmer</>, 'Posts a daily message to keep the honeypot active.', 'Helps the channel look “alive”.'],
-          [<>Random Channel Name</>, <>Renames the honeypot channel daily. <DocsLink href="https://github.com/RiskyMH/honeypot/blob/main/src/utils/random-channel-names.yaml">See the name list</DocsLink>.</>, 'Avoid predictable names.'],
+          [<>Random Channel Name</>, <>Renames the honeypot channel daily. <DocsLink href={`${GITHUB_REPO_URL}/blob/main/src/utils/random-channel-names.yaml`}>See the name list</DocsLink>.</>, 'Avoid predictable names.'],
           [<>Random Channel Name (Chaos)</>, 'Renames with random characters daily.', 'Best against blacklist bots.'],
           [<>⚙️ Recreate Channel</>, 'Remake the honeypot channel (every day).', 'Channel gets replaced to have a new ID - messages are not preserved.'],
           [<>Timeout First</>, 'Timeouts the user for 1 hour before banning/softbanning.', 'This timeout should still apply when they rejoin.'],

@@ -8,12 +8,13 @@ import {
   DocsSubheading,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { APP_URL } from '@/lib/constants'
 
 const meta = getBlogPostMeta('how-honeypot-systems-work')
 
 const title = `${meta.title} - Honeypot`
 const description = meta.description
-const url = 'https://honeypot.riskymh.dev/blog/how-honeypot-systems-work'
+const url = `${APP_URL}/blog/how-honeypot-systems-work`
 
 export const Route = createFileRoute('/blog/how-honeypot-systems-work')({
   component: RouteComponent,
@@ -212,7 +213,7 @@ function RouteComponent() {
 
         <DocsP>
           Building this reliably across tens of thousands of servers (while keeping false positives low) is the challenge I tackled with{' '}
-          <DocsLink href="https://honeypot.riskymh.dev/">Honeypot</DocsLink>.
+          <DocsLink href={APP_URL}>Honeypot</DocsLink>.
           {/* The architecture decisions behind it are covered in{' '}
           <DocsLink href="/blog/engineering-at-scale">Engineering Honeypot at Scale</DocsLink>. */}
         </DocsP>

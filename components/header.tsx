@@ -2,6 +2,7 @@
 
 import { Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button";
+import { DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_INVITE_URL } from "@/lib/constants";
 
 const navLinks = [
   { href: "#features", label: "Features" },
@@ -48,7 +49,7 @@ export function Header() {
             className="hidden border-border bg-secondary text-foreground hover:bg-muted sm:flex hover:text-foreground"
           >
             <a
-              href="https://discord.com/discovery/applications/1450060292716494940"
+              href={DISCORD_APP_DIRECTORY_URL}
               target="_blank"
             >
               <DiscordIcon className="mr-2 size-4" />
@@ -61,7 +62,7 @@ export function Header() {
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             <a
-              href="https://discord.com/oauth2/authorize?client_id=1450060292716494940"
+              href={DISCORD_BOT_INVITE_URL}
               target="_blank"
             >
               Invite Bot

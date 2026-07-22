@@ -15,12 +15,13 @@ import {
   DocsOl,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { APP_URL } from '@/lib/constants'
 
 const meta = getBlogPostMeta('discord-account-hacked-recovery')
 
 const title = `${meta.title} - Honeypot`
 const description = meta.description
-const url = 'https://honeypot.riskymh.dev/blog/discord-account-hacked-recovery'
+const url = `${APP_URL}/blog/discord-account-hacked-recovery`
 
 export const Route = createFileRoute('/blog/discord-account-hacked-recovery')({
   component: RouteComponent,
@@ -207,7 +208,7 @@ function RouteComponent() {
         </DocsUl>
         <DocsP>
           Good account security closes off most of the easy ways in, but it can't catch everything on its own, especially the moment an attacker is already inside and moving fast. That's the gap that ongoing monitoring for suspicious joins, phishing links, and unusual moderation activity is meant to cover, and it's the exact problem{' '}
-          <DocsLink href="https://honeypot.riskymh.dev/">Honeypot</DocsLink> was built to sit in front of.{' '}
+          <DocsLink href={APP_URL}>Honeypot</DocsLink> was built to sit in front of.{' '}
           <DocsLink href="/blog/how-honeypot-systems-work">How Honeypot Systems Work</DocsLink> covers the detection approach in more detail.
         </DocsP>
       </DocsSection>

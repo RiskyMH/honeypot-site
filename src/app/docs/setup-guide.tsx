@@ -16,10 +16,11 @@ import {
   DocsTitle,
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
+import { DISCORD_BOT_INVITE_URL, APP_URL } from '@/lib/constants'
 
 const title = 'Setup Guide - Honeypot'
 const description = 'A simple walkthrough for server owners and new moderators to set up the Honeypot Discord bot.'
-const url = 'https://honeypot.riskymh.dev/docs/setup-guide'
+const url = `${APP_URL}/docs/setup-guide`
 
 export const Route = createFileRoute('/docs/setup-guide')({
   component: RouteComponent,
@@ -33,7 +34,7 @@ function RouteComponent() {
     <DocsSection title="Quick Start">
       <DocsStepList>
         <DocsStep step="1" title="Invite the bot">
-          Use the official invite link and select your server. <DocsLink href="https://discord.com/oauth2/authorize?client_id=1450060292716494940">Open invite page</DocsLink>
+          Use the official invite link and select your server. <DocsLink href={DISCORD_BOT_INVITE_URL}>Open invite page</DocsLink>
         </DocsStep>
         <DocsStep step="2" title="Grant permissions">
           Honeypot needs Ban Members to work properly. Manage Channels is so it can create the honeypot channel on join.

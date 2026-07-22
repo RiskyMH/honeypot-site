@@ -18,6 +18,7 @@ import {
   DocsInlineCode,
   DocsLink,
 } from "./markdown"
+import { DISCORD_INVITE_URL, GITHUB_REPO_URL, DISCORD_BOT_INVITE_URL } from "@/lib/constants"
 
 const stats = [
   {
@@ -176,7 +177,7 @@ export default function DocsPage() {
       < DocsSection title="Getting Started" >
         <DocsOl>
           <span>
-            <DocsLink href="https://discord.com/api/oauth2/authorize?client_id=1450060292716494940">
+            <DocsLink href={DISCORD_BOT_INVITE_URL}>
               Invite Honeypot
             </DocsLink>{" "}
             to your server.
@@ -301,7 +302,7 @@ export default function DocsPage() {
           </div>
           <div className="flex gap-3 flex-wrap max-sm:justify-center">
             <Button className="bg-[#5865F2] text-white hover:bg-[#4752C4] ms-auto" asChild>
-              <a href="https://discord.gg/wYZa4Fpwfy" target="_blank">
+              <a href={DISCORD_INVITE_URL} target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
                   viewBox="0 0 24 24"
@@ -317,7 +318,7 @@ export default function DocsPage() {
               className="border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white ms-auto"
               asChild
             >
-              <a href="https://github.com/RiskyMH/honeypot" target="_blank">
+              <a href={GITHUB_REPO_URL} target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
                   viewBox="0 0 24 24"
