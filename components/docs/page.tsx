@@ -23,7 +23,7 @@ import { DISCORD_INVITE_URL, GITHUB_REPO_URL, DISCORD_BOT_INVITE_URL } from "@/l
 const stats = [
   {
     icon: Users,
-    value: "75k+",
+    value: "80k+",
     label: "Servers",
     live: false,
   },
@@ -35,7 +35,7 @@ const stats = [
   },
   {
     icon: UserPlus2Icon,
-    value: "90m+",
+    value: "100m+",
     label: "Members",
     live: false,
   },
