@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_INVITE_URL } from "@/lib/constants";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#how-it-works", label: "How it Works" },
-  { href: "#stats", label: "Stats" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#features", label: "Features" },
+  { href: "/#how-it-works", label: "How it Works" },
+  { href: "/#stats", label: "Stats" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/docs", label: "Docs" },
 ];
 
