@@ -106,10 +106,16 @@ function RouteComponent() {
           [<DocsInlineCode>{'{{server:public-link}}'}</DocsInlineCode>, 'DM', 'Link to the server\'s public discovery page (if applicable).'],
           [<DocsInlineCode>{'{{honeypot:channel:link}}'}</DocsInlineCode>, 'DM', 'Link to the honeypot channel message.'],
           [<DocsInlineCode>{'{{reinvite:link}}'}</DocsInlineCode>, 'DM', 'Invite link to rejoin the server (requires Reinvite experiment).'],
-          [<DocsInlineCode>{'{{user:mention}}'}</DocsInlineCode>, 'Log', 'Mentions the user.'],
+          [<DocsInlineCode>{'{{user:mention}}'}</DocsInlineCode>, 'DM, Log', 'Mentions the user.'],
           [<DocsInlineCode>{'{{user:id}}'}</DocsInlineCode>, 'Log', 'Raw user ID.'],
+          [<DocsInlineCode>{'{{user:name}}'}</DocsInlineCode>, 'Log', 'User\'s username.'],
+          [<DocsInlineCode>{'{{user:global-name}}'}</DocsInlineCode>, 'Log', 'User\'s global display name.'],
+          [<DocsInlineCode>{'{{user:created}}'}</DocsInlineCode>, 'Log', 'User\'s account creation date (date mention).'],
+          [<DocsInlineCode>{'{{member:nickname}}'}</DocsInlineCode>, 'Log', 'User\'s server nickname.'],
+          [<DocsInlineCode>{'{{member:joined}}'}</DocsInlineCode>, 'Log', 'User\'s server join date (date mention).'],
+          [<DocsInlineCode>{'{{member:roles}}'}</DocsInlineCode>, 'Log', 'User\'s server roles (comma seperated mentions).'],
           [<DocsInlineCode>{'{{honeypot:channel:mention}}'}</DocsInlineCode>, 'Log', 'Mentions the honeypot channel.'],
-          [<DocsInlineCode>{'{{honeypot:moderation-count}}'}</DocsInlineCode>, 'Log', 'Total moderation count for this server.'],
+          [<DocsInlineCode>{'{{honeypot:moderation-count}}'}</DocsInlineCode>, 'Log', 'Total moderation count for this honeypot channel.'],
         ]}
       />
       <DocsCallout tone="note" title="Log message requirement">
@@ -124,7 +130,7 @@ function RouteComponent() {
       />
       <DocsCodeBlock
         language="DM Message"
-        code={`## Honeypot Triggered\n\nYou have been **{{action:text}}** from **{{server:name}}** for sending a message in the [honeypot]({{honeypot:channel:link}}) channel.`}
+        code={`## Honeypot Triggered\n\nHey {{user:mention}}, you have been **{{action:text}}** from **{{server:name}}** for sending a message in the [honeypot]({{honeypot:channel:link}}) channel.\n\nThis may have happened if someone gained access to your account through malware, stolen sessions or leaked passwords. \nPlease [recover your account](https://honeypot.riskymh.dev/blog/discord-account-hacked-recovery), scan your device and reinstall your OS if needed.`}
       />
       <DocsCodeBlock
         language="Log Message"
