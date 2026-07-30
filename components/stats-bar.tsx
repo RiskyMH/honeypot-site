@@ -1,63 +1,72 @@
 "use client"
-import { useEffect, useRef, useState } from "react";
-import { Users, Shield, Trash2, Clock, CheckCheck, ShieldAlert } from "lucide-react";
+import { Users, Clock, CheckCheck, ShieldAlert } from "lucide-react";
 
 import { useStats } from "@/components/stats-context";
+import { STAT_FALLBACKS } from "@/lib/stats-format";
+import { useEffect, useRef, useState } from "react";
+import NumberFlow from "@number-flow/react";
 
-// AnimatedStatValue: shows stat value with vertical slide animation on change
-export function AnimatedStatValue({ value }: { value: string }) {
-  const [displayValue, setDisplayValue] = useState(value);
+
+export function StatValue({ value, fallback }: { value: number | null | undefined; fallback: string }) {
+  const [showFallback, setShowFallback] = useState(value == null);
   const [animating, setAnimating] = useState(false);
   const prevValue = useRef(value);
 
   useEffect(() => {
-    if (prevValue.current !== value) {
+    if (value != null && prevValue.current == null) {
       setAnimating(true);
-      // After out animation, update text
-      const outTimeout = setTimeout(() => {
-        setDisplayValue(value);
+      const t = setTimeout(() => {
+        setShowFallback(false);
         setAnimating(false);
-      }, 160); // match CSS animation duration (out)
+      }, 160);
       prevValue.current = value;
-      return () => clearTimeout(outTimeout);
+      return () => clearTimeout(t);
+    }
+    if (value != null) {
+      prevValue.current = value;
     }
   }, [value]);
 
   return (
-    <span className={`inline-block relative h-[1.05em] w-full`}>
-      <span className={`stat-slide ${animating ? "stat-slide-out" : "stat-slide-in"}`}>{displayValue}</span>
+    <span className={`inline-block relative h-[1.05em]`}>
+      <span className={`stat-slide ${animating ? "stat-slide-out" : "stat-slide-in"}`}>
+        {showFallback ? fallback : <NumberFlow value={value || 0} />}
+      </span>
     </span>
   );
 }
+
 
 export function StatsBar() {
   const { stats } = useStats();
   const displayStats = [
     {
       icon: Users,
-      value: stats?.guilds?.toLocaleString?.() || "85k+",
+      value: stats?.guilds,
       label: "Servers Protected",
       color: "text-primary",
-      slideOnRemount: true, // on an actual change, make it a vertical slider or smth
+      fallback: STAT_FALLBACKS.guilds,
     },
     {
       icon: ShieldAlert,
-      value: stats?.moderations?.toLocaleString?.() || "450k+",
+      value: stats?.moderations,
       label: "Users Banned",
       color: "text-primary",
-      slideOnRemount: true,
+      fallback: STAT_FALLBACKS.moderations,
     },
     {
       icon: CheckCheck,
-      value: "99%",
+      value: null,
       label: "Satisfaction Rate",
       color: "text-green-500",
+      display: "99%",
     },
     {
       icon: Clock,
-      value: "24/7",
+      value: null,
       label: "Always Online",
       color: "text-blue-400",
+      display: "24/7",
     },
   ];
   return (
@@ -77,11 +86,7 @@ export function StatsBar() {
                 <stat.icon className={`size-6 ${stat.color}`} />
                 <div>
                   <p className="text-xl font-bold text-foreground md:text-2xl">
-                    {stat.slideOnRemount ? (
-                      <AnimatedStatValue value={stat.value} />
-                    ) : (
-                      stat.value
-                    )}
+                    {stat.display ?? <StatValue value={stat.value} fallback={stat.fallback} />}
                   </p>
                   <p className="text-xs text-muted-foreground md:text-sm">
                     {stat.label}

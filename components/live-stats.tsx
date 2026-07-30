@@ -2,37 +2,28 @@
 
 import { Shield, Server } from "lucide-react";
 import { useStats } from "@/components/stats-context";
-import { AnimatedStatValue } from "./stats-bar";
+import { STAT_FALLBACKS } from "@/lib/stats-format";
 import { lazy, Suspense } from 'react';
+import NumberFlow from "@number-flow/react";
+import { StatValue } from "./stats-bar.js";
 
 const LiveStatsChart = lazy(() => import('./live-stats-chart.js').then(module => ({ default: module.LiveStatsChart })));
 
 export function LiveStats() {
-  const { stats: _stats } = useStats();
-  // if (!stats) return null;
-  const stats = _stats || {
-    guilds: 80_000,
-    moderations: 450_000,
-    last7dModerations: 40_000,
-    last7dEngagedGuilds: 10_000,
-    dailyStats: [],
-  };
+  const { stats } = useStats();
 
-  // Formatting logic local to this component
   const statCards = [
-    { icon: Shield, label: "Bans (7d)", value: stats.last7dModerations?.toLocaleString?.() || "-", color: "text-green-400" },
-    { icon: Shield, label: "Total Bans", value: stats.moderations?.toLocaleString?.() || "-", color: "text-blue-400" },
-    { icon: Server, label: "Triggered Servers (7d)", value: stats.last7dEngagedGuilds?.toLocaleString?.() || "-", color: "text-primary" },
-    { icon: Server, label: "Total Servers", value: stats.guilds?.toLocaleString?.() || "-", color: "text-blue-400" },
+    { icon: Shield, label: "Bans (7d)", value: stats?.last7dModerations, color: "text-green-400", fallback: STAT_FALLBACKS.last7dModerations },
+    { icon: Shield, label: "Total Bans", value: stats?.moderations, color: "text-blue-400", fallback: STAT_FALLBACKS.moderations },
+    { icon: Server, label: "Triggered Servers (7d)", value: stats?.last7dEngagedGuilds, color: "text-primary", fallback: STAT_FALLBACKS.last7dEngagedGuilds },
+    { icon: Server, label: "Total Servers", value: stats?.guilds, color: "text-blue-400", fallback: STAT_FALLBACKS.guilds },
   ];
 
-  const chartData = stats.dailyStats?.map(stat => ({
+  const chartData = stats?.dailyStats?.map(stat => ({
     date: new Date(stat.date).toLocaleDateString("en-US", { month: "short", day: "numeric" }),
     bans: stat.moderations,
     servers: stat.engagedGuilds,
   }));
-
-  // if (!chartData.length) return null;
 
   return (
     <section id="stats" className="py-16 md:py-24">
@@ -56,8 +47,7 @@ export function LiveStats() {
                       {stat.label}
                     </p>
                     <p className="text-xl font-bold text-foreground">
-                      <AnimatedStatValue value={stat.value} />
-                      {/* {stat.value} */}
+                      <StatValue value={stat.value} fallback={stat.fallback} />
                     </p>
                   </div>
                 </div>

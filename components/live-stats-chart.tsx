@@ -10,12 +10,12 @@ import {
   CartesianGrid,
   ReferenceLine,
 } from "recharts";
-import { RawStats } from "./stats-context";
+import { abbreviateNumber, formatNumber } from "@/lib/stats-format";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 
 export function LiveStatsChart({ data }: {
-  data: {
+  data?: {
     date: string;
     bans: number;
     servers: number;
@@ -53,9 +53,7 @@ export function LiveStatsChart({ data }: {
           tick={{ fill: "#4ade80B3", fontSize: 12 }}
           axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
           tickLine={false}
-          tickFormatter={(value) =>
-            value >= 1000 ? `${value / 1000}k` : value
-          }
+          tickFormatter={abbreviateNumber}
           hide={isMobile}
         />
         <YAxis
@@ -65,9 +63,7 @@ export function LiveStatsChart({ data }: {
           tick={{ fill: "#f59e0bB3", fontSize: 12 }}
           axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
           tickLine={false}
-          tickFormatter={(value) =>
-            value >= 1000 ? `${value / 1000}k` : value
-          }
+          tickFormatter={abbreviateNumber}
           hide={isMobile}
         />
         <ReferenceLine xAxisId="boring" x={1} yAxisId={"left"} strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" strokeWidth={1} />
@@ -79,7 +75,8 @@ export function LiveStatsChart({ data }: {
             color: "#fff",
           }}
           labelStyle={{ color: "#fff", fontWeight: "bold" }}
-          formatter={(value) => value.toLocaleString()}
+          formatter={(value) => formatNumber(value as number)}
+          separator=": "
         />
         <Line
           yAxisId="left"

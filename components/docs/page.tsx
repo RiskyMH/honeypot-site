@@ -19,23 +19,24 @@ import {
   DocsLink,
 } from "./markdown"
 import { DISCORD_INVITE_URL, GITHUB_REPO_URL, DISCORD_BOT_INVITE_URL } from "@/lib/constants"
+import { STAT_FALLBACKS } from "@/lib/stats-format"
 
 const stats = [
   {
     icon: Users,
-    value: "85k+",
+    value: STAT_FALLBACKS.guilds,
     label: "Servers",
     live: false,
   },
   {
     icon: Ban,
-    value: "450k+",
+    value: STAT_FALLBACKS.moderations,
     label: "Bans",
     live: false,
   },
   {
     icon: UserPlus2Icon,
-    value: "100m+",
+    value: STAT_FALLBACKS.members,
     label: "Members",
     live: false,
   },
