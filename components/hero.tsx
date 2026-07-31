@@ -162,6 +162,7 @@ export function Hero() {
                   <div>
                     <div className="flex items-center gap-1">
                       <span className="text-sm font-medium text-foreground">
+                        <span className="sr-only">{"Compromised Account "}</span>
                         Spammer
                       </span>
                       <span className="text-xs text-muted-foreground">
@@ -169,7 +170,9 @@ export function Hero() {
                       </span>
                     </div>
                     <p className="text-xs text-muted-foreground">
-                      Buy Nitro for free! $$
+                      Get some free crypto
+                      <br />{" "}
+                      from MrBeast! $$
                     </p>
                   </div>
                   <div className="ml-2 flex size-5 items-center justify-center rounded-full bg-red-500">
@@ -179,7 +182,7 @@ export function Hero() {
               </div>
 
               {/* Honeypot response - middle right */}
-              <div className="absolute -right-4 top-24 rounded-lg border border-border bg-[#1a1d21] p-3 ps-4 shadow-xl md:-right-46 max-lg:hidden">
+              <div className="absolute -right-4 top-26 rounded-lg border border-border bg-[#1a1d21] p-3 ps-4 shadow-xl md:-right-46 max-lg:hidden">
                 <div className="flex items-start gap-2">
                   {/* <Image
                     src="/honeypot.svg"
@@ -203,7 +206,7 @@ export function Hero() {
                       messages deleted.
                     </p>
                   </div>
-                  <div className="ml-2 flex size-5 items-center justify-center rounded-full bg-green-500 mt-auto">
+                  <div className="ml-2 flex size-5 items-center justify-center rounded-full bg-green-500 my-auto">
                     <Check className="size-3 text-white" />
                   </div>
                 </div>
