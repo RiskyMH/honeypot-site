@@ -13,9 +13,9 @@ export function formatStat(n: number | null | undefined, fallback = "—"): stri
 }
 
 export const STAT_FALLBACKS = {
-  guilds: "85k+",
-  moderations: "450k+",
+  guilds: "90k+",
+  moderations: "500k+",
   members: "100M+",
-  last7dModerations: "40k+",
+  last7dModerations: "50k+",
   last7dEngagedGuilds: "10k+",
 } as const;
