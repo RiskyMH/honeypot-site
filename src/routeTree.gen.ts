@@ -9,36 +9,31 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './app/__root'
-import { Route as R404RouteImport } from './app/404'
 import { Route as IndexRouteImport } from './app/index'
-import { Route as DocsIndexRouteImport } from './app/docs/index'
+import { Route as R404RouteImport } from './app/404'
 import { Route as BlogIndexRouteImport } from './app/blog/index'
-import { Route as DocsTipsRouteImport } from './app/docs/tips'
-import { Route as DocsSetupGuideRouteImport } from './app/docs/setup-guide'
-import { Route as DocsSelfHostingRouteImport } from './app/docs/self-hosting'
-import { Route as DocsHowItWorksRouteImport } from './app/docs/how-it-works'
-import { Route as DocsFaqRouteImport } from './app/docs/faq'
-import { Route as DocsConfigurationRouteImport } from './app/docs/configuration'
-import { Route as DocsCommandsRouteImport } from './app/docs/commands'
-import { Route as BlogWhatIsAHoneypotRouteImport } from './app/blog/what-is-a-honeypot'
-import { Route as BlogHowHoneypotSystemsWorkRouteImport } from './app/blog/how-honeypot-systems-work'
 import { Route as BlogDiscordAccountHackedRecoveryRouteImport } from './app/blog/discord-account-hacked-recovery'
-import { Route as DocsLegalTermsRouteImport } from './app/docs/legal/terms'
+import { Route as BlogHowHoneypotSystemsWorkRouteImport } from './app/blog/how-honeypot-systems-work'
+import { Route as BlogWhatIsAHoneypotRouteImport } from './app/blog/what-is-a-honeypot'
+import { Route as DocsIndexRouteImport } from './app/docs/index'
+import { Route as DocsCommandsRouteImport } from './app/docs/commands'
+import { Route as DocsConfigurationRouteImport } from './app/docs/configuration'
+import { Route as DocsFaqRouteImport } from './app/docs/faq'
+import { Route as DocsHowItWorksRouteImport } from './app/docs/how-it-works'
+import { Route as DocsSelfHostingRouteImport } from './app/docs/self-hosting'
+import { Route as DocsSetupGuideRouteImport } from './app/docs/setup-guide'
+import { Route as DocsTipsRouteImport } from './app/docs/tips'
 import { Route as DocsLegalPrivacyRouteImport } from './app/docs/legal/privacy'
+import { Route as DocsLegalTermsRouteImport } from './app/docs/legal/terms'
 
-const R404Route = R404RouteImport.update({
-  id: '/404',
-  path: '/404',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsIndexRoute = DocsIndexRouteImport.update({
-  id: '/docs/',
-  path: '/docs/',
+const R404Route = R404RouteImport.update({
+  id: '/404',
+  path: '/404',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -46,34 +41,26 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsTipsRoute = DocsTipsRouteImport.update({
-  id: '/docs/tips',
-  path: '/docs/tips',
+const BlogDiscordAccountHackedRecoveryRoute =
+  BlogDiscordAccountHackedRecoveryRouteImport.update({
+    id: '/blog/discord-account-hacked-recovery',
+    path: '/blog/discord-account-hacked-recovery',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogHowHoneypotSystemsWorkRoute =
+  BlogHowHoneypotSystemsWorkRouteImport.update({
+    id: '/blog/how-honeypot-systems-work',
+    path: '/blog/how-honeypot-systems-work',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogWhatIsAHoneypotRoute = BlogWhatIsAHoneypotRouteImport.update({
+  id: '/blog/what-is-a-honeypot',
+  path: '/blog/what-is-a-honeypot',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsSetupGuideRoute = DocsSetupGuideRouteImport.update({
-  id: '/docs/setup-guide',
-  path: '/docs/setup-guide',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsSelfHostingRoute = DocsSelfHostingRouteImport.update({
-  id: '/docs/self-hosting',
-  path: '/docs/self-hosting',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsHowItWorksRoute = DocsHowItWorksRouteImport.update({
-  id: '/docs/how-it-works',
-  path: '/docs/how-it-works',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsFaqRoute = DocsFaqRouteImport.update({
-  id: '/docs/faq',
-  path: '/docs/faq',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsConfigurationRoute = DocsConfigurationRouteImport.update({
-  id: '/docs/configuration',
-  path: '/docs/configuration',
+const DocsIndexRoute = DocsIndexRouteImport.update({
+  id: '/docs/',
+  path: '/docs/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsCommandsRoute = DocsCommandsRouteImport.update({
@@ -81,31 +68,44 @@ const DocsCommandsRoute = DocsCommandsRouteImport.update({
   path: '/docs/commands',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogWhatIsAHoneypotRoute = BlogWhatIsAHoneypotRouteImport.update({
-  id: '/blog/what-is-a-honeypot',
-  path: '/blog/what-is-a-honeypot',
+const DocsConfigurationRoute = DocsConfigurationRouteImport.update({
+  id: '/docs/configuration',
+  path: '/docs/configuration',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogHowHoneypotSystemsWorkRoute =
-  BlogHowHoneypotSystemsWorkRouteImport.update({
-    id: '/blog/how-honeypot-systems-work',
-    path: '/blog/how-honeypot-systems-work',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const BlogDiscordAccountHackedRecoveryRoute =
-  BlogDiscordAccountHackedRecoveryRouteImport.update({
-    id: '/blog/discord-account-hacked-recovery',
-    path: '/blog/discord-account-hacked-recovery',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DocsLegalTermsRoute = DocsLegalTermsRouteImport.update({
-  id: '/docs/legal/terms',
-  path: '/docs/legal/terms',
+const DocsFaqRoute = DocsFaqRouteImport.update({
+  id: '/docs/faq',
+  path: '/docs/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsHowItWorksRoute = DocsHowItWorksRouteImport.update({
+  id: '/docs/how-it-works',
+  path: '/docs/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsSelfHostingRoute = DocsSelfHostingRouteImport.update({
+  id: '/docs/self-hosting',
+  path: '/docs/self-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsSetupGuideRoute = DocsSetupGuideRouteImport.update({
+  id: '/docs/setup-guide',
+  path: '/docs/setup-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsTipsRoute = DocsTipsRouteImport.update({
+  id: '/docs/tips',
+  path: '/docs/tips',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsLegalPrivacyRoute = DocsLegalPrivacyRouteImport.update({
   id: '/docs/legal/privacy',
   path: '/docs/legal/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsLegalTermsRoute = DocsLegalTermsRouteImport.update({
+  id: '/docs/legal/terms',
+  path: '/docs/legal/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -242,13 +242,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/404': {
-      id: '/404'
-      path: '/404'
-      fullPath: '/404'
-      preLoaderRoute: typeof R404RouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -256,11 +249,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/': {
-      id: '/docs/'
-      path: '/docs'
-      fullPath: '/docs/'
-      preLoaderRoute: typeof DocsIndexRouteImport
+    '/404': {
+      id: '/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof R404RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -270,60 +263,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/tips': {
-      id: '/docs/tips'
-      path: '/docs/tips'
-      fullPath: '/docs/tips'
-      preLoaderRoute: typeof DocsTipsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/setup-guide': {
-      id: '/docs/setup-guide'
-      path: '/docs/setup-guide'
-      fullPath: '/docs/setup-guide'
-      preLoaderRoute: typeof DocsSetupGuideRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/self-hosting': {
-      id: '/docs/self-hosting'
-      path: '/docs/self-hosting'
-      fullPath: '/docs/self-hosting'
-      preLoaderRoute: typeof DocsSelfHostingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/how-it-works': {
-      id: '/docs/how-it-works'
-      path: '/docs/how-it-works'
-      fullPath: '/docs/how-it-works'
-      preLoaderRoute: typeof DocsHowItWorksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/faq': {
-      id: '/docs/faq'
-      path: '/docs/faq'
-      fullPath: '/docs/faq'
-      preLoaderRoute: typeof DocsFaqRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/configuration': {
-      id: '/docs/configuration'
-      path: '/docs/configuration'
-      fullPath: '/docs/configuration'
-      preLoaderRoute: typeof DocsConfigurationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/commands': {
-      id: '/docs/commands'
-      path: '/docs/commands'
-      fullPath: '/docs/commands'
-      preLoaderRoute: typeof DocsCommandsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog/what-is-a-honeypot': {
-      id: '/blog/what-is-a-honeypot'
-      path: '/blog/what-is-a-honeypot'
-      fullPath: '/blog/what-is-a-honeypot'
-      preLoaderRoute: typeof BlogWhatIsAHoneypotRouteImport
+    '/blog/discord-account-hacked-recovery': {
+      id: '/blog/discord-account-hacked-recovery'
+      path: '/blog/discord-account-hacked-recovery'
+      fullPath: '/blog/discord-account-hacked-recovery'
+      preLoaderRoute: typeof BlogDiscordAccountHackedRecoveryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/how-honeypot-systems-work': {
@@ -333,18 +277,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogHowHoneypotSystemsWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/discord-account-hacked-recovery': {
-      id: '/blog/discord-account-hacked-recovery'
-      path: '/blog/discord-account-hacked-recovery'
-      fullPath: '/blog/discord-account-hacked-recovery'
-      preLoaderRoute: typeof BlogDiscordAccountHackedRecoveryRouteImport
+    '/blog/what-is-a-honeypot': {
+      id: '/blog/what-is-a-honeypot'
+      path: '/blog/what-is-a-honeypot'
+      fullPath: '/blog/what-is-a-honeypot'
+      preLoaderRoute: typeof BlogWhatIsAHoneypotRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/legal/terms': {
-      id: '/docs/legal/terms'
-      path: '/docs/legal/terms'
-      fullPath: '/docs/legal/terms'
-      preLoaderRoute: typeof DocsLegalTermsRouteImport
+    '/docs/': {
+      id: '/docs/'
+      path: '/docs'
+      fullPath: '/docs/'
+      preLoaderRoute: typeof DocsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/commands': {
+      id: '/docs/commands'
+      path: '/docs/commands'
+      fullPath: '/docs/commands'
+      preLoaderRoute: typeof DocsCommandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/configuration': {
+      id: '/docs/configuration'
+      path: '/docs/configuration'
+      fullPath: '/docs/configuration'
+      preLoaderRoute: typeof DocsConfigurationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/faq': {
+      id: '/docs/faq'
+      path: '/docs/faq'
+      fullPath: '/docs/faq'
+      preLoaderRoute: typeof DocsFaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/how-it-works': {
+      id: '/docs/how-it-works'
+      path: '/docs/how-it-works'
+      fullPath: '/docs/how-it-works'
+      preLoaderRoute: typeof DocsHowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/self-hosting': {
+      id: '/docs/self-hosting'
+      path: '/docs/self-hosting'
+      fullPath: '/docs/self-hosting'
+      preLoaderRoute: typeof DocsSelfHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/setup-guide': {
+      id: '/docs/setup-guide'
+      path: '/docs/setup-guide'
+      fullPath: '/docs/setup-guide'
+      preLoaderRoute: typeof DocsSetupGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/tips': {
+      id: '/docs/tips'
+      path: '/docs/tips'
+      fullPath: '/docs/tips'
+      preLoaderRoute: typeof DocsTipsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/legal/privacy': {
@@ -352,6 +345,13 @@ declare module '@tanstack/react-router' {
       path: '/docs/legal/privacy'
       fullPath: '/docs/legal/privacy'
       preLoaderRoute: typeof DocsLegalPrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/legal/terms': {
+      id: '/docs/legal/terms'
+      path: '/docs/legal/terms'
+      fullPath: '/docs/legal/terms'
+      preLoaderRoute: typeof DocsLegalTermsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
