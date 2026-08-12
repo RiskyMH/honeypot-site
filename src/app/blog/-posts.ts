@@ -6,7 +6,7 @@ export type BlogSection = {
 
 export type BlogPostMeta = {
   slug: string
-  path: '/blog/what-is-a-honeypot' | '/blog/how-honeypot-systems-work' | '/blog/discord-account-hacked-recovery'
+  path: '/blog/what-is-a-honeypot' | '/blog/how-honeypot-systems-work' | '/blog/discord-account-hacked-recovery' | '/blog/why-im-not-worried-about-spam-bots-getting-smarter'
   title: string
   description: string
   category: string
@@ -124,6 +124,25 @@ const metaRegistry = ([
       },
       { id: 'stay-skeptical-of-urgency', title: 'Stay skeptical of urgency' },
       { id: 'quick-reference-checklist', title: 'Quick reference checklist' },
+    ],
+  },
+  {
+    slug: 'why-im-not-worried-about-spam-bots-getting-smarter',
+    path: '/blog/why-im-not-worried-about-spam-bots-getting-smarter',
+    title: "Why I'm Not Worried About Spam Bots Getting Smarter",
+    description:
+      'Honeypot does not need to win the arms race forever. It just needs to keep making the cheapest attacks not worth it.',
+    category: 'Engineering',
+    date: 'August 12, 2026',
+    dateCanonical: '2026-08-12',
+    readTime: '8 min read',
+    sections: [
+      { id: 'how-we-got-here', title: 'How we got here' },
+      { id: 'the-bots-used-to-be-really-simple', title: 'The bots used to be really simple' },
+      { id: 'why-that-doesnt-worry-me', title: "Why that doesn't worry me" },
+      { id: 'what-actually-keeps-me-busy', title: 'What actually keeps me busy' },
+      { id: 'what-im-considering-next', title: "What I'm considering next" },
+      { id: 'at-the-end-of-the-day', title: 'At the end of the day' },
     ],
   },
 ] satisfies BlogPostMeta[]).reverse();
