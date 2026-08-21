@@ -16,6 +16,6 @@ export const STAT_FALLBACKS = {
   guilds: "100k+",
   moderations: "600k+",
   members: "100M+",
-  last7dModerations: "60k+",
-  last7dEngagedGuilds: "10k+",
+  last7dModerations: "70k+",
+  last7dEngagedGuilds: "15k+",
 } as const;
