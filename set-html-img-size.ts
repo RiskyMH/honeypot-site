@@ -102,7 +102,7 @@ async function lockImageAspectRatios() {
             });
 
             // Transform the output via streaming allocation and write it back to disk
-            const optimizedHtml = rewriter.transform(htmlContent);
+            const optimizedHtml = rewriter.transform(new Response(htmlContent));
             await Bun.write(filePath, optimizedHtml);
 
             console.log(`⚡ Fixed image CLS for: ./${path.relative(DIST_DIR, filePath)}`);
