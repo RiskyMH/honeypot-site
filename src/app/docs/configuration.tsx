@@ -134,7 +134,7 @@ function RouteComponent() {
       />
       <DocsCodeBlock
         language="Log Message"
-        code={`{{user:mention}} was {{action:text}} for triggering the honeypot in {{honeypot:channel:mention}}\n-# User ID: \`{{user:id}}\``}
+        code={`{{user:mention}} was {{action:text}} for triggering the honeypot in {{honeypot:channel:mention}}\n-# User ID: \`{{user:id}}\` • Created: {{user:created}} • Joined: {{member:joined}}`}
       />
 
     </DocsSection>
