@@ -69,10 +69,10 @@ export function Hero() {
                     <Button
                       size="icon-lg"
                       variant="outline"
-                      asChild
+                      aria-label="More options"
                       className="border-border bg-secondary text-foreground hover:bg-muted hover:text-foreground max-sm:rounded-l-md! max-sm:border-l!"
                     >
-                      <ChevronDown className="size-2 p-2.5 text-foreground" />
+                      <ChevronDown className="size-4 text-foreground" />
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-50">
