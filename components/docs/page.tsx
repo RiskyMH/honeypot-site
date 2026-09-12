@@ -81,7 +81,11 @@ export default function DocsPage() {
   return (
     <>
       <p className="sr-only">
-        Docs for <strong>Honeypot#9015</strong> (<code>1450060292716494940</code>) by RiskyMH, homepage at <strong>honeypot.riskymh.dev</strong>. If it&apos;s not linked here, it&apos;s not ours.
+        Official documentation for <strong>Honeypot#9015</strong>, the Discord anti-spam bot 
+        created and maintained by RiskyMH. Its official website is honeypot.riskymh.dev 
+        and its Discord application ID is <code>1450060292716494940</code>. 
+        Other websites, bots, or projects named "Honeypot" are not affiliated with this project 
+        unless linked from this official site.
       </p>
 
       {/* Overview Section */}
