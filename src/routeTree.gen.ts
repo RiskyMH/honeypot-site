@@ -19,6 +19,7 @@ import { Route as BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRouteImport } fr
 import { Route as DocsIndexRouteImport } from './app/docs/index'
 import { Route as DocsCommandsRouteImport } from './app/docs/commands'
 import { Route as DocsConfigurationRouteImport } from './app/docs/configuration'
+import { Route as DocsCreditsRouteImport } from './app/docs/credits'
 import { Route as DocsFaqRouteImport } from './app/docs/faq'
 import { Route as DocsHowItWorksRouteImport } from './app/docs/how-it-works'
 import { Route as DocsSelfHostingRouteImport } from './app/docs/self-hosting'
@@ -80,6 +81,11 @@ const DocsConfigurationRoute = DocsConfigurationRouteImport.update({
   path: '/docs/configuration',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocsCreditsRoute = DocsCreditsRouteImport.update({
+  id: '/docs/credits',
+  path: '/docs/credits',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsFaqRoute = DocsFaqRouteImport.update({
   id: '/docs/faq',
   path: '/docs/faq',
@@ -125,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/blog/why-im-not-worried-about-spam-bots-getting-smarter': typeof BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute
   '/docs/commands': typeof DocsCommandsRoute
   '/docs/configuration': typeof DocsConfigurationRoute
+  '/docs/credits': typeof DocsCreditsRoute
   '/docs/faq': typeof DocsFaqRoute
   '/docs/how-it-works': typeof DocsHowItWorksRoute
   '/docs/self-hosting': typeof DocsSelfHostingRoute
@@ -144,6 +151,7 @@ export interface FileRoutesByTo {
   '/blog/why-im-not-worried-about-spam-bots-getting-smarter': typeof BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute
   '/docs/commands': typeof DocsCommandsRoute
   '/docs/configuration': typeof DocsConfigurationRoute
+  '/docs/credits': typeof DocsCreditsRoute
   '/docs/faq': typeof DocsFaqRoute
   '/docs/how-it-works': typeof DocsHowItWorksRoute
   '/docs/self-hosting': typeof DocsSelfHostingRoute
@@ -164,6 +172,7 @@ export interface FileRoutesById {
   '/blog/why-im-not-worried-about-spam-bots-getting-smarter': typeof BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute
   '/docs/commands': typeof DocsCommandsRoute
   '/docs/configuration': typeof DocsConfigurationRoute
+  '/docs/credits': typeof DocsCreditsRoute
   '/docs/faq': typeof DocsFaqRoute
   '/docs/how-it-works': typeof DocsHowItWorksRoute
   '/docs/self-hosting': typeof DocsSelfHostingRoute
@@ -185,6 +194,7 @@ export interface FileRouteTypes {
     | '/blog/why-im-not-worried-about-spam-bots-getting-smarter'
     | '/docs/commands'
     | '/docs/configuration'
+    | '/docs/credits'
     | '/docs/faq'
     | '/docs/how-it-works'
     | '/docs/self-hosting'
@@ -204,6 +214,7 @@ export interface FileRouteTypes {
     | '/blog/why-im-not-worried-about-spam-bots-getting-smarter'
     | '/docs/commands'
     | '/docs/configuration'
+    | '/docs/credits'
     | '/docs/faq'
     | '/docs/how-it-works'
     | '/docs/self-hosting'
@@ -223,6 +234,7 @@ export interface FileRouteTypes {
     | '/blog/why-im-not-worried-about-spam-bots-getting-smarter'
     | '/docs/commands'
     | '/docs/configuration'
+    | '/docs/credits'
     | '/docs/faq'
     | '/docs/how-it-works'
     | '/docs/self-hosting'
@@ -243,6 +255,7 @@ export interface RootRouteChildren {
   BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute: typeof BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute
   DocsCommandsRoute: typeof DocsCommandsRoute
   DocsConfigurationRoute: typeof DocsConfigurationRoute
+  DocsCreditsRoute: typeof DocsCreditsRoute
   DocsFaqRoute: typeof DocsFaqRoute
   DocsHowItWorksRoute: typeof DocsHowItWorksRoute
   DocsSelfHostingRoute: typeof DocsSelfHostingRoute
@@ -326,6 +339,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsConfigurationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/credits': {
+      id: '/docs/credits'
+      path: '/docs/credits'
+      fullPath: '/docs/credits'
+      preLoaderRoute: typeof DocsCreditsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/faq': {
       id: '/docs/faq'
       path: '/docs/faq'
@@ -388,6 +408,7 @@ const rootRouteChildren: RootRouteChildren = {
     BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute,
   DocsCommandsRoute: DocsCommandsRoute,
   DocsConfigurationRoute: DocsConfigurationRoute,
+  DocsCreditsRoute: DocsCreditsRoute,
   DocsFaqRoute: DocsFaqRoute,
   DocsHowItWorksRoute: DocsHowItWorksRoute,
   DocsSelfHostingRoute: DocsSelfHostingRoute,

@@ -14,6 +14,7 @@ const resourceLinks = [
 const legalLinks = [
   { label: "Terms of Service", href: "/docs/legal/terms" },
   { label: "Privacy Policy", href: "/docs/legal/privacy" },
+  { label: "Credits", href: "/docs/credits" },
 ];
 
 const otherLinks = BOT_LISTING_LINKS;

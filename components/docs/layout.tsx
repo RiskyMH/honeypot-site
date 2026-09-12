@@ -11,6 +11,7 @@ import {
   Command,
   Scale,
   FileCheck,
+  Heart,
   ExternalLink,
   InfoIcon,
   Menu,
@@ -72,6 +73,7 @@ const sidebarNav = [
     items: [
       { name: "Privacy Policy", icon: Scale, href: "/docs/legal/privacy" },
       { name: "Terms of Service", icon: FileCheck, href: "/docs/legal/terms" },
+      { name: "Credits", icon: Heart, href: "/docs/credits" },
     ],
   },
 ]
@@ -332,6 +334,11 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                     <li>
                       <Link to="/docs/legal/terms" className="hover:text-white">
                         Terms of Service
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/docs/credits" className="hover:text-white">
+                        Credits
                       </Link>
                     </li>
                   </ul>
