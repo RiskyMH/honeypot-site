@@ -80,14 +80,6 @@ const whatWeDontCollect = [
 export default function DocsPage() {
   return (
     <>
-      <p className="sr-only">
-        Official documentation for <strong>Honeypot#9015</strong>, the Discord anti-spam bot 
-        created and maintained by RiskyMH. Its official website is honeypot.riskymh.dev 
-        and its Discord application ID is <code>1450060292716494940</code>. 
-        Other websites, bots, or projects named "Honeypot" are not affiliated with this project 
-        unless linked from this official site.
-      </p>
-
       {/* Overview Section */}
       <section className="mb-12">
         <div className="flex items-start justify-between">
@@ -340,6 +332,18 @@ export default function DocsPage() {
             </Button>
           </div>
         </div>
+      </section>
+
+      <section className="sr-only">
+        <p>
+          Official documentation for <strong>Honeypot#9015</strong>, the Discord anti-spam bot
+          created and maintained by RiskyMH. Its official website is honeypot.riskymh.dev
+          and its Discord application ID is <code>1450060292716494940</code>.
+        </p>
+        <p>
+          Other websites, bots, or projects named "Honeypot" are not affiliated with this project
+          unless linked from this official site.
+        </p>
       </section>
     </>
   )
