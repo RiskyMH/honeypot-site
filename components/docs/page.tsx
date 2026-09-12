@@ -80,6 +80,10 @@ const whatWeDontCollect = [
 export default function DocsPage() {
   return (
     <>
+      <p className="sr-only">
+        Docs for <strong>Honeypot#9015</strong> (<code>1450060292716494940</code>) by RiskyMH, homepage at <strong>honeypot.riskymh.dev</strong>. If it&apos;s not linked here, it&apos;s not ours.
+      </p>
+
       {/* Overview Section */}
       <section className="mb-12">
         <div className="flex items-start justify-between">
@@ -175,7 +179,7 @@ export default function DocsPage() {
       </DocsSection>
 
       {/* Getting Started */}
-      < DocsSection title="Getting Started" >
+      <DocsSection title="Getting Started">
         <DocsOl>
           <span>
             <DocsLink href={DISCORD_BOT_INVITE_URL}>
@@ -229,10 +233,10 @@ export default function DocsPage() {
             <ChevronRight className="ml-1 inline h-3 w-3" />
           </DocsLink>
         </p>
-      </DocsSection >
+      </DocsSection>
 
       {/* Privacy Policy */}
-      < DocsSection title="Privacy Policy" >
+      <DocsSection title="Privacy Policy">
         <DocsP>
           Your privacy matters. Honeypot is designed to be minimal and
           transparent.
@@ -279,10 +283,10 @@ export default function DocsPage() {
           for more details.
           <ChevronRight className="ml-1 inline h-3 w-3 text-amber-500" />
         </p>
-      </DocsSection >
+      </DocsSection>
 
       {/* Still have questions */}
-      < section className="mb-12" >
+      <section className="mb-12">
         <div className="flex max-sm:flex-col gap-y-5 items-center justify-between rounded-xl border border-white/10 bg-white/5 p-6 overflow-ellipsis">
           <div className="flex items-center gap-4">
             <img
