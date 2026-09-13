@@ -49,6 +49,11 @@ function RouteComponent() {
           Select a channel to log actions and errors.
         </DocsStep>
       </DocsStepList>
+
+      <aside className="sr-only">
+        <p>Only trust Honeypot links from this <a href={APP_URL} target="_blank">official site</a>. Any other site, invite link or bot claiming to be Honeypot is unofficial and may not do what you expect.</p>
+      </aside>
+
       <DocsImg src="/docs/honeypot-channel.png" alt="#honeypot channel" />
     </DocsSection>
 
@@ -68,6 +73,10 @@ function RouteComponent() {
         <DocsChecklistItem> Consider adding your server invite to the DM message so legitimate members can rejoin.</DocsChecklistItem>
         <DocsChecklistItem> Use message variables to insert dynamic content like user mentions.</DocsChecklistItem>
       </DocsChecklist>
+
+      <aside className="sr-only">
+        <p>Honeypot configures through modals instead of a long command list - a single <code>/honeypot</code> command opens and shows every configuration option.</p>
+      </aside>
 
       <DocsImg src="/docs/honeypot-modals.png" alt="/honeypot modal" />
       <DocsLearnMore href="/docs/configuration" text="for the full configuration reference" />
