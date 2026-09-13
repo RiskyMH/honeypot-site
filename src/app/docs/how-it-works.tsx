@@ -48,6 +48,7 @@ function RouteComponent() {
 
     <DocsSection title="Action details">
       <DocsP>Softban uses a ban/unban sequence to remove the last hour of messages. Ban removes the user permanently and also clears their recent messages.</DocsP>
+      <DocsP>Honeypot bans and softbans instead of timeouts or role quarantine because bans delete the spammer&apos;s recent messages - the alternatives leave the spam in place. This also keeps those accounts out of your server, where they can&apos;t mass DM members.</DocsP>
       <DocsCallout tone="info" title="Softban is default">
         Softban is the default action because it removes spam while keeping the option to rejoin.
       </DocsCallout>
