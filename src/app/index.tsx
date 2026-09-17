@@ -9,7 +9,7 @@ import { LiveStats } from '../../components/live-stats'
 import { Footer } from '../../components/footer'
 import { StatsProvider } from '../../components/stats-context'
 import { buildHead } from '@/lib/utils'
-import { DISCORD_BOT_INVITE_URL, DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_CLIENT_ID, GITHUB_REPO_URL, GITHUB_PROFILE_URL, OWNER_URL, APP_URL, DISCORD_SERVER_URL, STATS_URL } from '@/lib/constants'
+import { DISCORD_BOT_INVITE_URL, DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_CLIENT_ID, GITHUB_REPO_URL, GITHUB_PROFILE_URL, OWNER_URL, APP_URL, DISCORD_SERVER_URL, STATS_URL, DISCORD_INVITE_URL } from '@/lib/constants'
 
 
 
@@ -148,7 +148,62 @@ export const Route = createFileRoute('/')({
             }
           ]
         }),
-      }
+      },
+      {
+        id: 'discord:component-embed',
+        type: 'application/json',
+        children: JSON.stringify({
+          "component": {
+            "type": 17, // ComponentType.CONTAINER
+            "accent_color": 0xf2943c,
+            "components": [
+              {
+                "type": 9, // ComponentType.SECTION
+                "components": [
+                  {
+                    "type": 10, // ComponentType.TEXT_DISPLAY
+                    "content":`## ${title}\n${description}`,
+                  }
+                ],
+                "accessory": {
+                  "type": 11, // ComponentType.THUMBNAIL
+                  "media": {
+                    "url": "https://honeypot.riskymh.dev/honeypot.png",
+                  }
+                }
+              },
+              {
+                "type": 1,  // ComponentType.ACTION_ROW
+                "components": [
+                  {
+                    "type": 2,  // ComponentType.BUTTON
+                    "label": "Invite Bot",
+                    "style": 5,
+                    "url": DISCORD_BOT_INVITE_URL,
+                    "emoji": {
+                      "name": "honeypot",
+                      "id": "1450060724943720600",
+                      "animated": false
+                    }
+                  },
+                  {
+                    "type": 2,  // ComponentType.BUTTON
+                    "label": "Support Server",
+                    "style": 5,
+                    "url": DISCORD_INVITE_URL
+                  },
+                  {
+                    "type": 2,  // ComponentType.BUTTON
+                    "label": "View Docs",
+                    "style": 5,
+                    "url": "https://honeypot.riskymh.dev/docs"
+                  },
+                ]
+              }
+            ]
+          }
+        }),
+      },
     ]
   }),
   component: HomePage,
