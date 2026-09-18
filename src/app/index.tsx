@@ -162,7 +162,7 @@ export const Route = createFileRoute('/')({
                 "components": [
                   {
                     "type": 10, // ComponentType.TEXT_DISPLAY
-                    "content":`## ${title}\n${description}`,
+                    "content":`## [Honeypot](${APP_URL})\n${description}`,
                   }
                 ],
                 "accessory": {
