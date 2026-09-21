@@ -4,8 +4,8 @@ import {
   DocsCallout,
   DocsChecklist,
   DocsChecklistItem,
+  DocsHint,
   DocsImg,
-  DocsImgPlaceholder,
   DocsInlineCode,
   DocsLearnMore,
   DocsLink,
@@ -61,8 +61,20 @@ function RouteComponent() {
       <DocsP>Open the configuration modal with <DocsInlineCode>/honeypot</DocsInlineCode>.</DocsP>
       <DocsChecklist>
         <DocsChecklistItem>Pick the honeypot channel (the trap).</DocsChecklistItem>
-        <DocsChecklistItem>Pick a log channel for actions and errors.</DocsChecklistItem>
-        <DocsChecklistItem>Select Softban, Ban, or Disabled.</DocsChecklistItem>
+        <DocsChecklistItem>
+          Pick a log channel for actions and errors.{" "}
+          <DocsHint label="[can't find channel?]">Discord only shows 25 channels in the select menu — start typing the name to find the rest.</DocsHint>
+        </DocsChecklistItem>
+        <DocsChecklistItem>
+          Select Softban, Ban, or Disabled.{" "}
+          <DocsHint label="[what's the difference?]">
+            <div className="space-y-1.5">
+              <p><span className="font-medium text-white">Softban</span> — bans then immediately unbans to delete recent messages (user can rejoin).</p>
+              <p><span className="font-medium text-white">Ban</span> — permanent ban.</p>
+              <p><span className="font-medium text-white">Disabled</span> — turns the honeypot off completely.</p>
+            </div>
+          </DocsHint>
+        </DocsChecklistItem>
         <DocsChecklistItem>Enable experiments if you want extra protection.</DocsChecklistItem>
       </DocsChecklist>
 

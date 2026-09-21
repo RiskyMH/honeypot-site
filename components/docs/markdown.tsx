@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 
 function hashify(text: string) {
@@ -175,7 +176,7 @@ export function DocsCallout({ tone = "note", title, children }: { tone?: Callout
             <p className={`mb-2 text-xs font-semibold uppercase tracking-wide ${styles.text}`}>
                 {title || styles.label}
             </p>
-            <div className="text-sm text-gray-300">
+            <div className="text-sm text-gray-300 [&_p+_p]:mt-2">
                 {children}
             </div>
         </div>
@@ -344,4 +345,22 @@ export function DocsFaqItem({ id, question, children }: { id?: string; question:
             <div className="text-sm text-gray-400">{children}</div>
         </div>
     )
+}
+
+export function DocsHint({ label, children }: { label: React.ReactNode; children: React.ReactNode }) {
+    return (
+        <HoverCard openDelay={100} closeDelay={100}>
+            <HoverCardTrigger asChild>
+                <button
+                    type="button"
+                    className="cursor-help text-xs font-normal text-gray-500 underline decoration-dotted underline-offset-4 hover:text-amber-500 focus-visible:text-amber-500 focus-visible:outline-none"
+                >
+                    {label}
+                </button>
+            </HoverCardTrigger>
+            <HoverCardContent side="top" align="start" className="w-64 border-white/10 bg-zinc-900 p-3 text-sm leading-relaxed text-gray-300">
+                {children}
+            </HoverCardContent>
+        </HoverCard>
+    );
 }
