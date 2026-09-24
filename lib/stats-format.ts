@@ -18,4 +18,5 @@ export const STAT_FALLBACKS = {
   members: "150M+",
   last7dModerations: "100k+",
   last7dEngagedGuilds: "15k+",
+  githubStars: "300+",
 } as const;

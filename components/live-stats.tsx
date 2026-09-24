@@ -4,7 +4,6 @@ import { Shield, Server } from "lucide-react";
 import { useStats } from "@/components/stats-context";
 import { STAT_FALLBACKS } from "@/lib/stats-format";
 import { lazy, Suspense } from 'react';
-import NumberFlow from "@number-flow/react";
 import { StatValue } from "./stats-bar.js";
 
 const LiveStatsChart = lazy(() => import('./live-stats-chart.js').then(module => ({ default: module.LiveStatsChart })));
