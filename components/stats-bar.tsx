@@ -1,5 +1,5 @@
 "use client"
-import { Users, Clock, Star, ShieldAlert, ArrowUpRight, ArrowDownRight } from "lucide-react";
+import { Users, Clock, Star, ShieldAlert, ArrowUpRight, ArrowDownRight, CodeXml } from "lucide-react";
 
 import { useStats } from "@/components/stats-context";
 import { STAT_FALLBACKS } from "@/lib/stats-format";
@@ -70,7 +70,7 @@ function useGithubStars() {
 
 export function StatsBar() {
   const { stats } = useStats();
-  const githubStars = useGithubStars();
+  // const githubStars = useGithubStars();
 
   const displayStats: Array<{
     icon: typeof Users;
@@ -103,11 +103,11 @@ export function StatsBar() {
         cta: "See more stats",
       },
       {
-        icon: Star,
-        value: stats ? githubStars : null,
-        label: "GitHub Stars",
-        color: "text-yellow-500",
-        fallback: STAT_FALLBACKS.githubStars,
+        icon: CodeXml,
+        value: null,
+        display: "100%",
+        label: "Open Source",
+        color: "text-green-500",
         href: GITHUB_REPO_URL,
         cta: "View on GitHub",
         external: true,
