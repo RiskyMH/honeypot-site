@@ -53,6 +53,7 @@ function RouteComponent() {
         <DocsChecklistItem>Place the honeypot near the top of your channel list. Within top three seems ideal.</DocsChecklistItem>
         <DocsChecklistItem>Avoid the very first slot; some bots may skip channel #1 as a heuristic.</DocsChecklistItem>
         <DocsChecklistItem>Keep it in a public-looking category. Bots may skip channels in categories named "Mod Only" or "Admin" assuming they lack access.</DocsChecklistItem>
+        <DocsChecklistItem>Match slowmode and channel topic/description to nearby channels — some bots look for the lowest slowmode.</DocsChecklistItem>
       </DocsChecklist>
 
       <DocsSubheading title="Make it look lived-in" />

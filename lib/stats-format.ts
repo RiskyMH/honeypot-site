@@ -8,9 +8,7 @@ export function abbreviateNumber(n: number): string {
   return String(n);
 }
 
-export function formatStat(n: number | null | undefined, fallback = "—"): string {
-  return formatNumber(n, fallback);
-}
+export const formatStat = formatNumber;
 
 export const STAT_FALLBACKS = {
   guilds: "150k+",
