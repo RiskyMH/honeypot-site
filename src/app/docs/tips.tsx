@@ -53,7 +53,7 @@ function RouteComponent() {
         <DocsChecklistItem>Place the honeypot near the top of your channel list. Within top three seems ideal.</DocsChecklistItem>
         <DocsChecklistItem>Avoid the very first slot; some bots may skip channel #1 as a heuristic.</DocsChecklistItem>
         <DocsChecklistItem>Keep it in a public-looking category. Bots may skip channels in categories named "Mod Only" or "Admin" assuming they lack access.</DocsChecklistItem>
-        <DocsChecklistItem>Match slowmode and channel topic/description to nearby channels — some bots look for the lowest slowmode.</DocsChecklistItem>
+        <DocsChecklistItem>Match slowmode and channel topic/description to nearby channels. Some bots look for the lowest slowmode.</DocsChecklistItem>
       </DocsChecklist>
 
       <DocsSubheading title="Make it look lived-in" />
@@ -82,6 +82,7 @@ function RouteComponent() {
         <DocsChecklistItem>Keep the bot role above all member roles. If it is below, bans may fail.</DocsChecklistItem>
         <DocsChecklistItem>Set a dedicated log channel so moderators see every action and error.</DocsChecklistItem>
         <DocsChecklistItem>Never use <DocsInlineCode>#general</DocsInlineCode> or any active channel as the honeypot. Real members may get banned.</DocsChecklistItem>
+        <DocsChecklistItem>Keep #honeypot's permissions similar to your other channels. It should be visible and allow sending attachments/embeds.</DocsChecklistItem>
         <DocsChecklistItem>Test with an alt account to verify the DM, action, and log entry all work.</DocsChecklistItem>
       </DocsChecklist>
     </DocsSection>
