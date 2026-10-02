@@ -12,9 +12,9 @@ export const formatStat = formatNumber;
 
 export const STAT_FALLBACKS = {
   guilds: "150k+",
-  moderations: "1.1M+",
+  moderations: "1.2M+",
   members: "150M+",
   last7dModerations: "100k+",
-  last7dEngagedGuilds: "15k+",
+  last7dEngagedGuilds: "20k+",
   githubStars: "300+",
 } as const;
