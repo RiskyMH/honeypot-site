@@ -154,7 +154,7 @@ export function StatsBar() {
                         href={stat.href}
                         target={stat.external ? "_blank" : undefined}
                         rel={stat.external ? "noopener noreferrer" : undefined}
-                        className="hidden md:inline-flex items-center gap-0.5 text-xs font-medium text-primary opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 hover:underline underline-offset-2 ml-auto"
+                        className="hidden xl:inline-flex items-center gap-0.5 text-xs font-medium text-primary opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 hover:underline underline-offset-2 ml-auto"
                       >
                         {stat.cta}
                         {stat.external ? <ArrowUpRight className="size-3" /> : <ArrowDownRight className="size-3" />}
