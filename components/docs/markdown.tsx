@@ -207,12 +207,12 @@ export function DocsStep({ step, title, children }: { step: string; title: strin
     );
 }
 
-export function DocsTable({ headers, rows }: { headers: string[]; rows: Array<Array<React.ReactNode>> }) {
+export function DocsTable({ headers, rows, mobileFullTable = false }: { headers: string[]; rows: Array<Array<React.ReactNode>>; mobileFullTable?: boolean }): React.ReactNode {
     return (
         <div className="mb-6">
             {/* Desktop: proper table */}
-            <div className="hidden sm:block overflow-x-auto rounded-xl border border-white/10 bg-white/5">
-                <table className="w-full">
+            <div className={(mobileFullTable ? "block" : "hidden sm:block") + " overflow-x-auto rounded-xl border border-white/10 bg-white/5"}>
+                <table className="w-full min-w-110">
                     <thead>
                         <tr className="border-b border-white/10 text-left text-xs uppercase tracking-wide text-gray-500">
                             {headers.map((header) => (
@@ -236,18 +236,20 @@ export function DocsTable({ headers, rows }: { headers: string[]; rows: Array<Ar
                 </table>
             </div>
             {/* Mobile: stacked cards */}
-            <div className="space-y-3 sm:hidden">
-                {rows.map((row, idx) => (
-                    <div key={idx} className="rounded-xl border border-white/10 bg-white/5 p-4">
-                        {headers.map((header, headIdx) => (
-                            <div key={header} className={headIdx !== 0 ? "mt-3" : ""}>
-                                <span className="block text-xs uppercase tracking-wide text-gray-500">{header}</span>
-                                <span className="block text-sm text-gray-200 mt-0.5">{row[headIdx]}</span>
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
+            {!mobileFullTable ? (
+                <div className="space-y-3 sm:hidden">
+                    {rows.map((row, idx) => (
+                        <div key={idx} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                            {headers.map((header, headIdx) => (
+                                <div key={header} className={headIdx !== 0 ? "mt-3" : ""}>
+                                    <span className="block text-xs uppercase tracking-wide text-gray-500">{header}</span>
+                                    <span className="block text-sm text-gray-200 mt-0.5">{row[headIdx]}</span>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            ) : null}
         </div>
     );
 }

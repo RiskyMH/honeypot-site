@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './app/index'
 import { Route as R404RouteImport } from './app/404'
 import { Route as BlogIndexRouteImport } from './app/blog/index'
 import { Route as BlogDiscordAccountHackedRecoveryRouteImport } from './app/blog/discord-account-hacked-recovery'
+import { Route as BlogHowDiscordSpamDetectionWorksRouteImport } from './app/blog/how-discord-spam-detection-works'
 import { Route as BlogHowHoneypotSystemsWorkRouteImport } from './app/blog/how-honeypot-systems-work'
 import { Route as BlogWhatIsAHoneypotRouteImport } from './app/blog/what-is-a-honeypot'
 import { Route as BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRouteImport } from './app/blog/why-im-not-worried-about-spam-bots-getting-smarter'
@@ -47,6 +48,12 @@ const BlogDiscordAccountHackedRecoveryRoute =
   BlogDiscordAccountHackedRecoveryRouteImport.update({
     id: '/blog/discord-account-hacked-recovery',
     path: '/blog/discord-account-hacked-recovery',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogHowDiscordSpamDetectionWorksRoute =
+  BlogHowDiscordSpamDetectionWorksRouteImport.update({
+    id: '/blog/how-discord-spam-detection-works',
+    path: '/blog/how-discord-spam-detection-works',
     getParentRoute: () => rootRouteImport,
   } as any)
 const BlogHowHoneypotSystemsWorkRoute =
@@ -126,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/404': typeof R404Route
   '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
+  '/blog/how-discord-spam-detection-works': typeof BlogHowDiscordSpamDetectionWorksRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
   '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/blog/why-im-not-worried-about-spam-bots-getting-smarter': typeof BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute
@@ -146,6 +154,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/404': typeof R404Route
   '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
+  '/blog/how-discord-spam-detection-works': typeof BlogHowDiscordSpamDetectionWorksRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
   '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/blog/why-im-not-worried-about-spam-bots-getting-smarter': typeof BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute
@@ -167,6 +176,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/404': typeof R404Route
   '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
+  '/blog/how-discord-spam-detection-works': typeof BlogHowDiscordSpamDetectionWorksRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
   '/blog/what-is-a-honeypot': typeof BlogWhatIsAHoneypotRoute
   '/blog/why-im-not-worried-about-spam-bots-getting-smarter': typeof BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute
@@ -189,6 +199,7 @@ export interface FileRouteTypes {
     | '/'
     | '/404'
     | '/blog/discord-account-hacked-recovery'
+    | '/blog/how-discord-spam-detection-works'
     | '/blog/how-honeypot-systems-work'
     | '/blog/what-is-a-honeypot'
     | '/blog/why-im-not-worried-about-spam-bots-getting-smarter'
@@ -209,6 +220,7 @@ export interface FileRouteTypes {
     | '/'
     | '/404'
     | '/blog/discord-account-hacked-recovery'
+    | '/blog/how-discord-spam-detection-works'
     | '/blog/how-honeypot-systems-work'
     | '/blog/what-is-a-honeypot'
     | '/blog/why-im-not-worried-about-spam-bots-getting-smarter'
@@ -229,6 +241,7 @@ export interface FileRouteTypes {
     | '/'
     | '/404'
     | '/blog/discord-account-hacked-recovery'
+    | '/blog/how-discord-spam-detection-works'
     | '/blog/how-honeypot-systems-work'
     | '/blog/what-is-a-honeypot'
     | '/blog/why-im-not-worried-about-spam-bots-getting-smarter'
@@ -250,6 +263,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   R404Route: typeof R404Route
   BlogDiscordAccountHackedRecoveryRoute: typeof BlogDiscordAccountHackedRecoveryRoute
+  BlogHowDiscordSpamDetectionWorksRoute: typeof BlogHowDiscordSpamDetectionWorksRoute
   BlogHowHoneypotSystemsWorkRoute: typeof BlogHowHoneypotSystemsWorkRoute
   BlogWhatIsAHoneypotRoute: typeof BlogWhatIsAHoneypotRoute
   BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute: typeof BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute
@@ -295,6 +309,13 @@ declare module '@tanstack/react-router' {
       path: '/blog/discord-account-hacked-recovery'
       fullPath: '/blog/discord-account-hacked-recovery'
       preLoaderRoute: typeof BlogDiscordAccountHackedRecoveryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/how-discord-spam-detection-works': {
+      id: '/blog/how-discord-spam-detection-works'
+      path: '/blog/how-discord-spam-detection-works'
+      fullPath: '/blog/how-discord-spam-detection-works'
+      preLoaderRoute: typeof BlogHowDiscordSpamDetectionWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/how-honeypot-systems-work': {
@@ -402,6 +423,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   R404Route: R404Route,
   BlogDiscordAccountHackedRecoveryRoute: BlogDiscordAccountHackedRecoveryRoute,
+  BlogHowDiscordSpamDetectionWorksRoute: BlogHowDiscordSpamDetectionWorksRoute,
   BlogHowHoneypotSystemsWorkRoute: BlogHowHoneypotSystemsWorkRoute,
   BlogWhatIsAHoneypotRoute: BlogWhatIsAHoneypotRoute,
   BlogWhyImNotWorriedAboutSpamBotsGettingSmarterRoute:

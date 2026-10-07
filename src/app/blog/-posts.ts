@@ -6,7 +6,7 @@ export type BlogSection = {
 
 export type BlogPostMeta = {
   slug: string
-  path: '/blog/what-is-a-honeypot' | '/blog/how-honeypot-systems-work' | '/blog/discord-account-hacked-recovery' | '/blog/why-im-not-worried-about-spam-bots-getting-smarter'
+  path: '/blog/what-is-a-honeypot' | '/blog/how-honeypot-systems-work' | '/blog/discord-account-hacked-recovery' | '/blog/why-im-not-worried-about-spam-bots-getting-smarter' | '/blog/how-discord-spam-detection-works'
   title: string
   description: string
   category: string
@@ -143,6 +143,29 @@ const metaRegistry = ([
       { id: 'what-actually-keeps-me-busy', title: 'What actually keeps me busy' },
       { id: 'what-im-considering-next', title: "What I'm considering next" },
       { id: 'at-the-end-of-the-day', title: 'At the end of the day' },
+    ],
+  },
+  {
+    slug: 'how-discord-spam-detection-works',
+    path: '/blog/how-discord-spam-detection-works',
+    title: 'How Discord Spam Detection Works: From Filters to Honeypots',
+    description:
+      'From keyword filters to honeypot traps: how eight layers of Discord spam detection work and why you should have several at once.',
+    category: 'Security',
+    date: 'October 7, 2026',
+    dateCanonical: '2026-10-07',
+    readTime: '14 min read',
+    sections: [
+      { id: 'people-reports-and-moderator-pings', title: '1. People: reports and moderator pings' },
+      { id: 'keyword-and-link-filters-automod', title: '2. Keyword and link filters: AutoMod' },
+      { id: 'content-matching-have-we-seen-this-before', title: '3. Content matching: have we seen this before?' },
+      { id: 'behaviour-detection-does-this-look-like-spam', title: '4. Behaviour detection: does this look like spam?' },
+      { id: 'verification-can-we-stop-them-before-they-start', title: '5. Verification: can we stop them before they start?' },
+      { id: 'reputation-and-account-signals-who-is-sending-this', title: '6. Reputation and account signals: who is sending this?' },
+      { id: 'honeypots-why-did-they-interact-with-this', title: '7. Honeypots: why did they interact with this?' },
+      { id: 'ai-and-machine-learning-can-we-understand-what-this-is', title: '8. AI and machine learning: can we understand what this is?' },
+      { id: 'why-you-probably-want-several-at-once', title: 'Why you probably want several at once' },
+      { id: 'there-is-no-single-fix', title: 'There is no single fix' },
     ],
   },
 ] satisfies BlogPostMeta[]).reverse();
