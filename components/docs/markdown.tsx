@@ -101,16 +101,17 @@ export function DocsImgPlaceholder({ alt }: { alt: string }) {
     )
 }
 
-export function DocsLink({ href, children }: { href: string, children: React.ReactNode }) {
+export function DocsLink({ href, children, icon, title }: { href: string, children: React.ReactNode, icon?: boolean, title?: string }) {
+    const style = icon ? "inline-flex text-amber-500 hover:text-amber-400" : "text-amber-500 hover:underline";
     if (href.startsWith("https")) {
         return (
-            <a href={href} className="text-amber-500 hover:underline" target="_blank">
+            <a href={href} className={style} target="_blank" title={title}>
                 {children}
             </a>
         )
     }
     return (
-        <Link to={href} className="text-amber-500 hover:underline">
+        <Link to={href} className={style} title={title}>
             {children}
         </Link>
     )

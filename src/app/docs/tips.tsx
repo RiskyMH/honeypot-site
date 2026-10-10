@@ -12,6 +12,7 @@ import {
 } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
 import { APP_URL } from '@/lib/constants'
+import { ExternalLinkIcon } from 'lucide-react'
 
 const title = 'Tips & Best Practices - Honeypot'
 const description = 'Recommendations for maximizing the effectiveness of your honeypot trap and ensuring smooth moderation.'
@@ -105,6 +106,31 @@ function RouteComponent() {
         <DocsChecklistItem><strong>Never testing.</strong> Roles may get re-ordered, permissions may get revoked. Test with an alt account periodically. </DocsChecklistItem>
         <DocsChecklistItem><strong>Using a real channel.</strong> Setting <DocsInlineCode>#general</DocsInlineCode> or any active channel as the honeypot may ban real members. </DocsChecklistItem>
       </DocsChecklist>
+    </DocsSection>
+
+    <DocsSection title="Layer your defenses">
+      <DocsP>
+        Honeypot works best alongside Discord's built-in moderation tools. For broader coverage, consider a few additional measures:
+      </DocsP>
+      <DocsChecklist>
+        <DocsChecklistItem>
+          <strong>Discord AutoMod:</strong> Set up rules for invite links (<DocsInlineCode>discord.gg</DocsInlineCode>) and <DocsInlineCode>@everyone</DocsInlineCode> pings.
+        </DocsChecklistItem>
+        <DocsChecklistItem>
+          <strong>Avoid conflicts:</strong> Exclude the honeypot channel from relevant AutoMod rules so they don't interfere with each other.
+        </DocsChecklistItem>
+        <DocsChecklistItem>
+          <strong>Member reports:</strong> Give members an easy way to alert moderators about spam that slips through.
+          <span className="w-1 inline-flex" />
+          <DocsLink href="https://discord.com/discovery/applications/1540722224288366682" icon title="See /report bot as an example">
+            <ExternalLinkIcon className="size-4" />
+            <span className="sr-only">{" "}See /report bot as an example</span>
+          </DocsLink>
+        </DocsChecklistItem>
+      </DocsChecklist>
+      <DocsP>
+        For more detail and options, see <DocsLink href="/blog/how-discord-spam-detection-works">How Discord Spam Detection Works</DocsLink>.
+      </DocsP>
     </DocsSection>
   </DocsLayout>
 }
