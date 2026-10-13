@@ -11,7 +11,7 @@ export const Route = createFileRoute('/404')({
   component: NotFoundPage,
 })
 
-function NotFoundPage() {
+export function NotFoundPage() {
   return (
     <div className="max-w-xl mx-auto py-12 m-auto h-dvh flex flex-col items-center justify-center">
       <img src="/honeypot.svg" alt="Honeypot Logo" className="w-20 h-20 mb-6 opacity-80" />

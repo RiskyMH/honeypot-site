@@ -7,6 +7,7 @@ import {
 // import appCss from '../../app/globals.css?url'
 import '../globals.css'
 import { APP_URL } from '@/lib/constants'
+import { NotFoundPage } from './404'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -64,6 +65,7 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootLayout,
+  notFoundComponent: NotFoundPage,
 })
 
 function RootLayout() {
