@@ -1,6 +1,6 @@
 export const DISCORD_BOT_CLIENT_ID = '1450060292716494940'
 
-export const DISCORD_INVITE_URL = 'https://discord.gg/haFKuBssU7'
+export const DISCORD_INVITE_URL = 'https://discord.gg/DPjWvRTSkz'
 export const DISCORD_SERVER_URL = 'https://discord.com/servers/riskys-server-894705593087049729'
 // export const DISCORD_SERVER_URL = DISCORD_INVITE_URL // discord discoverability requirements are harsh with retention
 export const DISCORD_BOT_INVITE_URL = `https://discord.com/oauth2/authorize?client_id=${DISCORD_BOT_CLIENT_ID}`
