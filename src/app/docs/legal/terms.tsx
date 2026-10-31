@@ -2,7 +2,7 @@ import DocsLayout from '@/components/docs/layout'
 import { createFileRoute } from '@tanstack/react-router'
 import { DocsCallout, DocsInlineCode, DocsLink, DocsP, DocsSection, DocsTitle, DocsChecklist, DocsChecklistItem } from '@/components/docs/markdown'
 import { buildHead } from '@/lib/utils'
-import { DISCORD_INVITE_URL, OWNER_URL, GITHUB_REPO_URL, APP_URL } from '@/lib/constants'
+import { DISCORD_INVITE_URL_, OWNER_URL, GITHUB_REPO_URL, APP_URL } from '@/lib/constants'
 
 const title = 'Terms of Service - Honeypot'
 const description = 'Official Honeypot bot terms of service.'
@@ -87,7 +87,7 @@ function RouteComponent() {
     </DocsSection>
 
     <DocsSection title="Contact">
-      <DocsP>For support, join the Discord server <DocsLink href={DISCORD_INVITE_URL}>{DISCORD_INVITE_URL}</DocsLink> or contact the owner RiskyMH at <DocsLink href={OWNER_URL}>{OWNER_URL}</DocsLink>.</DocsP>
+      <DocsP>For support, join the Discord server <DocsLink href={DISCORD_INVITE_URL_}>{DISCORD_INVITE_URL_}</DocsLink> or contact the owner RiskyMH at <DocsLink href={OWNER_URL}>{OWNER_URL}</DocsLink>.</DocsP>
     </DocsSection>
   </DocsLayout>
 }

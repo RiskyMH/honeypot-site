@@ -21,7 +21,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import { useState } from "react"
-import { DISCORD_INVITE_URL, DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_INVITE_URL, GITHUB_REPO_URL } from "@/lib/constants"
+import { DISCORD_INVITE_URL_, DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_INVITE_URL, GITHUB_REPO_URL } from "@/lib/constants"
 
 const sidebarNav = [
   {
@@ -235,7 +235,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
               on Discord.
             </p>
               <Button className="w-full bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
-              <a href={DISCORD_INVITE_URL} target="_blank">
+              <a href={DISCORD_INVITE_URL_} target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
                   viewBox="0 0 24 24"
@@ -290,7 +290,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                       </a>
                     </li>
                     <li>
-                      <a href={DISCORD_INVITE_URL} target="_blank" className="hover:text-white">
+                      <a href={DISCORD_INVITE_URL_} target="_blank" className="hover:text-white">
                         Support Server
                       </a>
                     </li>
@@ -435,7 +435,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 on Discord.
               </p>
             <Button className="w-full bg-[#5865F2] text-white hover:bg-[#4752C4]" asChild>
-                <a href={DISCORD_INVITE_URL} target="_blank">
+                <a href={DISCORD_INVITE_URL_} target="_blank">
                   <svg
                     className="mr-2 h-4 w-4"
                     viewBox="0 0 24 24"

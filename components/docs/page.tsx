@@ -18,7 +18,7 @@ import {
   DocsInlineCode,
   DocsLink,
 } from "./markdown"
-import { DISCORD_INVITE_URL, GITHUB_REPO_URL, DISCORD_BOT_INVITE_URL } from "@/lib/constants"
+import { DISCORD_INVITE_URL_, GITHUB_REPO_URL, DISCORD_BOT_INVITE_URL } from "@/lib/constants"
 import { STAT_FALLBACKS } from "@/lib/stats-format"
 
 const stats = [
@@ -303,7 +303,7 @@ export default function DocsPage() {
           </div>
           <div className="flex gap-3 flex-wrap max-sm:justify-center">
             <Button className="bg-[#5865F2] text-white hover:bg-[#4752C4] ms-auto" asChild>
-              <a href={DISCORD_INVITE_URL} target="_blank">
+              <a href={DISCORD_INVITE_URL_} target="_blank">
                 <svg
                   className="mr-2 h-4 w-4"
                   viewBox="0 0 24 24"

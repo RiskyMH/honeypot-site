@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, X, Check, BadgeCheck, ShieldCheck, HashIcon, BotIcon, ChevronDown } from "lucide-react";
 import { ButtonGroup } from "./ui/button-group";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
-import { DISCORD_BOT_INVITE_URL, DISCORD_INVITE_URL, GITHUB_REPO_URL } from "@/lib/constants";
+import { DISCORD_BOT_INVITE_URL, DISCORD_INVITE_URL_, GITHUB_REPO_URL } from "@/lib/constants";
 
 
 export function Hero() {
@@ -85,7 +85,7 @@ export function Hero() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <a
-                          href={DISCORD_INVITE_URL}
+                          href={DISCORD_INVITE_URL_}
                           target="_blank"
                         >
                           Support Server

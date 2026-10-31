@@ -3,7 +3,7 @@ import { Users, Clock, Star, ShieldAlert, ArrowUpRight, ArrowDownRight, CodeXml 
 
 import { useStats } from "@/components/stats-context";
 import { STAT_FALLBACKS } from "@/lib/stats-format";
-import { DISCORD_BOT_INVITE_URL, DISCORD_INVITE_URL, GITHUB_REPO_URL } from "@/lib/constants";
+import { DISCORD_BOT_INVITE_URL, DISCORD_INVITE_URL_, GITHUB_REPO_URL } from "@/lib/constants";
 import { useEffect, useRef, useState } from "react";
 import NumberFlow from "@number-flow/react";
 
@@ -118,7 +118,7 @@ export function StatsBar() {
         label: "Always Online",
         color: "text-blue-400",
         display: "24/7",
-        href: DISCORD_INVITE_URL,
+        href: DISCORD_INVITE_URL_,
         cta: "Join support server",
         external: true,
       },

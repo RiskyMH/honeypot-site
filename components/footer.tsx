@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
-import { DISCORD_BOT_CLIENT_ID, DISCORD_BOT_INVITE_URL, DISCORD_SERVER_URL, DISCORD_INVITE_URL, GITHUB_REPO_URL, OWNER_URL, BOT_LISTING_LINKS } from "@/lib/constants";
+import { DISCORD_BOT_CLIENT_ID, DISCORD_BOT_INVITE_URL, DISCORD_SERVER_URL, DISCORD_INVITE_URL_, GITHUB_REPO_URL, OWNER_URL, BOT_LISTING_LINKS } from "@/lib/constants";
 
 const resourceLinks = [
   { label: "Invite Bot", href: DISCORD_BOT_INVITE_URL },
@@ -130,7 +130,7 @@ export function Footer() {
               className="border-border bg-[#12151a] text-foreground hover:bg-muted hover:text-foreground"
             >
               <a
-                href={DISCORD_INVITE_URL}
+                href={DISCORD_INVITE_URL_}
                 target="_blank"
               >
                 <DiscordIcon className="mr-2 size-4" />
