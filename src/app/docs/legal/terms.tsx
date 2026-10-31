@@ -87,7 +87,7 @@ function RouteComponent() {
     </DocsSection>
 
     <DocsSection title="Contact">
-      <DocsP>For support, join the Discord server <DocsLink href={DISCORD_INVITE_URL_}>{DISCORD_INVITE_URL_}</DocsLink> or contact the owner RiskyMH at <DocsLink href={OWNER_URL}>{OWNER_URL}</DocsLink>.</DocsP>
+      <DocsP>For support, join the <DocsLink href={DISCORD_INVITE_URL_}>Discord server</DocsLink> or contact the owner RiskyMH at <DocsLink href={OWNER_URL}>{OWNER_URL}</DocsLink>.</DocsP>
     </DocsSection>
   </DocsLayout>
 }

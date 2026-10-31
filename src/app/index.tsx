@@ -9,7 +9,7 @@ import { LiveStats } from '../../components/live-stats'
 import { Footer } from '../../components/footer'
 import { StatsProvider } from '../../components/stats-context'
 import { buildHead } from '@/lib/utils'
-import { DISCORD_BOT_INVITE_URL, DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_CLIENT_ID, GITHUB_REPO_URL, GITHUB_PROFILE_URL, OWNER_URL, APP_URL, DISCORD_SERVER_URL, STATS_URL, DISCORD_INVITE_URL_ } from '@/lib/constants'
+import { DISCORD_BOT_INVITE_URL, DISCORD_APP_DIRECTORY_URL, DISCORD_BOT_CLIENT_ID, GITHUB_REPO_URL, GITHUB_PROFILE_URL, OWNER_URL, APP_URL, DISCORD_SERVER_URL, STATS_URL, DISCORD_INVITE_URL_, DISCORD_INVITE_URL } from '@/lib/constants'
 
 
 
@@ -162,7 +162,7 @@ export const Route = createFileRoute('/')({
                 "components": [
                   {
                     "type": 10, // ComponentType.TEXT_DISPLAY
-                    "content":`## [Honeypot](${APP_URL})\n${description}`,
+                    "content": `## [Honeypot](${APP_URL})\n${description}`,
                   }
                 ],
                 "accessory": {
@@ -224,6 +224,12 @@ function HomePage() {
         </StatsProvider>
       </main>
       <Footer />
+
+      
+      {/* maybe honeypot some scrapers :shrug: */}
+      <a href={DISCORD_INVITE_URL} target="_blank" rel="noopener noreferrer" hidden className="hidden">
+        {DISCORD_INVITE_URL}
+      </a>
     </div>
   )
 
