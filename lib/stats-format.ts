@@ -11,7 +11,7 @@ export function abbreviateNumber(n: number): string {
 export const formatStat = formatNumber;
 
 export const STAT_FALLBACKS = {
-  guilds: "210k+",
+  guilds: "220k+",
   moderations: "1.7M+",
   members: "200M+",
   last7dModerations: "100k+",
