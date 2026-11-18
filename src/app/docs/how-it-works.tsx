@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import {
   DocsCallout,
   DocsInlineCode,
+  DocsLink,
   DocsP,
   DocsSection,
   DocsStep,
@@ -62,6 +63,14 @@ function RouteComponent() {
       <DocsCallout tone="warn" title="Missing permissions">
         If the bot lacks Ban Members or its role is too low, the action fails and a log warning is posted.
       </DocsCallout>
+    </DocsSection>
+
+    <DocsSection title="Flow diagrams">
+      <DocsP>
+        For the sequence of events, commands and buttons in more detail, see the{" "}
+        <DocsLink href="/event-flows">flow diagrams</DocsLink>. They show the path each action
+        takes, with short notes where the logic needs more context.
+      </DocsP>
     </DocsSection>
   </DocsLayout>
 }

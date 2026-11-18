@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './app/__root'
 import { Route as IndexRouteImport } from './app/index'
 import { Route as R404RouteImport } from './app/404'
+import { Route as EventFlowsRouteImport } from './app/event-flows'
 import { Route as BlogIndexRouteImport } from './app/blog/index'
 import { Route as BlogDiscordAccountHackedRecoveryRouteImport } from './app/blog/discord-account-hacked-recovery'
 import { Route as BlogHowDiscordSpamDetectionWorksRouteImport } from './app/blog/how-discord-spam-detection-works'
@@ -37,6 +38,11 @@ const IndexRoute = IndexRouteImport.update({
 const R404Route = R404RouteImport.update({
   id: '/404',
   path: '/404',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventFlowsRoute = EventFlowsRouteImport.update({
+  id: '/event-flows',
+  path: '/event-flows',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -132,6 +138,7 @@ const DocsLegalTermsRoute = DocsLegalTermsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/event-flows': typeof EventFlowsRoute
   '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
   '/blog/how-discord-spam-detection-works': typeof BlogHowDiscordSpamDetectionWorksRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
@@ -153,6 +160,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/event-flows': typeof EventFlowsRoute
   '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
   '/blog/how-discord-spam-detection-works': typeof BlogHowDiscordSpamDetectionWorksRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
@@ -175,6 +183,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/404': typeof R404Route
+  '/event-flows': typeof EventFlowsRoute
   '/blog/discord-account-hacked-recovery': typeof BlogDiscordAccountHackedRecoveryRoute
   '/blog/how-discord-spam-detection-works': typeof BlogHowDiscordSpamDetectionWorksRoute
   '/blog/how-honeypot-systems-work': typeof BlogHowHoneypotSystemsWorkRoute
@@ -198,6 +207,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/404'
+    | '/event-flows'
     | '/blog/discord-account-hacked-recovery'
     | '/blog/how-discord-spam-detection-works'
     | '/blog/how-honeypot-systems-work'
@@ -219,6 +229,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/404'
+    | '/event-flows'
     | '/blog/discord-account-hacked-recovery'
     | '/blog/how-discord-spam-detection-works'
     | '/blog/how-honeypot-systems-work'
@@ -240,6 +251,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/404'
+    | '/event-flows'
     | '/blog/discord-account-hacked-recovery'
     | '/blog/how-discord-spam-detection-works'
     | '/blog/how-honeypot-systems-work'
@@ -262,6 +274,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   R404Route: typeof R404Route
+  EventFlowsRoute: typeof EventFlowsRoute
   BlogDiscordAccountHackedRecoveryRoute: typeof BlogDiscordAccountHackedRecoveryRoute
   BlogHowDiscordSpamDetectionWorksRoute: typeof BlogHowDiscordSpamDetectionWorksRoute
   BlogHowHoneypotSystemsWorkRoute: typeof BlogHowHoneypotSystemsWorkRoute
@@ -295,6 +308,13 @@ declare module '@tanstack/react-router' {
       path: '/404'
       fullPath: '/404'
       preLoaderRoute: typeof R404RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/event-flows': {
+      id: '/event-flows'
+      path: '/event-flows'
+      fullPath: '/event-flows'
+      preLoaderRoute: typeof EventFlowsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -422,6 +442,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   R404Route: R404Route,
+  EventFlowsRoute: EventFlowsRoute,
   BlogDiscordAccountHackedRecoveryRoute: BlogDiscordAccountHackedRecoveryRoute,
   BlogHowDiscordSpamDetectionWorksRoute: BlogHowDiscordSpamDetectionWorksRoute,
   BlogHowHoneypotSystemsWorkRoute: BlogHowHoneypotSystemsWorkRoute,
