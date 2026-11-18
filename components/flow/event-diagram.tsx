@@ -53,7 +53,8 @@ const keyItems = [
   { label: 'Decision', className: 'border-blue-500/30 bg-blue-500/[0.06]' },
   { label: 'Action', className: 'border-green-500/30 bg-green-500/[0.06]' },
   { label: 'Sub-step', className: 'border-dashed border-green-500/30 bg-green-500/[0.03]' },
-  { label: 'End', className: 'border-border bg-muted/25' },
+  { label: 'End with warning', className: 'border-dashed border-primary/30 bg-primary/[0.03]' },
+  { label: 'End', className: 'border-muted-foreground/40 bg-muted/25' },
 ]
 
 function endNote(hint: string) {

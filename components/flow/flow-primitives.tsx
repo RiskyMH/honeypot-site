@@ -13,7 +13,7 @@ const NODE_VARIANTS: Record<NodeVariant, string> = {
   amber: 'border-primary/30 bg-primary/[0.06] text-primary/85',
   'amber-dashed': 'border-dashed border-primary/30 bg-primary/[0.03] text-primary/85',
   blue: 'border-blue-500/30 bg-blue-500/[0.06] text-blue-400/85',
-  gray: 'border-border bg-muted/25 text-foreground/90',
+  gray: 'border-muted-foreground/40 bg-muted/25 text-foreground/90',
   green: 'border-green-500/30 bg-green-500/[0.06] text-green-400/85',
   'green-dashed': 'border-dashed border-green-500/30 bg-green-500/[0.03] text-green-400/85',
 }
@@ -159,7 +159,7 @@ export function Parallel({ title, direction = 'row', children }: ParallelProps) 
   const items = React.Children.toArray(children)
 
   return (
-    <div className="rounded-lg border border-border bg-secondary/30 px-4 pb-4 pt-3">
+    <div className="rounded-lg border border-border bg-secondary/90 px-4 pb-4 pt-3">
       {title && (
         <div className="mb-3 text-xs font-medium text-muted-foreground">
           {title}
@@ -244,7 +244,7 @@ export function TrackColumn({ title, stretch = true, children }: TrackColumnProp
   return (
     <div
       className={cn(
-        'flex flex-1 flex-col items-center rounded-lg border border-border bg-secondary/30 px-3 pb-4 pt-3',
+        'flex flex-1 flex-col items-center rounded-lg border border-border bg-secondary/60 px-3 pb-4 pt-3',
         stretch && 'h-full',
       )}
     >
