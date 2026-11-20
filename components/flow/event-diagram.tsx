@@ -597,6 +597,8 @@ export default function EventDiagramsPage() {
                 <Parallel title="Quality checks">
                   <Step variant="green-dashed" className="w-44">
                     Ensure the warning message exists
+                    <br />
+                    <span className="opacity-70">(or delete if disabled)</span>
                   </Step>
                   <Step variant="green-dashed" className="w-44">
                     Create an invite
@@ -610,7 +612,7 @@ export default function EventDiagramsPage() {
                   </Step>
                 </Parallel>
 
-                <Parallel title="Try out newly enabled experiments">
+                <Parallel title="Try out newly enabled cron experiments">
                   <Step variant="green-dashed" className="w-44">Channel warmer</Step>
                   <Step variant="green-dashed" className="w-44">Random channel name</Step>
                 </Parallel>
